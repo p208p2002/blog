@@ -27,14 +27,6 @@ pretty_urls:
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
 ```
 
-### package.json
-`$ hexo generate`預設產出的資料是`public`但是這樣做會在自動部屬的時候遇到一些問題，因此修改一下腳本，使得產出資料夾重新命名為`build`
-```json
-"scripts": {
-    "build": "hexo generate&&mv public build",
-```
-修改後我們也將使用`$ npm run build`取代`$ hexo generate`
-
 ### 設定ACCESS_TOKEN
 接下來的操作需要一些Repo的存取權限，因此需要做ACCESS_TOKEN設定
 
@@ -70,13 +62,11 @@ jobs:
           npm install -g hexo-cli
           npm install
           npm run build
-
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./public
 ```
 
 ### Push
