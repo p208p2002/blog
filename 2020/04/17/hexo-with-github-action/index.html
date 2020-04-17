@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>為Hexo設置GitHub Actions | The coding day 整天打扣</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="為什麼我們需要幫Hexo配置GitHub Action?設置好Github Action後我們就不在需要使用$ hexo generate命令來在本機產生靜態檔案，而是交由GitHub Action來做這件事。 你甚至不需要在本機安裝任何環境(包括nodejs)，並且可以更專注的在寫文章這件事；通過設置，在有新的push進來後，GitHub Action會自動執行，接下來自動進行build hex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="為Hexo設置GitHub Actions">
+<meta property="og:url" content="https://p208p2002.github.io/blog/2020/04/17/hexo-with-github-action/index.html">
+<meta property="og:site_name" content="The coding day 整天打扣">
+<meta property="og:description" content="為什麼我們需要幫Hexo配置GitHub Action?設置好Github Action後我們就不在需要使用$ hexo generate命令來在本機產生靜態檔案，而是交由GitHub Action來做這件事。 你甚至不需要在本機安裝任何環境(包括nodejs)，並且可以更專注的在寫文章這件事；通過設置，在有新的push進來後，GitHub Action會自動執行，接下來自動進行build hex">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/Hun6Vtm.png">
+<meta property="article:published_time" content="2020-04-17T14:03:28.000Z">
+<meta property="article:modified_time" content="2020-04-17T07:58:11.037Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="github-action">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Hun6Vtm.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+<link rel="stylesheet" href="/blog/css/scrollUp/image.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <!-- <div class="logo">
+        <img src="/blog/logo.png" alt="Profile Picture">
+      </div> -->
+      <div id="title" style="margin-top: 25px;">The coding day 整天打扣</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/blog/">Home</a>
+          
+            <a class="main-nav-link" href="/blog/archives">Archives</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/blog/">The coding day 整天打扣</a>
+      <!-- <img src="/blog/logo.png" alt="Profile Picture"> -->
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="p208p2002.github.io/blog">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/blog/">Home</a></li>
+      
+        <li><a href="/blog/archives">Archives</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-with-github-action" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/04/17/hexo-with-github-action/" class="article-date">
+  <time datetime="2020-04-17T14:03:28.000Z" itemprop="datePublished">2020-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      為Hexo設置GitHub Actions
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="為什麼我們需要幫Hexo配置GitHub-Action"><a href="#為什麼我們需要幫Hexo配置GitHub-Action" class="headerlink" title="為什麼我們需要幫Hexo配置GitHub Action?"></a>為什麼我們需要幫Hexo配置GitHub Action?</h3><p>設置好Github Action後我們就不在需要使用<code>$ hexo generate</code>命令來在本機產生靜態檔案，而是交由GitHub Action來做這件事。</p>
+<p>你甚至不需要在本機安裝任何環境(包括nodejs)，並且可以更專注的在寫文章這件事；通過設置，在有新的push進來後，GitHub Action會自動執行，接下來自動進行build hexo與部屬git page等動作。</p>
+<h2 id="來動手設置吧"><a href="#來動手設置吧" class="headerlink" title="來動手設置吧"></a>來動手設置吧</h2><h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>首先確保你的url部分已經在<code>_config.yml</code>正確的設定了，詳細的做法可以參考<a href="https://hexo.io/zh-tw/docs/configuration" target="_blank" rel="noopener">官方文檔</a></p>
+<p>而我的部落格是這樣設定的</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://p208p2002.github.io/blog/</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/blog/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing 'index.html' from permalinks</span></span><br><span class="line">  <span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing '.html' from permalinks</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p><code>$ hexo generate</code>預設產出的資料是<code>public</code>但是這樣做會在自動部屬的時候遇到一些問題，因此修改一下腳本，使得產出資料夾重新命名為<code>build</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "build": "hexo generate&amp;&amp;mv public build",</span><br></pre></td></tr></table></figure>
+<p>修改後我們也將使用<code>$ npm run build</code>取代<code>$ hexo generate</code></p>
+<h3 id="設定ACCESS-TOKEN"><a href="#設定ACCESS-TOKEN" class="headerlink" title="設定ACCESS_TOKEN"></a>設定ACCESS_TOKEN</h3><p>接下來的操作需要一些Repo的存取權限，因此需要做ACCESS_TOKEN設定</p>
+<p>前往 <strong>Setting &gt; Developer settings &gt; generate new token</strong> 然後將repo選項全勾選<br><img src="https://i.imgur.com/Hun6Vtm.png" alt=""></p>
+<p>前往你的 <strong>blog repo &gt; settings &gt; secrets</strong><br>將剛剛的token貼入，並取名<code>ACCESS_TOKEN</code></p>
+<h3 id="配置GitHub-Actions"><a href="#配置GitHub-Actions" class="headerlink" title="配置GitHub Actions"></a>配置GitHub Actions</h3><p>在你的專案資料夾新增資料夾與檔案，結構如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.github&#x2F;</span><br><span class="line">    - main.yml</span><br></pre></td></tr></table></figure>
+<p>然後編輯<code>main.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Build</span> <span class="string">and</span> <span class="string">Deploy</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build-and-deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">🔧</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span> <span class="comment"># If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">'10.x'</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line">          <span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">hexo-cli</span></span><br><span class="line">          <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">          <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">🚀</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">JamesIves/github-pages-deploy-action@releases/v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">ACCESS_TOKEN:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.ACCESS_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">BRANCH:</span> <span class="string">gh-pages</span> <span class="comment"># The branch the action should deploy to.</span></span><br><span class="line">          <span class="attr">FOLDER:</span> <span class="string">build</span> <span class="comment"># The folder the action should deploy.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+<p>到這邊就完成所有設定並且觸發GitHub Action了😉<br>你可以在你的Repo中的Action標籤看見目前Build與部屬的狀況<br>等到部屬完畢就可以在<a href="https://USERNAME.github.io/REPO/" target="_blank" rel="noopener">https://USERNAME.github.io/REPO/</a>看到你的部落格</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://p208p2002.github.io/blog/2020/04/17/hexo-with-github-action/" data-id="ck93whx3200003ohh2lueap08" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-action/" rel="tag">github-action</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/blog/js/jquery.scrollUp.min.js"></script>
+
+
+<script src="/blog/js/jquery.transform.js"></script>
+
+
+<script src="/blog/js/menu.js"></script>
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+<script src="/blog/js/scrollUp.js"></script>
+
+
+  </div>
+</body>
+</html>
