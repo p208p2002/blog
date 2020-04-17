@@ -1,0 +1,32 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+
+# Content
+excerpt_link: ......
+fancybox: false
+
+# Sidebar
+sidebar: 
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+- links
+
+# Links
+links:
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins: 
+fb_app_id:
+
+# scrollUp 样式
+scrollUp: image
