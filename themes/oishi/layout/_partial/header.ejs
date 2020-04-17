@@ -5,7 +5,7 @@
       <!-- <div class="logo">
         <img src="<%-config.root%>logo.png" alt="Profile Picture">
       </div> -->
-      <div id="title" style="margin-top: 25px;"><%-config.title%></div>
+      <!-- <div id="title" style="margin-top: 25px;"><%-config.title%></div> -->
       <% if (config.subtitle) {%>
         <div id="subtitle"><%- config.subtitle %></div>
       <% } %>
@@ -27,7 +27,8 @@
         <% }%>
       -->
     </nav>
-    <nav id="title-nav" style="display:none">
+    <!-- <nav id="title-nav" style="display:none"></nav> -->
+    <nav id="title-nav-custom" style="display:block">
       <a href="<%- url_for() %>"><%= config.title %></a>
       <!-- <img src="<%-config.root%>logo.png" alt="Profile Picture"> -->
       <!--
