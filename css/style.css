@@ -636,8 +636,8 @@ body {
   font-family: FontAwesome;
   font-size: 14px;
   height: 14px;
-  padding: 5px 15px;
-  text-align: center;
+  padding: 5px 45px;
+  text-align: left;
 }
 #title-nav-custom a {
   color: #555;
