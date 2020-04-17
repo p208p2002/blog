@@ -438,6 +438,7 @@ body {
   width: 0;
 }
 #header {
+  margin-top: 36px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -467,7 +468,7 @@ body {
 }
 #header-inner {
   background: none repeat scroll 0 0 #ccc;
-  height: 40px;
+  height: 38px;
   position: fixed;
   text-align: center;
   top: 0;
