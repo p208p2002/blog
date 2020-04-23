@@ -443,6 +443,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   background-image: url("images/banner.jpg");
+  background-position: center;
   background-color: #ccc;
   height: 250px;
   position: relative;
