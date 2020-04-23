@@ -104,6 +104,78 @@
   
 
     
+    <article id="post-why-you-should-stop-using-jupyter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/04/why-you-should-stop-using-jupyter/" class="article-date">
+  <time datetime="2020-04-23T12:26:51.000Z" itemprop="datePublished">2020-04-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/04/why-you-should-stop-using-jupyter/">為什麼你應該停止使用Jupyter?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這篇主要想與本科或是已有一些基礎的人分享，因為是時候後拆掉輔助輪了；當你想騎得更快，輔助輪只會阻礙你。</p>
+<p>只要做數據分析、AI有關的項目，目前最火紅的程式語言當屬Python了。<br>而網路上許多的入門教學第一件事情就是告訴你安裝Anaconda跟Jupyter，這提供了我們入們的舒適環境，不過當我們已經不是初學者，工具也該跟著進化了。</p>
+<blockquote>
+<p>事實上我也非常不喜歡Anaconda，它非常肥大，並且總是讓我搞不清楚我的套件到底裝到哪邊去了。通常我都使用 pipenv 與 pyenv，非常輕量、直覺</p>
+</blockquote>
+<h2 id="跳躍式的執行區塊"><a href="#跳躍式的執行區塊" class="headerlink" title="跳躍式的執行區塊"></a>跳躍式的執行區塊</h2><p>Jupyter將程式碼使用區塊隔開，你可以任意執行每一個區塊，但是問題隨之而來，執行的區塊被讀進記憶體，但是在你變動區塊後，記憶體裡面的資料沒有改動，這樣可能使你的在debug的時候發生問題</p>
+<p><img src="https://i.imgur.com/7l74UmX.png" alt=""></p>
+<blockquote>
+<p>原本的程式</p>
+</blockquote>
+<p><img src="https://i.imgur.com/GTHaC3n.png" alt=""></p>
+<blockquote>
+<p>變動後將第一行刪除後，變數資料依然存在</p>
+</blockquote>
+<p>看起來似乎沒什麼，但是當你的程式邏輯越來越複雜，也使你的環境愈發髒亂。</p>
+<p>甚至有幾次我改變了我的副程式，但是我根本不確定目前使用的是變更前還是變更後的副程式。</p>
+<h2 id="困難的GIT版控"><a href="#困難的GIT版控" class="headerlink" title="困難的GIT版控"></a>困難的GIT版控</h2><p>Jupyter使用了json結構儲存你的程式碼和一些其他資訊</p>
+<p><img src="https://i.imgur.com/A40Kk9m.png" alt=""></p>
+<p>這其實非常不利於你使用git進行版控，每一次輸出變動，都會造成git改變，也沒有辦法使用git進行合作開發，一想到合併衝突就頭痛😨</p>
+<h2 id="沒有辦法直接引入-ipynb"><a href="#沒有辦法直接引入-ipynb" class="headerlink" title="沒有辦法直接引入.ipynb"></a>沒有辦法直接引入.ipynb</h2><p>好吧，的確有套件或指令可以輔助你做這件事，但是並沒有讓這件事情變得簡單</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/20186344/ipynb-import-another-ipynb-file" target="_blank" rel="noopener">https://stackoverflow.com/questions/20186344/ipynb-import-another-ipynb-file</a></p>
+</blockquote>
+<p>比較理想、好維護的架構應該是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- main.py</span><br><span class="line">- requments.txt</span><br><span class="line">- lib&#x2F;</span><br><span class="line">    - foo&#x2F;</span><br><span class="line">        - __init__.py</span><br><span class="line">        ...</span><br><span class="line">    - bar&#x2F;</span><br><span class="line">        - __init__.py</span><br><span class="line">        ...</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>當你的程式變得複雜，你不會想要想將所有東西擠在同一支檔案的</p>
+</blockquote>
+<h2 id="結尾"><a href="#結尾" class="headerlink" title="結尾"></a>結尾</h2><p>說了這麼多Jupyter還是有它的優點，可惜是當你漸漸熟悉Python之後，這些特性將會成為絆腳石，如果不拋開它，將無法向前邁進</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://p208p2002.github.io/blog/2020/04/why-you-should-stop-using-jupyter/" data-id="ck9c9p5qf0001mzixhu82gzdh" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/jupyter/" rel="tag">jupyter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
     <article id="post-hexo-with-github-action" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/04/hexo-with-github-action/" class="article-date">
@@ -147,7 +219,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://p208p2002.github.io/blog/2020/04/hexo-with-github-action/" data-id="ck95qlo7f000036ho134d0n2y" class="article-share-link">Share</a>
+        <a data-url="https://p208p2002.github.io/blog/2020/04/hexo-with-github-action/" data-id="ck9c9p5q70000mzix2lzmg2t1" class="article-share-link">Share</a>
       
 
       
