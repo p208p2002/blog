@@ -2,6 +2,10 @@
 title: self-attention-cacultate-with-numpy
 date: 2020-08-12 14:54:08
 tags:
+    - self-attention
+    - attention-is-all-you-need
+    - transformers
+    - bert
 ---
 
 ### Attention 公式
