@@ -697,7 +697,7 @@ body {
 }
 @media screen and (max-width: 479px) {
   #search-form-wrap {
-    width: 100%;
+    width: 95%;
     right: -100%;
   }
 }
@@ -748,7 +748,7 @@ body {
   padding: 0 1.5rem;
   position: fixed;
   text-align: left;
-  top: 48px;
+  top: 35px;
   z-index: 999;
 }
 .site-nav ul {
