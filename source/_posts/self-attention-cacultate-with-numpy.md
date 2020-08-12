@@ -9,7 +9,7 @@ tags:
 ---
 
 ### Attention 公式
-![](attention.png)
+{% asset_img attention.png %}
 
 公式中的(Q)uerys, (K)eys, (V)alues可以視為一種representations,他們各自對應一組權重，模型的目的就是去學習權重
 
