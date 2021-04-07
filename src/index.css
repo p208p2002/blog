@@ -22,7 +22,7 @@ code {
 
 .inner-container{
   padding:2.5%;
-  border: 1px solid #333;
+  border: 1px solid gray;
   border-radius: 5px;
   box-sizing: border-box;
   max-width: 500px;
@@ -30,4 +30,25 @@ code {
   height:100%;
   overflow: scroll;
   overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
