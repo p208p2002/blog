@@ -8,7 +8,7 @@ Focusing on writing post, that's all.
 comming soon...
 ### Write Post
 1. Create a `Public Gist`
-2. Ensure Filename with valid extention name
+2. Ensure Filename with supported extention name
     > Defaults to: `.md`,`.ipynb`  
 3. Add some hash tag to `Gist description`
     > At least include `#blog`
