@@ -12,9 +12,11 @@ function Index() {
   return (
     <RootContext.Provider value={{ isLoading, setLoading }}>
       <div className="container">
-        <App />
-        <LoadingView />
-        <Footer/>
+        <div className="inner-container">
+          <App />
+          <LoadingView />
+          <Footer />
+        </div>
       </div>
     </RootContext.Provider >
   )

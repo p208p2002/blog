@@ -1,3 +1,13 @@
 #Footer{
     font-size: 3px;
+    position: absolute;
+    bottom: 2.5%;
+    right: 2.5%;
+}
+
+@media screen and (max-width: 768px){
+    #Footer{
+        font-size: 3px;
+        position: initial;
+    }
 }

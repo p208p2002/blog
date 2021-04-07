@@ -1,4 +1,4 @@
-body {
+html,body,#root {
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,6 +6,7 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
@@ -14,5 +15,19 @@ code {
 }
 
 .container{
-  padding:5%;
+  padding:2.5%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.inner-container{
+  padding:2.5%;
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-sizing: border-box;
+  max-width: 500px;
+  max-height: 100%;
+  height:100%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
