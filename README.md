@@ -1,7 +1,7 @@
 # Scooter
 Scooter is a pure and lightweight blog system build on Gist.
 
-Focusing on writing the post, that's all.
+Focusing on writing post, that's all.
 
 ## Document
 comming soon...
