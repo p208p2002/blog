@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LoadingView from './modules/Loading'
-
+import Footer from './modules/Footer'
 export const RootContext = React.createContext({});
 
 function Index() {
   let [isLoading, setLoading] = useState(false)
   return (
     <RootContext.Provider value={{ isLoading, setLoading }}>
-      <LoadingView/>
-      <App />
+      <div className="container">
+        <App />
+        <LoadingView />
+        <Footer/>
+      </div>
     </RootContext.Provider >
   )
 }
