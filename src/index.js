@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LoadingView from './modules/Loading'
+
+export const RootContext = React.createContext({});
+
+function Index() {
+  let [isLoading, setLoading] = useState(false)
+  return (
+    <RootContext.Provider value={{ isLoading, setLoading }}>
+      <LoadingView/>
+      <App />
+    </RootContext.Provider >
+  )
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+    <Index />
+  </>,
   document.getElementById('root')
 );
 

@@ -1,0 +1,18 @@
+#Search-Bar {
+    margin-bottom: 20px;
+}
+
+#Search-Bar input[type=text] {
+    border: 1px solid #333;
+    border-radius: 4px 0px 0px 4px;
+    height: 24px;
+    padding-left: 5px;
+}
+
+#Search-Bar button[type=submit]{
+    height: 28px;
+    border-color: #333;
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 4px 4px 0px;
+}
