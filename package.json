@@ -1,5 +1,6 @@
 {
-  "name": "simple-blog",
+  "name": "scooter",
+  "homepage": "https://p208p2002.github.io/scooter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
