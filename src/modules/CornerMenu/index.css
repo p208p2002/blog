@@ -1,0 +1,23 @@
+#Corner-Menu {
+    color: gray;
+    font-size: 3px;
+    position: absolute;
+    bottom: 8%;
+    right: 2.5%;
+}
+
+#Corner-Menu .link {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    display: block;
+    margin-top: 15px;
+}
+
+#Corner-Menu .link a {
+    color: #b7b7b7;
+}
+
+#Corner-Menu .link a:hover{
+    color: gray;
+}

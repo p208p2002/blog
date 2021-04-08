@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LoadingView from './modules/Loading'
+import CornerMenu from './modules/CornerMenu'
 import Footer from './modules/Footer'
 export const RootContext = React.createContext({});
 
@@ -15,6 +16,7 @@ function Index() {
         <div className="inner-container">
           <App />
           <LoadingView />
+          <CornerMenu/>
           <Footer />
         </div>
       </div>

@@ -22,7 +22,7 @@ code {
 
 .inner-container{
   padding:2.5%;
-  border: 1px solid #b7b7b7;
+  border: 0px solid #b7b7b7;
   border-radius: 5px;
   box-sizing: border-box;
   max-width: 500px;
@@ -34,7 +34,7 @@ code {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 2px;
 }
 
 /* Track */
