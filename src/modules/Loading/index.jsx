@@ -1,11 +1,14 @@
 import { useContext } from 'react'
 import { RootContext } from '../../index'
+import './index.css'
 
 function Loading(){
     let { isLoading } = useContext(RootContext)
     if(isLoading){
         return(
-            <p>Loading...</p>
+            <div id="Loading">
+                Loading...
+            </div>
         )
     }
     return null

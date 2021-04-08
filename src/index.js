@@ -18,10 +18,10 @@ function Index() {
 
   return (
     <RootContext.Provider value={{ isLoading, setLoading }}>
+      <LoadingView />
       <div className="container">
         <div className="inner-container">
           <App />
-          <LoadingView />
           <CornerMenu />
           <Footer />
         </div>
