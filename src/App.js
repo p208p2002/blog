@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import './App.css';
-import { GIST_API_URL, TITLE_FILTER_RULE, DESC_FILTER_RULE } from './configs/general'
+import { GIST_API_URL, TITLE_FILTER_RULE, DESC_FILTER_RULE, BLOG_NAME } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import { RootContext } from './index'
@@ -45,6 +45,7 @@ function App() {
 
   return (
     <div id="App">
+      <h2>{BLOG_NAME}</h2>
       <Search />
       <div>
         {posts.map((post, i) => <PostBlock key={i} post={post} />)}
