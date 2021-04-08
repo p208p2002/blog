@@ -1,0 +1,17 @@
+#App .context {
+    width: 300px;
+    margin: 0 auto;
+    padding-left: 10%;
+}
+
+#App h1{
+    font-size: 32px;
+}
+
+@media screen and (max-width: 768px) {
+    #App .context {
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 12%;
+    }
+}

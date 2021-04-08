@@ -15,9 +15,13 @@ code {
 }
 
 .container{
-  padding:2.5%;
+  padding:2.5% 0% 2.5% 0%;
   height: 100%;
   box-sizing: border-box;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .inner-container{

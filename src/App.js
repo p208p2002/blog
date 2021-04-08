@@ -45,9 +45,11 @@ function App() {
 
   return (
     <div id="App">
-      <h2>{BLOG_NAME}</h2>
-      <Search />
-      <div>
+      <div className="text-center">
+        <h1>{BLOG_NAME}</h1>
+        <Search />
+      </div>
+      <div className="context">
         {posts.map((post, i) => <PostBlock key={i} post={post} />)}
       </div>
     </div>
