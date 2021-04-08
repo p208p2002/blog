@@ -7,7 +7,7 @@ function Footer() {
             <br/>
             {new Date().getFullYear()} © {OWNER}
             <br/>
-            <small>Powered by Scooter</small>
+            <small>Powered by <a href="https://github.com/p208p2002/blog" target="_blank" rel="noreferrer">Scooter</a></small>
         </footer>
     )
 }

@@ -7,6 +7,14 @@
     right: 2.5%;
 }
 
+#Footer a{
+    color: #6699FF;
+}
+
+#Footer a:link{
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px){
     #Footer{
         color: gray;

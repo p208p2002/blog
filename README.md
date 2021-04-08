@@ -1,7 +1,7 @@
 # Scooter
 Scooter is my own blog system, it's a pure, lightweight and serverless blog system based on Gist.
 
-It design to focusing on writing the blog post, that's all.
+It design for focusing on writing the blog post, that's all.
 
 ## How it wroks?
 We use gist api to fetch user's public gist, than filter with some rule that help you ignore what you don't want to display.
