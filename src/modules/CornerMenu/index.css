@@ -18,6 +18,24 @@
     color: #b7b7b7;
 }
 
-#Corner-Menu .link a:hover{
+#Corner-Menu .link a:hover {
     color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    #Corner-Menu {
+        color: gray;
+        font-size: 3px;
+        position: absolute;
+        bottom: 2%;
+        right: 6%;
+    }
+
+    #Corner-Menu .link {
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        display: block;
+        margin-top: 15px;
+    }
 }
