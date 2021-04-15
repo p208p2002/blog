@@ -1,3 +1,10 @@
 #Post-Block{
     margin-bottom: 12px;
 }
+
+#Post-Block .title-badge{
+    width: 100px;
+    margin-left: 10px;
+    position: relative;
+    top: 4px;
+}
