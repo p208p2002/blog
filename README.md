@@ -5,7 +5,7 @@ It designed for focusing on writing the blog post, that's all.
 
 Scooter是我為這個部落格系統取的名字，它輕量化、無後台並且依賴Gist。
 
-它被設計用來專注在寫作，僅此而已
+它被設計用來專注在寫作，僅此而已。
 
 ## Features
 - Focusing on writing post
