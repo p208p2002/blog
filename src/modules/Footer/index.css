@@ -1,7 +1,7 @@
 #Footer{
     text-align: center;
     color: gray;
-    font-size: 3px;
+    font-size: 10pt;
     position: absolute;
     bottom: 2.5%;
     right: 2.5%;
@@ -18,7 +18,7 @@
 @media screen and (max-width: 768px){
     #Footer{
         color: gray;
-        font-size: 3px;
+        font-size: 10pt;
         position: initial;
     }
 }
