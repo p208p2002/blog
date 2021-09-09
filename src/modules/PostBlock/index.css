@@ -1,5 +1,5 @@
 #Post-Block{
-    margin-bottom: 12px;
+    padding: 0px;
 }
 
 #Post-Block .title-badge{
@@ -7,4 +7,10 @@
     margin-left: 10px;
     position: relative;
     top: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    #Post-Block{
+        padding: 12px;
+    }
 }

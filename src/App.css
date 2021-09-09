@@ -1,7 +1,6 @@
 #App .context {
     width: 300px;
     margin: 0 auto;
-    padding-left: 8.5%;
 }
 
 #App h1{
@@ -12,6 +11,5 @@
     #App .context {
         width: 100%;
         margin: 0 auto;
-        padding-left: 12%;
     }
 }
