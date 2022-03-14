@@ -18,7 +18,7 @@ function PostBlock(props) {
                         rel="noreferrer"
                         target="_blank"
                         href={`http://colab.research.google.com/gist/${ownerName}/` + html_url.replace("https://gist.github.com/", "")}>
-                        <img className="title-badge" src="https://colab.research.google.com/assets/colab-badge.svg" alt="open in colab" srcset="" />
+                        <img className="title-badge" src="https://colab.research.google.com/assets/colab-badge.svg" alt="open in colab" srcSet="" />
                     </a>
                     :
                     null
