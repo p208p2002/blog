@@ -1,22 +1,15 @@
 {
-  "files": {
-    "main.css": "/blog/static/css/main.eb49e597.chunk.css",
-    "main.js": "/blog/static/js/main.73465f24.chunk.js",
-    "main.js.map": "/blog/static/js/main.73465f24.chunk.js.map",
-    "runtime-main.js": "/blog/static/js/runtime-main.339f7812.js",
-    "runtime-main.js.map": "/blog/static/js/runtime-main.339f7812.js.map",
-    "static/js/2.8929286f.chunk.js": "/blog/static/js/2.8929286f.chunk.js",
-    "static/js/2.8929286f.chunk.js.map": "/blog/static/js/2.8929286f.chunk.js.map",
-    "static/js/3.cd97289d.chunk.js": "/blog/static/js/3.cd97289d.chunk.js",
-    "static/js/3.cd97289d.chunk.js.map": "/blog/static/js/3.cd97289d.chunk.js.map",
-    "index.html": "/blog/index.html",
-    "static/css/main.eb49e597.chunk.css.map": "/blog/static/css/main.eb49e597.chunk.css.map",
-    "static/js/2.8929286f.chunk.js.LICENSE.txt": "/blog/static/js/2.8929286f.chunk.js.LICENSE.txt"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.339f7812.js",
-    "static/js/2.8929286f.chunk.js",
-    "static/css/main.eb49e597.chunk.css",
-    "static/js/main.73465f24.chunk.js"
-  ]
+  "main.css": "/blog/static/css/main.fdb82125.chunk.css",
+  "main.js": "/blog/static/js/main.e25d7ad4.chunk.js",
+  "main.js.map": "/blog/static/js/main.e25d7ad4.chunk.js.map",
+  "static/js/1.74d65fb7.chunk.js": "/blog/static/js/1.74d65fb7.chunk.js",
+  "static/js/1.74d65fb7.chunk.js.map": "/blog/static/js/1.74d65fb7.chunk.js.map",
+  "static/js/2.68093cf1.chunk.js": "/blog/static/js/2.68093cf1.chunk.js",
+  "static/js/2.68093cf1.chunk.js.map": "/blog/static/js/2.68093cf1.chunk.js.map",
+  "runtime~main.js": "/blog/static/js/runtime~main.715012cf.js",
+  "runtime~main.js.map": "/blog/static/js/runtime~main.715012cf.js.map",
+  "static/css/main.fdb82125.chunk.css.map": "/blog/static/css/main.fdb82125.chunk.css.map",
+  "index.html": "/blog/index.html",
+  "precache-manifest.b90ebcebed1e84ea72b85d660b5360ec.js": "/blog/precache-manifest.b90ebcebed1e84ea72b85d660b5360ec.js",
+  "service-worker.js": "/blog/service-worker.js"
 }
