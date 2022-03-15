@@ -1,3 +1,4 @@
+import React from 'react'
 import './index.css'
 import { GITHUB_USER } from '../../configs/general'
 import { useState } from 'react'
