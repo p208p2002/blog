@@ -1,7 +1,7 @@
 #Corner-Menu {
     color: gray;
     font-size: 3px;
-    position: absolute;
+    position: fixed;
     bottom: 8%;
     right: 2.5%;
 }

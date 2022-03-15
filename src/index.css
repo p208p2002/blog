@@ -24,7 +24,7 @@ code {
   text-align: center;
 }
 
-.inner-container {
+.app-container {
   padding: 0%;
   border: 0px solid #b7b7b7;
   border-radius: 5px;
@@ -34,6 +34,12 @@ code {
   height: 100%;
   overflow: scroll;
   overflow-x: hidden;
+}
+
+.render-container{
+  margin: 0 auto;
+  max-width: 800px;
+  padding-bottom: 200px;
 }
 
 /* width */

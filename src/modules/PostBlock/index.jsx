@@ -7,12 +7,18 @@ function PostBlock(props) {
     let { post } = props
     let title = Object.keys(post.files)[0] // only use first file
     let { created_at, html_url, description } = post
+    let { raw_url } = post.files[title]
+
+
     let isIpynb = title.match(/.*\.ipynb/) === null ? false : true
     let ownerName = post.owner.login
     return (
         <div key={title} id="Post-Block">
             <div>
-                <a href={html_url} target="_blank" rel="noopener noreferrer">{title}</a>
+                {isIpynb ? <a href={html_url} target="_blank" rel="noopener noreferrer">{title}</a>:<a href={`/?render=${raw_url}`}>{title}</a>}
+                
+
+                {/*  */}
                 {/* if the file type is ipynb, show a badge with "open in colab" */}
                 {isIpynb ?
                     <a

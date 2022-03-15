@@ -7,11 +7,17 @@ import LoadingView from './modules/Loading'
 import CornerMenu from './modules/CornerMenu'
 import Footer from './modules/Footer'
 import { BLOG_NAME } from './configs/general'
+import MdRender from './modules/MdRender';
 export const RootContext = React.createContext({});
+
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+let { render = undefined } = params
+console.log(params)
 
 function Index() {
   let [isLoading, setLoading] = useState(false)
-  
+
   useEffect(() => {
     document.title = BLOG_NAME
   }, []);
@@ -20,11 +26,21 @@ function Index() {
     <RootContext.Provider value={{ isLoading, setLoading }}>
       <LoadingView />
       <div className="container">
-        <div className="inner-container">
-          <App />
-          <CornerMenu />
-          <Footer />
-        </div>
+        {render === undefined ? (
+          <div className="app-container">
+            <App />
+            <CornerMenu />
+            <Footer />
+          </div>
+        ) : (
+          <div className="render-container">
+            <MdRender md_url={render} />
+            <CornerMenu />
+            <Footer />
+
+          </div>
+        )}
+
       </div>
     </RootContext.Provider >
   )

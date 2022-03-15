@@ -2,7 +2,7 @@
     text-align: center;
     color: gray;
     font-size: 10pt;
-    position: absolute;
+    position: fixed;
     bottom: 2.5%;
     right: 2.5%;
 }

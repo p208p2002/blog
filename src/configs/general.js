@@ -6,5 +6,5 @@ export const BLOG_NAME = 'Philip\'s blog'
 export const TITLE_FILTER_RULE = /md$|ipynb$/; 
 export const DESC_FILTER_RULE = /#blog/;
 
-export const HOME_PAGE = 'https://p208p2002.github.io/'
+export const HOME_PAGE = '/'
 export const GITHUB = 'https://github.com/p208p2002'

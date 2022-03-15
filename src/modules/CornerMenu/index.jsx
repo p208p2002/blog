@@ -12,7 +12,7 @@ function index() {
                 </a>
             </div>
             <div className="link">
-                <a href={HOME_PAGE} target="_blank" rel="noopener noreferrer">
+                <a href={HOME_PAGE}>
                     <FaHome className="animate__animated animate__backInUp" style={{ height: '100%', width: '100%' }} />
                 </a>
             </div>
