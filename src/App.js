@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import './App.css';
-import { GIST_API_URL, TITLE_FILTER_RULE, DESC_FILTER_RULE, BLOG_NAME } from './configs/general'
+import { GIST_LIST_URL, TITLE_FILTER_RULE, DESC_FILTER_RULE, BLOG_NAME } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import { RootContext } from './index'
@@ -16,7 +16,7 @@ function App() {
 
   let fetchPost = (titleRule, descRule) => {
     setLoading(true)
-    axios.get(GIST_API_URL)
+    axios.get(GIST_LIST_URL)
       .then((res) => {
         console.log(res.data)
         posts = res.data

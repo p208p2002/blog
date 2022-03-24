@@ -34,7 +34,7 @@ function Index() {
           </div>
         ) : (
           <div className="render-container">
-            <MdRender md_url={render} />
+            <MdRender gistId={render} />
             <CornerMenu />
             <Footer />
 
