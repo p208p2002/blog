@@ -5,6 +5,7 @@ import { GIST_LIST_URL, TITLE_FILTER_RULE, DESC_FILTER_RULE, BLOG_NAME } from '.
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import { RootContext } from './index'
+import MDPreviewer from './modules/MdRender/preview'
 
 
 const axios = require('axios');
@@ -51,7 +52,12 @@ function App() {
         <Search />
       </div>
       <div className="context">
-        {posts.map((post, i) => <PostBlock key={i} post={post} />)}
+        {posts.map((post, i) => (
+          <PostBlock key={i} post={post} >
+            <MDPreviewer gistId={post.id} maxLine={15}/>
+          </PostBlock>
+
+        ))}
       </div>
     </div>
   );

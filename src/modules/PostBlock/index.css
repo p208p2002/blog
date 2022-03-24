@@ -1,6 +1,12 @@
 #Post-Block{
-    padding: 0px;
-    margin-bottom: 10px;
+    padding: 15px;
+    margin-bottom: 50px;
+    border: #d8d8d8 solid 1px;
+    border-radius: 5px;
+}
+
+#Post-Block hr{
+    border: 1px solid #d8d8d8;
 }
 
 #Post-Block .title-badge{
@@ -8,6 +14,10 @@
     margin-left: 10px;
     position: relative;
     top: 4px;
+}
+
+#Post-Block a.post-title{
+    font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {
