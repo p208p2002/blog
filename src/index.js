@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -8,6 +8,7 @@ import CornerMenu from './modules/CornerMenu'
 import Footer from './modules/Footer'
 import { BLOG_NAME } from './configs/general'
 import MdRender from './modules/MdRender';
+import {Helmet} from 'react-helmet'
 export const RootContext = React.createContext({});
 
 const urlSearchParams = new URLSearchParams(window.location.search);
@@ -18,16 +19,17 @@ console.log(params)
 function Index() {
   let [isLoading, setLoading] = useState(false)
 
-  useEffect(() => {
-    document.title = BLOG_NAME
-  }, []);
-
   return (
     <RootContext.Provider value={{ isLoading, setLoading }}>
       <LoadingView />
       <div className="container">
         {render === undefined ? (
           <div className="app-container">
+            <Helmet>
+              <meta charSet="utf-8" />
+              <title>{BLOG_NAME}</title>
+              <meta name="description" content="程式筆記與心得分享" />
+            </Helmet>
             <App />
             <CornerMenu />
             <Footer />
