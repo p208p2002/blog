@@ -26,7 +26,7 @@
     #Corner-Menu {
         color: gray;
         font-size: 3px;
-        position: absolute;
+        position: fixed;
         bottom: 2%;
         right: 6%;
     }

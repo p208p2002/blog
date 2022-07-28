@@ -23,5 +23,16 @@
 @media screen and (max-width: 768px) {
     #Post-Block{
         padding: 12px;
+        max-width: 100%;     
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #Post-Block{
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        margin-bottom: 20px;
     }
 }
