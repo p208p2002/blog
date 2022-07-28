@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+Sitemap: http://blog.philip-huang.tech/sitemap.txt
