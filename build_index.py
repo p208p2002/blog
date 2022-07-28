@@ -1,5 +1,4 @@
 import glob
-from math import e
 import sys
 import json
 import os
