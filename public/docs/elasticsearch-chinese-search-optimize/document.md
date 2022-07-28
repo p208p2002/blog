@@ -112,17 +112,17 @@ POST custom/_close
 ```
 
 3. 宣告新的同義詞filter
-```
+```json
 PUT custom/_settings
 {
   "index":{
     "analysis":{
       "filter": {
-					"synonym": {
-						"type": "synonym",
-						"synonyms_path": "zh_synonym.txt"
-					}
+				"synonym": {
+					"type": "synonym",
+					"synonyms_path": "zh_synonym.txt"
 				}
+			}
     }
   }
 }
