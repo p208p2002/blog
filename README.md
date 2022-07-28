@@ -1,4 +1,4 @@
-# Trailer
+# Trailer [![Build and Deploy](https://github.com/p208p2002/blog/actions/workflows/main.yml/badge.svg)](https://github.com/p208p2002/blog/actions/workflows/main.yml)
 Trailer是我為這個部落格系統取的名字，它輕量化且無後端，依賴 Github Pages 運作。
 > Trailer (拖車) 本身並沒有任何動力，通常附掛於汽車之後用以裝載一些物品
 
