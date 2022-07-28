@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.css'
-import { GITHUB_USER } from '../../configs/general'
 import { useState } from 'react'
 
 function Search() {
@@ -9,7 +8,7 @@ function Search() {
         <div id="Search-Bar">
             <form id="Searrch-Form">
                 <input
-                    placeholder="Seacrh on Gist"
+                    placeholder="Seacrh Post"
                     type="text"
                     value={keyword}
                     onChange={(e) => {
@@ -20,7 +19,7 @@ function Search() {
                     type="submit"
                     onClick={(e) => {
                         e.preventDefault();
-                        window.open("https://gist.github.com/search?q=" + encodeURI(`user:${GITHUB_USER} ${keyword}`));
+                        window.open("/index.json");
                         setKeyword('')
                     }}
                 >

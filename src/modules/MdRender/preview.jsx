@@ -5,15 +5,12 @@ import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/s
 import './preview.css'
 const axios = require('axios');
 
-export default function MdRender({ gistId, maxLine=20 }) {
+export default function MdRender({ file_link, maxLine=20 }) {
     const [content, setContent] = useState("")
     useEffect(() => {
-        axios.get(`https://api.github.com/gists/${gistId}`)
+        axios.get(file_link)
             .then((res) => {
-                console.log(res.data)
-                const gistData = res.data
-                const gistTitle = Object.keys(gistData.files)[0]
-                const gistContent = gistData.files[gistTitle].content.split("\n").slice(0,maxLine).join("\n")
+                const gistContent = res.data.split("\n").slice(2,maxLine).join("\n")
 
                 setContent(gistContent)
             })

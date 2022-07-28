@@ -1,27 +1,24 @@
 import React from 'react'
 import './index.css'
-import { DESC_FILTER_RULE } from '../../configs/general'
-import moment from 'moment'
 
-function PostBlock(props) {
-    let { post } = props
-    let title = Object.keys(post.files)[0] // only use first file
-    let { created_at, html_url, description } = post
-    let { id: gistId } = post
+function PostBlock({doc,children}) {
+   
+    let title = doc.title
+    let created_at = doc.date
+    let tags = doc.tags
 
-
-    let isIpynb = title.match(/.*\.ipynb/) === null ? false : true
-    let ownerName = post.owner.login
+    // let isIpynb = title.match(/.*\.ipynb/) === null ? false : true
+    // let ownerName = post.owner.login
     return (
         <div key={title} id="Post-Block">
+            
             <div className="text-center">
                 <div>
-                    {isIpynb ? <a className='post-title' href={html_url} target="_blank" rel="noopener noreferrer">{title}</a> : <a className='post-title' href={`/?render=${gistId}`}>{title}</a>}
+                <a className='post-title' href={doc.page_link}>{title}</a>
 
+                    {/* {isIpynb ? <a className='post-title' href={html_url} target="_blank" rel="noopener noreferrer">{title}</a> : <a className='post-title' href={`/?render=${gistId}`}>{title}</a>} */}
 
-                    {/*  */}
-                    {/* if the file type is ipynb, show a badge with "open in colab" */}
-                    {isIpynb ?
+                    {/* {isIpynb ?
                         <a
                             className='post-title'
                             rel="noopener noreferrer"
@@ -31,21 +28,21 @@ function PostBlock(props) {
                         </a>
                         :
                         null
-                    }
+                    } */}
                 </div>
 
                 <div>
                     <small>
-                        {description.replace(DESC_FILTER_RULE, "")}
+                        {tags.join("#")}
                         <br />
-                        <span>{moment(created_at).format("LL")}</span>
+                        <span>{created_at}</span>
                         <br />
                     </small>
                 </div>
             </div>
 
             <hr />
-            {props.children}
+            {children}
         </div>
     )
 }

@@ -13,7 +13,7 @@ export const RootContext = React.createContext({});
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-let { render = undefined } = params
+let { page = undefined } = params
 console.log(params)
 
 function Index() {
@@ -23,7 +23,7 @@ function Index() {
     <RootContext.Provider value={{ isLoading, setLoading }}>
       <LoadingView />
       <div className="container">
-        {render === undefined ? (
+        {page === undefined ? (
           <div className="app-container">
             <Helmet>
               <meta charSet="utf-8" />
@@ -36,10 +36,9 @@ function Index() {
           </div>
         ) : (
           <div className="render-container">
-            <MdRender gistId={render} />
+            <MdRender doc_id={page} />
             <CornerMenu />
             <Footer />
-
           </div>
         )}
 

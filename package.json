@@ -1,5 +1,5 @@
 {
-  "name": "scooter",
+  "name": "trailer",
   "homepage": "https://blog.philip-huang.tech",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "python build_index.py && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

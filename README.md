@@ -1,23 +1,16 @@
-# Scooter
-Scooter is my own blog system, it's a pure, lightweight and serverless blog system based on Gist.
-
-It designed for focusing on writing the blog post, that's all.
-
-Scooter是我為這個部落格系統取的名字，它輕量化、無後台並且依賴Gist。
+# Trailer
+Trailer是我為這個部落格系統取的名字，它輕量化且無後端，依賴 Github Pages 運作。
+> Trailer (拖車) 本身並沒有任何動力，通常附掛於汽車之後用以裝載一些物品
 
 它被設計用來專注在寫作，僅此而已。
 
 ## Features
 - Focusing on writing post
-- Support Markdown (.md) and Notebook (.ipynb)
-- Clean style and simple usage
-
-
-## How it wroks?
-We use gist api to fetch user's public gist, than filter with some rule that help you ignore what you don't want to display.
+- Support Markdown (.md) and ~~Notebook (.ipynb)~~
+- Clean style and easy to use
 
 ## Documentation
-### Configure your own Scooter
+### Configure your own Trailer
 1. Fork this repo
 2. Edit configs to yours:
     - `src/configs/general.js`
@@ -31,11 +24,7 @@ We use gist api to fetch user's public gist, than filter with some rule that hel
 
 > Via github workflows every times you push, the site will rebuld and deploy.
 
-### Write a Post
-1. Create a `Public Gist`
-2. Ensure Filename with supported extention name
-    > Defaults to: `.md`,`.ipynb`  
-3. Add some hash tag to `Gist description`
-    > At least include `#blog`
-
-
+## Todo
+- Post Search
+- Pagination
+- Tag classification

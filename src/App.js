@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import './App.css';
-import { GIST_LIST_URL, TITLE_FILTER_RULE, DESC_FILTER_RULE, BLOG_NAME } from './configs/general'
+import { TITLE_FILTER_RULE, DESC_FILTER_RULE, BLOG_NAME } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import { RootContext } from './index'
@@ -17,19 +17,10 @@ function App() {
 
   let fetchPost = (titleRule, descRule) => {
     setLoading(true)
-    axios.get(GIST_LIST_URL)
+    axios.get("/index.json")
       .then((res) => {
         console.log(res.data)
         posts = res.data
-        posts = posts.filter((post) => {
-          let title = Object.keys(post.files)[0] // only use first file
-          let { description } = post
-          // console.log(description)
-          if (title.match(titleRule) && description.match(descRule)) {
-            return true
-          }
-          return false
-        })
         setPosts(posts)
       })
       .catch((err) => {
@@ -42,7 +33,6 @@ function App() {
 
   useEffect(() => {
     fetchPost(TITLE_FILTER_RULE, DESC_FILTER_RULE)
-    // eslint-disable-next-line
   }, [])
 
   return (
@@ -51,12 +41,12 @@ function App() {
         <h1>{BLOG_NAME}</h1>
         <Search />
       </div>
+      
       <div className="context">
         {posts.map((post, i) => (
-          <PostBlock key={i} post={post} >
-            <MDPreviewer gistId={post.id} maxLine={15}/>
+          <PostBlock key={i} doc={post} >
+            <MDPreviewer file_link={post.file_link}  maxLine={15}/>
           </PostBlock>
-
         ))}
       </div>
     </div>

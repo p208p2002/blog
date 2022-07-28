@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+download_gists/
+
+docs/index.json
+docs/sitemap.txt

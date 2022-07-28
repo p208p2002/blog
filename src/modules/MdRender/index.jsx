@@ -6,21 +6,20 @@ import { BLOG_NAME } from '../../configs/general'
 import { Helmet } from 'react-helmet'
 const axios = require('axios');
 
-export default function MdRender({ gistId }) {
+export default function MdRender({ doc_id }) {
     const [content, setContent] = useState("")
     const [pageTitle,setPageTitle] = useState(BLOG_NAME)
     const [pageDescription , setPageDescription] = useState("")
 
     useEffect(() => {
-        axios.get(`https://api.github.com/gists/${gistId}`)
+        axios.get(`/docs/${doc_id}/document.md`)
             .then((res) => {
                 console.log(res.data)
-                const gistData = res.data
-                const gistTitle = Object.keys(gistData.files)[0]
-                const gistContent = gistData.files[gistTitle].content
+                const gistTitle = res.data.split("\n")[2].replace("# ","")
+                const gistContent = res.data
                 setContent(gistContent)
                 setPageTitle(`${gistTitle} - ${BLOG_NAME}`)
-                setPageDescription(gistContent.replaceAll("#","").slice(0,150))
+                setPageDescription(gistContent.replaceAll("#"," ").slice(0,500))
             })
     }, [])
     return (
