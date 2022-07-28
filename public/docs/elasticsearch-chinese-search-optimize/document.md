@@ -32,7 +32,7 @@ IK是一款專門進行中文分詞的ES套件，使用它能夠使`tokenize`後
 > https://github.com/medcl/elasticsearch-analysis-ik
 
 
-```
+```json
 POST _analyze
 {
   "analyzer": "ik_smart",
@@ -86,7 +86,7 @@ POST _analyze
 
 
 我們再重新試一下 *那裡有一顆蘋果*
-```
+```json
 POST _analyze
 {
   "analyzer": "ik_smart",
@@ -104,12 +104,12 @@ POST _analyze
 
 
 1. 建立新的index
-```
+```json
 PUT custom
 ```
 
 2. 暫時關閉index準備更新設定
-```
+```json
 POST custom/_close
 ```
 
@@ -131,12 +131,12 @@ PUT custom/_settings
 ```
 
 4. 重新打開index
-```
+```json
 POST custom/_open
 ```
 
 5. 測試同義詞
-```
+```json
 POST custom/_analyze
 {
   "tokenizer": "ik_smart",
@@ -158,7 +158,7 @@ POST custom/_analyze
 - /usr/share/elasticsearch/plugins/stconvert/plugin-descriptor.properties
 
 測試一下簡轉繁
-```
+```json
 POST _analyze
 {
   "tokenizer": "stconvert",
@@ -174,7 +174,7 @@ POST _analyze
 
 
 1. 一樣先暫時關閉index
-```
+```json
 POST custom/_close
 ```
 
@@ -222,7 +222,7 @@ PUT custom/_settings
 ```
 
 3. 設定完畢，開啟 index
-```
+```json
 POST custom/_open
 ```
 4. 測試客製化 analyzer
