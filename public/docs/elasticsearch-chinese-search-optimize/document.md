@@ -1,6 +1,6 @@
-#Elasticserach#中文搜尋優化
+#Elasticserach#中文搜尋優化#簡繁轉換#同義詞#中文分詞
 2022/07/28
-# Elasticserach Search 中文搜尋優化 (簡繁)
+# Elasticserach Search 中文搜尋優化
 ## 中文與英文的不同
 中文與英文的結構不同，英文會使用空白分隔單字，但是中文卻是全部黏在一起
 
@@ -307,6 +307,7 @@ PUT foo
 
 > `search_analyzer`: 搜尋時針對關鍵字進行解析，使用`ik_smart_word`進行粗粒度切割
 
+### 搜尋測試
 #### 放一些測試資料
 ```json
 POST foo/bar/1
@@ -342,7 +343,7 @@ POST foo/bar/6
 
 ```
 
-下Query搜尋
+#### 下Query搜尋 
 ```json
 POST foo/_search
 {
@@ -361,7 +362,7 @@ POST foo/_search
 }
 ```
 
-搜尋結果
+搜尋結果如下
 ```json
 {
   "took" : 21,
