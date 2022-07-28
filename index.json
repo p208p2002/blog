@@ -1,5 +1,16 @@
 [
     {
+        "title": "Elasticserach Search 中文搜尋優化 (簡繁)",
+        "tags": [
+            "Elasticserach ",
+            "中文搜尋優化"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=elasticsearch-chinese-search-optimize",
+        "file_link": "https://blog.philip-huang.tech/docs/elasticsearch-chinese-search-optimize/document.md",
+        "date": "2022/07/28",
+        "_sort_key": 20220728
+    },
+    {
         "title": "Python3 文字與unicode互轉",
         "tags": [
             "blog",
