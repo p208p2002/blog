@@ -26,3 +26,6 @@ download_gists/
 
 docs/index.json
 docs/sitemap.txt
+
+public/sitemap.txt
+public/index.json

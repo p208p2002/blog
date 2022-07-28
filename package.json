@@ -20,7 +20,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "sh -c 'python build_index.py http://localhost:3000' && react-scripts start",
     "build": "python build_index.py && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -7,4 +7,5 @@ export const TITLE_FILTER_RULE = /md$|ipynb$/;
 export const DESC_FILTER_RULE = /#blog/;
 
 export const HOME_PAGE = '/'
-export const GITHUB = 'https://github.com/p208p2002'
+export const GITHUB = `https://github.com/${GITHUB_USER}`
+export const IMG_FILE_PREFIX = `https://media.githubusercontent.com/media/${GITHUB_USER}/blog/main/public/docs`
