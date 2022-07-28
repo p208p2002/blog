@@ -1,4 +1,4 @@
-#Elasticserach #中文搜尋優化
+#Elasticserach#中文搜尋優化
 2022/07/28
 # Elasticserach Search 中文搜尋優化 (簡繁)
 ## 中文與英文的不同
