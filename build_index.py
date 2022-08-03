@@ -38,6 +38,7 @@ if __name__ == "__main__":
             lines = md_doc.split("\n")
             
             title = lines[2].replace("# ","")
+            assert title != "", "please check doc's title (must at line:3)"
             tags = list(filter(lambda x:x!="",lines[0].split("#")))
             date = lines[1]
 
