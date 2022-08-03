@@ -44,14 +44,22 @@ if __name__ == "__main__":
             file_link = urljoin(homepage,file).replace("/public","")
             page_link = urljoin(homepage,os.path.dirname(file)).replace("/docs/","?page=").replace("/public","")
 
-            _index = {
-                'title':title,
-                'tags':tags,
-                'page_link':page_link,
-                'file_link':file_link,
-                'date':date,
-                '_sort_key':int(date.replace("/",""))
-            }
+            try:
+                _index = {
+                    'title':title,
+                    'tags':tags,
+                    'page_link':page_link,
+                    'file_link':file_link,
+                    'date':date,
+                    '_sort_key':int(date.replace("/",""))
+                }
+            except Exception as e:                
+                print()
+                print(e)
+                print(f'\nplease check ** {file} ** has "tag" and "date" and first and second lines\n'*3)
+                sys.exit(1)
+                
+
 
 
             print(_index['title'])
