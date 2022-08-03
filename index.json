@@ -75,6 +75,28 @@
         "_sort_key": 20210324
     },
     {
+        "title": "GPT & GPT2 Fine-Tuning",
+        "tags": [
+            "gpt",
+            "gpt2"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=blog_gpt_gpt2_nlp",
+        "file_link": "https://blog.philip-huang.tech/docs/blog_gpt_gpt2_nlp/document.md",
+        "date": "2020/01/01",
+        "_sort_key": 20200101
+    },
+    {
+        "title": "BART Model Fine-Tuning",
+        "tags": [
+            "bart-model",
+            "nlp"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=blog_bart-model_nlp",
+        "file_link": "https://blog.philip-huang.tech/docs/blog_bart-model_nlp/document.md",
+        "date": "2020/01/01",
+        "_sort_key": 20200101
+    },
+    {
         "title": "在Dockerfile與GitHub Action中安裝私有Python套件",
         "tags": [
             "dockerfile",
