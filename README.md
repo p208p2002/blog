@@ -2,8 +2,6 @@
 Trailer是我為這個部落格系統取的名字，它輕量化且無後端，依賴 Github Pages 運作。
 > Trailer (拖車) 本身並沒有任何動力，通常附掛於汽車之後用以裝載一些物品
 
-它被設計用來專注在寫作，僅此而已。
-
 Trailer is the name of my blog system, which is lightweight and serverless.
 > Trailer: a wheeled vehicle that can be pulled by a car or truck.
 
