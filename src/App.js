@@ -44,7 +44,7 @@ function App() {
   return (
     <div id="App">
       <div className="text-center">
-        <h1>{BLOG_NAME}</h1>
+        <h1><a href="/" className="home-page-title">{BLOG_NAME}</a></h1>
         <Search setPosts={setPosts} fullIndex={fullIndex}/>
       </div>
       

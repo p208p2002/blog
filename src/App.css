@@ -9,6 +9,11 @@
     font-size: 32px;
 }
 
+#App .home-page-title{
+    color: black;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
     #App .context {
         width: 100%;
