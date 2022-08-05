@@ -25,5 +25,4 @@ Trailer是我為這個部落格系統取的名字，它輕量化且無後端，�
 > Via github workflows every times you push, the site will rebuld and deploy.
 
 ## Todo
-- Post Search
-- Tag classificatio
+- Tag classification
