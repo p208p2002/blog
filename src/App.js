@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div id="App">
-      <div className="text-center">
+      <div style={{marginTop:40}} className="text-center">
         <h1><a href="/" className="home-page-title">{BLOG_NAME}</a></h1>
         <Search setPosts={setPosts} fullIndex={fullIndex}/>
       </div>
@@ -56,7 +56,7 @@ function App() {
         ))}
       </div>
       {/* pagination */}
-      <div style={{textAlign:'center'}}>
+      <div style={{textAlign:'center',marginBottom:40}}>
       <a href="/">{`<<Fisrt Page`}</a>
       <span style={{marginLeft:5,marginRight:5}}> - </span>
       <a href={`/?offset=${offset+POST_PRE_PAGE}&limit=${offset+POST_PRE_PAGE*2}`}>{'Older Post >>'}</a>
