@@ -11,6 +11,7 @@
         "page_link": "https://blog.philip-huang.tech?page=elasticsearch-chinese-search-optimize",
         "file_link": "https://blog.philip-huang.tech/docs/elasticsearch-chinese-search-optimize/document.md",
         "date": "2022/07/28",
+        "_has_notebook": false,
         "_sort_key": 20220728
     },
     {
@@ -24,6 +25,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_python3_uni2word_word2uni",
         "file_link": "https://blog.philip-huang.tech/docs/blog_python3_uni2word_word2uni/document.md",
         "date": "2022/07/01",
+        "_has_notebook": false,
         "_sort_key": 20220701
     },
     {
@@ -36,6 +38,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_flask_pyorch_cuda-out-of-memory",
         "file_link": "https://blog.philip-huang.tech/docs/blog_flask_pyorch_cuda-out-of-memory/document.md",
         "date": "2022/03/18",
+        "_has_notebook": false,
         "_sort_key": 20220318
     },
     {
@@ -48,6 +51,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_docker_ssh_docker-multi-stage-build",
         "file_link": "https://blog.philip-huang.tech/docs/blog_docker_ssh_docker-multi-stage-build/document.md",
         "date": "2022/03/14",
+        "_has_notebook": false,
         "_sort_key": 20220314
     },
     {
@@ -60,6 +64,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_pytorch-lightning_pytorch",
         "file_link": "https://blog.philip-huang.tech/docs/blog_pytorch-lightning_pytorch/document.md",
         "date": "2021/06/20",
+        "_has_notebook": false,
         "_sort_key": 20210620
     },
     {
@@ -72,6 +77,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_nlp_pytorch_self-attention",
         "file_link": "https://blog.philip-huang.tech/docs/blog_nlp_pytorch_self-attention/document.md",
         "date": "2021/03/24",
+        "_has_notebook": false,
         "_sort_key": 20210324
     },
     {
@@ -83,6 +89,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_gpt_gpt2_nlp",
         "file_link": "https://blog.philip-huang.tech/docs/blog_gpt_gpt2_nlp/document.md",
         "date": "2020/01/01",
+        "_has_notebook": true,
         "_sort_key": 20200101
     },
     {
@@ -94,6 +101,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_bart-model_nlp",
         "file_link": "https://blog.philip-huang.tech/docs/blog_bart-model_nlp/document.md",
         "date": "2020/01/01",
+        "_has_notebook": true,
         "_sort_key": 20200101
     },
     {
@@ -107,6 +115,7 @@
         "page_link": "https://blog.philip-huang.tech?page=blog_dockerfile_gh-action_ssh_pip-install-private",
         "file_link": "https://blog.philip-huang.tech/docs/blog_dockerfile_gh-action_ssh_pip-install-private/document.md",
         "date": "2021/10/6",
+        "_has_notebook": false,
         "_sort_key": 2021106
     }
 ]
