@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import './App.css';
-import { TITLE_FILTER_RULE, DESC_FILTER_RULE, BLOG_NAME } from './configs/general'
+import { BLOG_NAME } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import { RootContext } from './index'
@@ -15,7 +15,7 @@ function App() {
   let [posts, setPosts] = useState([])
   let { setLoading } = useContext(RootContext)
 
-  let fetchPost = (titleRule, descRule) => {
+  let fetchPost = () => {
     setLoading(true)
     axios.get("/index.json")
       .then((res) => {
@@ -32,7 +32,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetchPost(TITLE_FILTER_RULE, DESC_FILTER_RULE)
+    fetchPost()
   }, [])
 
   return (
