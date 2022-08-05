@@ -12,6 +12,7 @@ const axios = require('axios');
 
 function App() {
 
+  let [fullIndex, setFullIndex] = useState([])
   let [posts, setPosts] = useState([])
   let { setLoading,params } = useContext(RootContext)
   let { offset = 0 ,limit = POST_PRE_PAGE} = params
@@ -26,6 +27,7 @@ function App() {
         posts = res.data
         posts = posts.slice(offset,limit)
         setPosts(posts)
+        setFullIndex(res.data)
       })
       .catch((err) => {
         console.log(err)
@@ -43,7 +45,7 @@ function App() {
     <div id="App">
       <div className="text-center">
         <h1>{BLOG_NAME}</h1>
-        <Search />
+        <Search setPosts={setPosts} fullIndex={fullIndex}/>
       </div>
       
       <div className="context">

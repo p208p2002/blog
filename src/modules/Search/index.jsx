@@ -2,13 +2,13 @@ import React from 'react'
 import './index.css'
 import { useState } from 'react'
 
-function Search() {
+function Search({setPosts,fullIndex=[]}) {
     let [keyword, setKeyword] = useState('')
     return (
         <div id="Search-Bar">
             <form id="Searrch-Form">
                 <input
-                    placeholder="Seacrh Post"
+                    placeholder="Search post, tag, etc."
                     type="text"
                     value={keyword}
                     onChange={(e) => {
@@ -19,7 +19,27 @@ function Search() {
                     type="submit"
                     onClick={(e) => {
                         e.preventDefault();
-                        window.open("/index.json");
+                        fullIndex = fullIndex.filter((postIndex)=>{
+                            let { title = '',tags=[]} = postIndex
+
+                            let keep_flag = false
+
+                            // search title 
+                            if(title.toLowerCase().match(keyword.toLowerCase())){
+                                keep_flag = true
+                            }
+
+                            // search tag
+                            tags.forEach((tag)=>{
+                                if (tag.toLowerCase().match(keyword.toLowerCase())){
+                                    keep_flag = true
+                                }
+                            })
+
+                            return keep_flag
+
+                        })
+                        setPosts(fullIndex)
                         setKeyword('')
                     }}
                 >
