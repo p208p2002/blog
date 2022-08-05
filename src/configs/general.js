@@ -5,3 +5,4 @@ export const HOME_PAGE = '/'
 export const GITHUB = `https://github.com/${GITHUB_USER}`
 export const IMG_FILE_PREFIX = `https://media.githubusercontent.com/media/${GITHUB_USER}/blog/main/public/docs`
 export const POST_PRE_PAGE = 5
+export const CODE_LAB_PREFIX = `https://colab.research.google.com/github/${GITHUB_USER}/blog/blob/main/public/docs`

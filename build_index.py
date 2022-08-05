@@ -32,7 +32,8 @@ if __name__ == "__main__":
     doc_index = []
     files = glob.glob("public/docs/*/*.md")
     for file in files:
-
+        
+        notebook_exist = os.path.isfile(os.path.join(os.path.dirname(file),'document.ipynb'))
         with open(file,'r',encoding='utf-8') as f:
             md_doc = f.read()
             lines = md_doc.split("\n")
@@ -44,7 +45,7 @@ if __name__ == "__main__":
 
             file_link = urljoin(homepage,file).replace("/public","")
             page_link = urljoin(homepage,os.path.dirname(file)).replace("/docs/","?page=").replace("/public","")
-
+            
             try:
                 _index = {
                     'title':title,
@@ -52,6 +53,7 @@ if __name__ == "__main__":
                     'page_link':page_link,
                     'file_link':file_link,
                     'date':date,
+                    '_has_notebook':notebook_exist,
                     '_sort_key':int(date.replace("/",""))
                 }
             except Exception as e:                
