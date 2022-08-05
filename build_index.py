@@ -60,9 +60,6 @@ if __name__ == "__main__":
                 print(f'\nplease check ** {file} ** has "tag" and "date" and first and second lines\n'*3)
                 sys.exit(1)
                 
-
-
-
             print(_index['title'])
             print(_index['tags'])
             print(_index['date'])
