@@ -26,5 +26,4 @@ Trailer是我為這個部落格系統取的名字，它輕量化且無後端，�
 
 ## Todo
 - Post Search
-- Pagination
-- Tag classification
+- Tag classificatio

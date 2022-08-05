@@ -14,13 +14,12 @@ export const RootContext = React.createContext({});
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 let { page = undefined } = params
-console.log(params)
 
 function Index() {
   let [isLoading, setLoading] = useState(false)
 
   return (
-    <RootContext.Provider value={{ isLoading, setLoading }}>
+    <RootContext.Provider value={{ isLoading, setLoading, params }}>
       <LoadingView />
       <div className="container">
         {page === undefined ? (
