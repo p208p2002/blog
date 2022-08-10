@@ -79,7 +79,7 @@ class BertModel(BertPreTrainedModel):
 接下來將我們將在BART加入一層新的 Embedding Layer，並且提供新的輸入特徵到模型。
 
 由於程式碼藏在 library<sup>*2</sup> 中，不那麼方便進行更動，見過許多不同的作法: Fork, 複製整份 library 到專案內， 直接修改 modeling_xx.py ... ，這些作法都不太讓人滿意，最後經過許多嘗試與思考，我最推薦使用`繼承`與`覆寫` (真是經典:D)。
-> y<sup>*2</sup> 使用了[huggingface/transformers](https://github.com/huggingface/transformers) 套件
+> <sup>*2</sup> 使用了[huggingface/transformers](https://github.com/huggingface/transformers) 套件
 
 這次修改的目標類別是 `BartForConditionalGeneration` (對應條件文本生成類)，為了加入新的 Embedding Layer 將需要一路往上追多個類別 `BartForConditionalGeneration` -> `BartModel` -> `BartEncoder` (在這裡做新增)；現在可以從`BartEncoder`往下講回去了~
 
