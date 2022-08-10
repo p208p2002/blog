@@ -1,5 +1,22 @@
 [
     {
+        "title": "修改 Transformer Language Model, 教你如何加入新的 Embedding Layer",
+        "tags": [
+            "bart",
+            "bert",
+            "transformer-model",
+            "pytorch",
+            "nlp",
+            "huggingface",
+            "custom-transformer-model"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=custom_bart_model",
+        "file_link": "https://blog.philip-huang.tech/docs/custom_bart_model/document.md",
+        "date": "2022/08/10",
+        "_has_notebook": false,
+        "_sort_key": 20220810
+    },
+    {
         "title": "Elasticserach Search 中文搜尋優化",
         "tags": [
             "Elasticserach",
