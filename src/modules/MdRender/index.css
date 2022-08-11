@@ -34,3 +34,10 @@
 #MD img{
     max-width: 100%;
 }
+
+#MD blockquote{
+    color: #626567;
+    background-color: #F2F3F4;
+    padding: 1px 12px 1px 12px;
+    font-size: smaller;
+}
