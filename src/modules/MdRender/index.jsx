@@ -89,6 +89,9 @@ export default function MdRender({ doc_id }) {
                         }
                     }}
                 />
+                <div className="footer w-100 text-center">
+                    <small>歡迎打開<a target={'_blank'} href={`${GITHUB}/blog/issues`}> Issues </a>討論問題 \ (•◡•) /</small>
+                </div>
             </div>
         </>
     )

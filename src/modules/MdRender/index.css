@@ -2,6 +2,15 @@
     margin-right: 5px;
 }
 
+#MD .footer{
+    color: gray;
+    margin-top: 60px;
+}
+
+#MD .footer a{
+    color: #6699FF;
+}
+
 #MD h2{
     text-decoration: underline;
     text-decoration-color: #3498DB;
