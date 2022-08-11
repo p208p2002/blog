@@ -1,3 +1,27 @@
 .badge{
     margin-right: 5px;
 }
+
+#MD h2{
+    text-decoration: underline;
+    text-decoration-color: #3498DB;
+    line-height: 60px;
+}
+
+#MD pre{
+    max-width: 100%;
+    overflow: auto;
+}
+
+#MD code{
+    background-color: #FCF3CF;
+    padding: 0px 5px 0px 5px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-family: monospace;
+    font-size: larger;
+}
+
+#MD img{
+    width: 100%;
+}

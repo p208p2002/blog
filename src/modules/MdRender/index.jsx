@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX,GITHUB } from '../../configs/general'
+import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB } from '../../configs/general'
 import { Helmet } from 'react-helmet'
 import './index.css'
 const axios = require('axios');
@@ -50,44 +50,46 @@ export default function MdRender({ doc_id }) {
             </Helmet>
             <br />
             <h1>{postTitle}</h1>
-            
+
             <a href={`${GITHUB}/blog/tree/main/public/docs/${doc_id}`} target="_blank" rel="noopener noreferrer">
-                <img className="badge" src="https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=%23181717&color=gray" alt="" srcset="" />
+                <img className="badge" src="https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=%23181717&color=gray" alt="" srcSet="" />
             </a>
-            
+
             <a href={`/docs/${doc_id}/document.md`}>
-                <img className="badge" src="https://img.shields.io/badge/document-000?style=for-the-badge&logo=markdown&color=gray" alt="" srcset="" />
+                <img className="badge" src="https://img.shields.io/badge/document-000?style=for-the-badge&logo=markdown&color=gray" alt="" srcSet="" />
             </a>
 
             {hasNotebook ?
                 <a href={`${CODE_LAB_PREFIX}/${doc_id}/document.ipynb`} target="_blank" rel="noopener noreferrer">
-                    <img className="badge" src="https://img.shields.io/badge/codelab-000?style=for-the-badge&logo=googlecolab&logoColor=%23F9AB00&color=gray" alt="" srcset="" />
+                    <img className="badge" src="https://img.shields.io/badge/codelab-000?style=for-the-badge&logo=googlecolab&logoColor=%23F9AB00&color=gray" alt="" srcSet="" />
                 </a>
                 :
                 <></>
             }
 
-            <ReactMarkdown
-                children={content}
-                components={{
-                    code({ node, inline, className, children, ...props }) {
-                        const match = /language-(\w+)/.exec(className || '')
-                        return !inline && match ? (
-                            <SyntaxHighlighter
-                                children={String(children).replace(/\n$/, '')}
-                                style={codeSyntaxStyle}
-                                language={match[1]}
-                                PreTag="div"
-                                {...props}
-                            />
-                        ) : (
-                            <code className={className} {...props}>
-                                {children}
-                            </code>
-                        )
-                    }
-                }}
-            />
+            <div id="MD">
+                <ReactMarkdown
+                    children={content}
+                    components={{
+                        code({ node, inline, className, children, ...props }) {
+                            const match = /language-(\w+)/.exec(className || '')
+                            return !inline && match ? (
+                                <SyntaxHighlighter
+                                    children={String(children).replace(/\n$/, '')}
+                                    style={codeSyntaxStyle}
+                                    language={match[1]}
+                                    PreTag="div"
+                                    {...props}
+                                />
+                            ) : (
+                                <code className={className} {...props}>
+                                    {children}
+                                </code>
+                            )
+                        }
+                    }}
+                />
+            </div>
         </>
     )
 }
