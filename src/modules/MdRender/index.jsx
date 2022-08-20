@@ -61,7 +61,7 @@ export default function MdRender({ doc_id }) {
 
             {hasNotebook ?
                 <a href={`${CODE_LAB_PREFIX}/${doc_id}/document.ipynb`} target="_blank" rel="noopener noreferrer">
-                    <img className="badge" src="https://img.shields.io/badge/codelab-000?style=for-the-badge&logo=googlecolab&logoColor=%23F9AB00&color=gray" alt="" srcSet="" />
+                    <img className="badge" src="https://img.shields.io/badge/colaboratory-000?style=for-the-badge&logo=googlecolab&logoColor=%23F9AB00&color=gray" alt="" srcSet="" />
                 </a>
                 :
                 <></>
