@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB } from '../../configs/general'
+import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB, GITHUB_USER_CONTENT_PREFIX } from '../../configs/general'
 import { Helmet } from 'react-helmet'
 import rehypeRaw from 'rehype-raw'
 
@@ -57,12 +57,12 @@ export default function MdRender({ doc_id }) {
                 <img className="badge" src="https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=%23181717&color=gray" alt="" srcSet="" />
             </a>
 
-            <a href={`/docs/${doc_id}/document.md`}>
+            <a href={`${GITHUB_USER_CONTENT_PREFIX}/docs/${doc_id}/document.md`}>
                 <img className="badge" src="https://img.shields.io/badge/document-000?style=for-the-badge&logo=markdown&color=gray" alt="" srcSet="" />
             </a>
 
             {hasNotebook ?
-                <a href={`${CODE_LAB_PREFIX}/${doc_id}/document.ipynb`} target="_blank" rel="noopener noreferrer">
+                <a href={`${CODE_LAB_PREFIX}/docs/${doc_id}/document.ipynb`} target="_blank" rel="noopener noreferrer">
                     <img className="badge" src="https://img.shields.io/badge/colaboratory-000?style=for-the-badge&logo=googlecolab&logoColor=%23F9AB00&color=gray" alt="" srcSet="" />
                 </a>
                 :
