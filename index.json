@@ -2,7 +2,6 @@
     {
         "title": "修改 Transformer Language Model, 教你如何加入新的 Embedding Layer",
         "tags": [
-            "",
             "bart",
             "bert",
             "transformer-model",
@@ -20,7 +19,6 @@
     {
         "title": "Elasticserach Search 中文搜尋優化",
         "tags": [
-            "",
             "Elasticserach",
             "中文搜尋優化",
             "簡繁轉換",
@@ -36,7 +34,6 @@
     {
         "title": "Python3 文字與unicode互轉",
         "tags": [
-            "",
             "blog",
             "python3",
             "uni2word",
@@ -51,7 +48,6 @@
     {
         "title": "Flask與Pytorch模型部署",
         "tags": [
-            "",
             "flask",
             "pyorch",
             "cuda-out-of-memory"
@@ -65,7 +61,6 @@
     {
         "title": "Docker多階段建構",
         "tags": [
-            "",
             "docker",
             "ssh",
             "docker-multi-stage-build"
@@ -79,7 +74,6 @@
     {
         "title": "用 PyTorch Lighting 拯救你的一天",
         "tags": [
-            "",
             "blog",
             "pytorch-lightning",
             "pytorch"
@@ -93,7 +87,6 @@
     {
         "title": "PyTorch實作NLP中的Self-Attention",
         "tags": [
-            "",
             "nlp",
             "pytorch",
             "self-attention"
@@ -107,7 +100,6 @@
     {
         "title": "GPT & GPT2 Fine-Tuning",
         "tags": [
-            "",
             "gpt",
             "gpt2"
         ],
@@ -120,7 +112,6 @@
     {
         "title": "BART Model Fine-Tuning",
         "tags": [
-            "",
             "bart-model",
             "nlp"
         ],
@@ -133,7 +124,6 @@
     {
         "title": "在Dockerfile與GitHub Action中安裝私有Python套件",
         "tags": [
-            "",
             "dockerfile",
             "gh-action",
             "ssh",
