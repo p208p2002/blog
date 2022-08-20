@@ -1,6 +1,10 @@
-#bart#bert#transformer-model#pytorch#nlp#huggingface#custom-transformer-model
-2022/08/10
 # 修改 Transformer Language Model, 教你如何加入新的 Embedding Layer
+
+<document-info>
+- tags: #bart#bert#transformer-model#pytorch#nlp#huggingface#custom-transformer-model
+- date: 2022/08/10
+</document-info>
+
 預訓練語言模型 Transformer Language Model (TLM) 非常強大，卻因為架構複雜而難以修改<sup>*1</sup>，今天示範如何在 BART Model 增加新的 Embedding Layer。
 
 > BART 是一個 Transformer Encoder-Decoder 架構模型。

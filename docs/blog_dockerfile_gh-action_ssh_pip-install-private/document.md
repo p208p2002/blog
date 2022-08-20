@@ -1,6 +1,10 @@
-#dockerfile#gh-action#ssh#pip-install-private
-2021/10/6
 # 在Dockerfile與GitHub Action中安裝私有Python套件
+
+<document-info>
+- tags: #dockerfile#gh-action#ssh#pip-install-private
+- date: 2021/10/6
+</document-info>
+
 
 對Python有進階認識的可能會知道可以直接從github repo安裝套件，對public repo可以這樣做
 ```sh

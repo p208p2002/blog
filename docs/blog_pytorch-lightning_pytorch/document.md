@@ -1,6 +1,10 @@
-#blog#pytorch-lightning#pytorch
-2021/06/20
 # 用 PyTorch Lighting 拯救你的一天
+
+<document-info>
+- tags: #blog#pytorch-lightning#pytorch
+- date: 2021/06/20
+</document-info>
+
 最近做DL實驗發現除了主要研究的核心，最花心力的就是維護的你training pipline
 從資料處理、訓練、預測與算分到加入中斷點恢復，各種超參數與模型版本管理。
 如果要一直驗證與處理這些問題，實在是很力不從心，好在大家都有同樣的困擾，於是PL出現了，根據官方說法

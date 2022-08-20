@@ -1,6 +1,10 @@
-#nlp#pytorch#self-attention
-2021/03/24
 # PyTorch實作NLP中的Self-Attention
+
+<document-info>
+- tags: #nlp#pytorch#self-attention
+- date: 2021/03/24
+</document-info>
+
 ### 輸入準備
 我們準備了兩個句子來進行這次實驗
 ```python

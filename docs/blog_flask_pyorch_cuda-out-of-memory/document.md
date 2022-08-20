@@ -1,6 +1,10 @@
-#flask#pyorch#cuda-out-of-memory
-2022/03/18
 # Flask與Pytorch模型部署
+
+<document-info>
+- tags: #flask#pyorch#cuda-out-of-memory
+- date: 2022/03/18
+</document-info>
+
 pytorch模型部署時若遇到多執行緒(或是多個併發請求)會自動請求新的vram，使用完畢後也不會自動釋放，因此當API用一段時間後常常會出現 cuda out of memor 導致server崩潰。除此之外多執行緒爭奪資源也有機會讓程式變得不穩定。
 
 有幾條思路可以解決

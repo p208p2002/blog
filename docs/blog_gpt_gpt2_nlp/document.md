@@ -1,7 +1,10 @@
-#gpt#gpt2
-2020/01/01
 # GPT & GPT2 Fine-Tuning
 ## Import
+
+<document-info>
+- tags: #gpt#gpt2
+- date: 2020/01/01
+</document-info>
 
 
 ```python

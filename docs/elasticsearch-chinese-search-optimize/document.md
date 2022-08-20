@@ -1,6 +1,10 @@
-#Elasticserach#中文搜尋優化#簡繁轉換#同義詞#中文分詞
-2022/07/28
 # Elasticserach Search 中文搜尋優化
+
+<document-info>
+- tags: #Elasticserach#中文搜尋優化#簡繁轉換#同義詞#中文分詞
+- date: 2022/07/28
+</document-info>
+
 ## 中文與英文的不同
 中文與英文的結構不同，英文會使用空白分隔單字，但是中文卻是全部黏在一起
 
