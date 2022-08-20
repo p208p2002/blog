@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import './preview.css'
+import rehypeRaw from 'rehype-raw'
+
 const axios = require('axios');
 
 export default function MdRender({ file_link, maxLine=20 }) {
@@ -16,8 +18,9 @@ export default function MdRender({ file_link, maxLine=20 }) {
             })
     }, [])
     return (
-        <div className="md-preview">
+        <div id="MD-Preview" className="md-preview">
             <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
             children={content}
             components={{
                 code({ node, inline, className, children, ...props }) {

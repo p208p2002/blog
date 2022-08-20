@@ -4,6 +4,8 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB } from '../../configs/general'
 import { Helmet } from 'react-helmet'
+import rehypeRaw from 'rehype-raw'
+
 import './index.css'
 const axios = require('axios');
 
@@ -26,7 +28,7 @@ export default function MdRender({ doc_id }) {
     useEffect(() => {
         axios.get(`/docs/${doc_id}/document.md`)
             .then((res) => {
-                const gistTitle = res.data.split("\n")[2].replace("# ", "")
+                const gistTitle = res.data.split("\n")[0].replace("# ", "")
                 const gistContent = fixImgLink(res.data, doc_id).replace(`# ${gistTitle}`, "")
 
                 setContent(gistContent)
@@ -69,6 +71,7 @@ export default function MdRender({ doc_id }) {
 
             <div id="MD">
                 <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
                     children={content}
                     components={{
                         code({ node, inline, className, children, ...props }) {

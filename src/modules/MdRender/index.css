@@ -41,3 +41,11 @@
     padding: 1px 12px 1px 12px;
     font-size: smaller;
 }
+
+#MD document-info{
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+    overflow: hidden;
+}

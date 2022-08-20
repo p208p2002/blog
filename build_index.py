@@ -36,12 +36,33 @@ if __name__ == "__main__":
         notebook_exist = os.path.isfile(os.path.join(os.path.dirname(file),'document.ipynb'))
         with open(file,'r',encoding='utf-8') as f:
             md_doc = f.read()
-            lines = md_doc.split("\n")
             
-            title = lines[2].replace("# ","")
-            assert title != "", "please check doc's title (must at line:3)"
-            tags = list(filter(lambda x:x!="",lines[0].split("#")))
-            date = lines[1]
+            title = md_doc.split("\n")[0].replace("# ","").strip()
+            
+             # parse document_info_text and save to `document_info`
+            try:
+                document_info_start = md_doc.index("<document-info>")
+                document_info_end =  md_doc.index("</document-info>")
+            except Exception as e:
+                print(e)
+                print("<document-info> tag not found",file)
+                exit(1)
+                
+            document_info_text = md_doc[document_info_start:document_info_end]
+            document_info_text = document_info_text.strip().split("\n")
+            document_info_text.pop(0) # remove <document-info>
+            document_info_text = list(map(lambda x: x.split(":"),document_info_text)) # split to (tag_name,value)
+            
+            document_info = {}
+            for tag_name,value in document_info_text:
+                tag_name = tag_name.replace("-","").strip() #clean tag
+                value = value.strip() # clean value
+
+                if tag_name == 'tags':
+                    value = value.split("#")
+                    
+                document_info[tag_name] = value
+
 
             file_link = urljoin(homepage,file).replace("/public","")
             page_link = urljoin(homepage,os.path.dirname(file)).replace("/docs/","?page=").replace("/public","")
@@ -49,12 +70,12 @@ if __name__ == "__main__":
             try:
                 _index = {
                     'title':title,
-                    'tags':tags,
+                    'tags':document_info['tags'],
                     'page_link':page_link,
                     'file_link':file_link,
-                    'date':date,
+                    'date':document_info['date'],
                     '_has_notebook':notebook_exist,
-                    '_sort_key':int(date.replace("/",""))
+                    '_sort_key':int(document_info['date'].replace("/",""))
                 }
             except Exception as e:                
                 print()

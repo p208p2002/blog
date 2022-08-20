@@ -1,4 +1,8 @@
-.md-preview h1{
+#MD-Preview{
+    overflow: hidden;
+}
+#MD-Preview document-info,
+#MD-Preview .md-preview h1{
     visibility: hidden;
     line-height: 0px;
 }
