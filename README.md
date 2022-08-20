@@ -15,3 +15,22 @@ This blog system is designed for focusing on writing.
 - 支援 MarkDown (.md) 與 Notebook (.ipynb)
 - 支援 Google Colab，立即嘗試文章範例
 - 簡潔與清晰的頁面設計，盡可能提供最佳閱讀體驗
+
+## Documentation
+### Configuration
+1. Clone from Repo
+2. Edit configs:
+    - `src/configs/general.js`
+    - `homepage` in `package.json` to yours `gh-pages` url
+3. Add `ACCESS_TOKEN` in repo `secrets` *
+4. Push to GitHub
+
+> \* [Creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
+
+> \* [Encrypted secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
+
+> Via github workflows every times you push, the site will rebuld and deploy.
+
+### Script Tools
+- build_index.py
+- convert_ipynb_to_md.py
