@@ -60,6 +60,8 @@ if __name__ == "__main__":
 
                 if tag_name == 'tags':
                     value = value.split("#")
+                    if value[0] == "":
+                        value.pop(0)
                     
                 document_info[tag_name] = value
 
