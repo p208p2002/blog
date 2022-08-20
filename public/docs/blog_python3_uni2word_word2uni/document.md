@@ -1,6 +1,10 @@
-#blog#python3#uni2word#word2uni
-2022/07/01
 # Python3 文字與unicode互轉
+
+<document-info>
+- tags: #blog#python3#uni2word#word2uni
+- date: 2022/07/01
+</document-info>
+
 ### word2unicode
 文字轉unicode較為簡單，用ord(x)即可
 ```python

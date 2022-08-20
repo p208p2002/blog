@@ -1,8 +1,11 @@
-#bart-model#nlp
-2020/01/01
 # BART Model Fine-Tuning
-## Import
 
+<document-info>
+- tags: #bart-model#nlp
+- date: 2020/01/01
+</document-info>
+
+## Import
 
 ```python
 ! pip install transformers==4.5.1

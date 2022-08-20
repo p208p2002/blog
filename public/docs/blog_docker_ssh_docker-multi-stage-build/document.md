@@ -1,6 +1,10 @@
-#docker#ssh#docker-multi-stage-build
-2022/03/14
 # Docker多階段建構
+
+<document-info>
+- tags: #docker#ssh#docker-multi-stage-build
+- date: 2022/03/14
+</document-info>
+
 最近剛好有一個專案在建構的時候需要存取多個私有庫，然而直接把 ssh key 帶入映像檔中會有安全性疑慮，同時也要避免 ssh key 出現在 image layer 中，這時候可以借助 multi-stage build 來達到要求。
 
 ### Dockerfile撰寫
