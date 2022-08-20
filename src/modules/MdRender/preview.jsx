@@ -12,8 +12,7 @@ export default function MdRender({ file_link, maxLine=20 }) {
     useEffect(() => {
         axios.get(file_link)
             .then((res) => {
-                const gistContent = res.data.split("\n").slice(2,maxLine).join("\n")
-
+                const gistContent = res.data.split("\n").slice(1,maxLine).join("\n") // remove title
                 setContent(gistContent)
             })
     }, [])
