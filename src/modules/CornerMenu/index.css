@@ -1,3 +1,7 @@
+.drkmd-toggle-button{
+    visibility: hidden !important;
+}
+
 #Corner-Menu {
     color: gray;
     font-size: 3px;
@@ -14,12 +18,17 @@
     margin-top: 15px;
 }
 
+#Corner-Menu .link svg,
 #Corner-Menu .link a {
     color: #b7b7b7;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
-#Corner-Menu .link a:hover {
+#Corner-Menu .link svg:hover,
+#Corner-Menu .link a:hover{
     color: gray;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

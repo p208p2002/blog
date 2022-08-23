@@ -1,0 +1,55 @@
+:root {
+    --dark-background-color: #2C3333;
+    --dark-text-color: #E7F6F2;
+    --dark-text-color-2: #A5C9CA;
+    --dark-h1-color: white;
+    --dark-blockquote-background-color: #395B64;
+    --dark-blockquote-text-color: #A5C9CA;
+    --dark-code-background-color: #A5C9CA;
+    --dark-code-text-color: #2C3333;
+}
+
+
+body.theme-dark{
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+.theme-dark .home-page-title{
+    color: var(--dark-text-color-2) !important;
+}
+
+.theme-dark h1 {
+    color: var(--dark-h1-color);
+}
+
+.theme-dark a {
+    color: var(--dark-text-color-2);
+}
+
+.theme-dark small{
+    color: white;
+}
+
+.theme-dark #MD blockquote{
+    background-color: var(--dark-blockquote-background-color) !important;
+    color: var(--dark-blockquote-text-color) !important;   
+}
+
+.theme-dark #MD code {
+    background-color: var(--dark-code-background-color) !important;
+    color: var(--dark-code-text-color);
+}
+
+.theme-dark #MD pre code{
+    /* fix color */
+    background-color: rgb(45, 45, 45) !important; 
+}
+
+.theme-dark input{
+    background-color: #2C3333;
+}
+
+.theme-dark #Search-Bar button[type=submit]{
+    background-color: var(--dark-text-color);
+}
