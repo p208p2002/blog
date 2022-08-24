@@ -22,9 +22,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && sh -c 'python build_index.py http://localhost:3000' && react-scripts start",
-    "start-ssl-default": "sh -c 'python build_index.py http://localhost:3000' && react-scripts start",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && python build_index.py && react-scripts build",
+    "start": "sh -c 'python build_index.py http://localhost:3000' && react-scripts start",
+    "build": "python build_index.py && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
