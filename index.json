@@ -1,5 +1,17 @@
 [
     {
+        "title": "Poetry 與 PyTorch 依賴解決方案",
+        "tags": [
+            "peotry",
+            "pytorch"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=poetry-and-pytorch",
+        "file_link": "https://blog.philip-huang.tech/docs/poetry-and-pytorch/document.md",
+        "date": "2022/09/26",
+        "_has_notebook": false,
+        "_sort_key": 20220926
+    },
+    {
         "title": "修改 Transformer Language Model, 教你如何加入新的 Embedding Layer",
         "tags": [
             "bart",
