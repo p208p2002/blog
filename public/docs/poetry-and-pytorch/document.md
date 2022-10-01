@@ -13,7 +13,7 @@ Poetry 是一個強大的 Python 套件管理工具，不過目前對於一些�
 
 最後再透過額外的 Poetry Task Runner [<i>nat-n/poethepoet</i>](https://github.com/nat-n/poethepoet) 整合在poetry中
 
-```
+```text
 [tool.poetry.dependencies]
 torch = "*"
 poethepoet = "*"
