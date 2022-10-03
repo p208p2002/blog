@@ -20,7 +20,8 @@
 MarkDown (.md)|✔️|
 NoteBook (.ipynb)|✔️|
 GitHub Workflow|✔️|
-搜尋、索引與分頁|✔️
+搜尋、索引與分頁|✔️|
+深色主題模式|✔️|
 頁面預渲染|❌|
 LaTeX 數學式|❌|
 非侵入式廣告投放|❌|
