@@ -1,36 +1,36 @@
 # Trailer [![Build and Deploy](https://github.com/p208p2002/blog/actions/workflows/main.yml/badge.svg)](https://github.com/p208p2002/blog/actions/workflows/main.yml)
 
-Trailer是我為這個部落格系統取的名字，它輕量化且無後端，依賴 GitHub Pages 運作。
-> Trailer (拖車) 本身並沒有任何動力，通常附掛於汽車之後用以裝載一些物品
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Jupyter Notebook](https://img.shields.io/badge/jupyter-darkorange.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 
-這個部落格系統被設計於專注寫作與提供最佳閱讀體驗。
 
-Trailer is the name of my blog system, which is lightweight and serverless.
-> Trailer: a wheeled vehicle that can be pulled by a car or truck.
-
-This blog system is designed for focusing on writing.
+輕量化、無後端的自建落格系統。盡可能地提供舒適的寫作與閱讀體驗。
 
 ## 特色
 - 沒有繁瑣的設定與編輯器，專注文章寫作與分享
 - 支援 MarkDown (.md) 與 Notebook (.ipynb)
-- 支援 Google Colab，立即嘗試文章範例
-- 簡潔與清晰的頁面設計，盡可能提供最佳閱讀體驗
+- 連結 Google Colab，立即嘗試文章範例
+- 簡潔與清晰的頁面設計
 
-## Documentation
-### Configuration
-1. Clone from Repo
-2. Edit configs:
+## 運作方式
+這個部落格利用了GitHub Pages提供的靜態網頁空間，並且搭配GitHub Workflow功能在程式碼變動或文章更新時自動重新部署。
+
+## 功能實現
+|功能名稱|狀態|備註|
+|---|:---:|---|
+MarkDown (.md)|✔️|
+NoteBook (.ipynb)|✔️|
+GitHub Workflow|✔️|
+搜尋、索引與分頁|✔️
+頁面預渲染|❌|
+LaTeX 數學式|❌|
+非侵入式廣告投放|❌|
+
+## 文件
+### 配置
+- 部落格設定/變數
     - `src/configs/general.js`
-    - `homepage` in `package.json` to yours `gh-pages` url
-3. Add `ACCESS_TOKEN` in repo `secrets` *
-4. Push to GitHub
+    - `package.json`
 
-> \* [Creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
-
-> \* [Encrypted secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
-
-> Via github workflows every times you push, the site will rebuld and deploy.
-
-### Script Tools
-- build_index.py
-- convert_ipynb_to_md.py
+### 輔助工具
+- build_index.py: 建立網站索引、Sitemap等資訊
+- convert_ipynb_to_md.py: 轉換 `.ipynb` -> `.md`
