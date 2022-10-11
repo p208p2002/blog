@@ -20,7 +20,7 @@ function Search({setPosts,fullIndex=[]}) {
                     onClick={(e) => {
                         e.preventDefault();
                         fullIndex = fullIndex.filter((postIndex)=>{
-                            let { title = '',tags=[]} = postIndex
+                            let { title = '',tags=[], hidden_tags=[]} = postIndex
 
                             let keep_flag = false
 
@@ -31,6 +31,13 @@ function Search({setPosts,fullIndex=[]}) {
 
                             // search tag
                             tags.forEach((tag)=>{
+                                if (tag.toLowerCase().match(keyword.toLowerCase())){
+                                    keep_flag = true
+                                }
+                            })
+
+                            // search hidden tag
+                            hidden_tags.forEach((tag)=>{
                                 if (tag.toLowerCase().match(keyword.toLowerCase())){
                                     keep_flag = true
                                 }

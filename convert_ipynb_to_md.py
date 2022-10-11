@@ -2,15 +2,8 @@ from pprint import pformat
 import subprocess
 import glob
 import os
-def setup_jupyter():
-    try:
-        subprocess.check_output(['which','jupyter'])
-    except:
-        subprocess.run(['pip','install','jupyter'])
 
 if __name__ == "__main__":
-    setup_jupyter()
-
     files = glob.glob("public/docs/*/*.ipynb")
     for file in files:
 

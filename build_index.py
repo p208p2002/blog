@@ -1,4 +1,3 @@
-from asyncio.log import logger
 import glob
 import sys
 import json
@@ -7,6 +6,7 @@ import subprocess
 import sys
 from datetime import datetime,timezone,timedelta
 import platform
+import jieba.analyse
 
 def urljoin(base:str, *parts:str) -> str:
     for part in filter(None, parts):
@@ -103,10 +103,14 @@ if __name__ == "__main__":
                 get_file_last_modify_time(file)
             )
 
+            # jieba 自動產生tag
+            hidden_tags = jieba.analyse.extract_tags(md_doc, topK=10)
+
             try:
                 _index = {
                     'title':title,
                     'tags':document_info['tags'],
+                    'hidden_tags':hidden_tags,
                     'page_link':page_link,
                     'file_link':file_link,
                     'date':document_date,
@@ -121,6 +125,7 @@ if __name__ == "__main__":
                 
             print(_index['title'])
             print(_index['tags'])
+            print(_index['hidden_tags'])
             print(_index['date'])
             print(_index['file_link'])
             print(_index['_sort_key'])
