@@ -5,6 +5,18 @@
             "peotry",
             "pytorch"
         ],
+        "hidden_tags": [
+            "torch",
+            "poetry",
+            "install",
+            "PyTorch",
+            "light",
+            "ltt",
+            "Poetry",
+            "安裝",
+            "硬體",
+            "cuda"
+        ],
         "page_link": "https://blog.philip-huang.tech?page=poetry-and-pytorch",
         "file_link": "https://blog.philip-huang.tech/docs/poetry-and-pytorch/document.md",
         "date": "2022/09/26",
@@ -22,6 +34,18 @@
             "huggingface",
             "custom-transformer-model"
         ],
+        "hidden_tags": [
+            "None",
+            "Optional",
+            "mask",
+            "torch",
+            "self",
+            "ids",
+            "input",
+            "head",
+            "decoder",
+            "__"
+        ],
         "page_link": "https://blog.philip-huang.tech?page=custom_bart_model",
         "file_link": "https://blog.philip-huang.tech/docs/custom_bart_model/document.md",
         "date": "2022/08/10",
@@ -37,6 +61,18 @@
             "同義詞",
             "中文分詞"
         ],
+        "hidden_tags": [
+            "ik",
+            "json",
+            "POST",
+            "analyzer",
+            "type",
+            "synonym",
+            "title",
+            "smart",
+            "index",
+            "custom"
+        ],
         "page_link": "https://blog.philip-huang.tech?page=elasticsearch-chinese-search-optimize",
         "file_link": "https://blog.philip-huang.tech/docs/elasticsearch-chinese-search-optimize/document.md",
         "date": "2022/07/28",
@@ -51,6 +87,18 @@
             "uni2word",
             "word2uni"
         ],
+        "hidden_tags": [
+            "uni",
+            "unicode",
+            "uni2word",
+            "python",
+            "word",
+            "word2unicode",
+            "5B57",
+            "shell",
+            "str",
+            "bytes"
+        ],
         "page_link": "https://blog.philip-huang.tech?page=blog_python3_uni2word_word2uni",
         "file_link": "https://blog.philip-huang.tech/docs/blog_python3_uni2word_word2uni/document.md",
         "date": "2022/07/01",
@@ -63,6 +111,18 @@
             "flask",
             "pyorch",
             "cuda-out-of-memory"
+        ],
+        "hidden_tags": [
+            "__",
+            "model",
+            "input",
+            "self",
+            "import",
+            "執行緒",
+            "out",
+            "return",
+            "Flask",
+            "albert"
         ],
         "page_link": "https://blog.philip-huang.tech?page=blog_flask_pyorch_cuda-out-of-memory",
         "file_link": "https://blog.philip-huang.tech/docs/blog_flask_pyorch_cuda-out-of-memory/document.md",
@@ -77,6 +137,18 @@
             "ssh",
             "docker-multi-stage-build"
         ],
+        "hidden_tags": [
+            "ssh",
+            "build",
+            "server",
+            "RUN",
+            "###",
+            "image",
+            "system",
+            "SSH",
+            "PRIVATE",
+            "KEY"
+        ],
         "page_link": "https://blog.philip-huang.tech?page=blog_docker_ssh_docker-multi-stage-build",
         "file_link": "https://blog.philip-huang.tech/docs/blog_docker_ssh_docker-multi-stage-build/document.md",
         "date": "2022/03/14",
@@ -89,6 +161,18 @@
             "blog",
             "pytorch-lightning",
             "pytorch"
+        ],
+        "hidden_tags": [
+            "self",
+            "batch",
+            "model",
+            "loss",
+            "step",
+            "def",
+            "test",
+            "__",
+            "size",
+            "path"
         ],
         "page_link": "https://blog.philip-huang.tech?page=blog_pytorch-lightning_pytorch",
         "file_link": "https://blog.philip-huang.tech/docs/blog_pytorch-lightning_pytorch/document.md",
@@ -103,6 +187,18 @@
             "pytorch",
             "self-attention"
         ],
+        "hidden_tags": [
+            "0.0000",
+            "attention",
+            "mask",
+            "score",
+            "inf",
+            "self",
+            "batch",
+            "torch",
+            "0.0775",
+            "0.0157"
+        ],
         "page_link": "https://blog.philip-huang.tech?page=blog_nlp_pytorch_self-attention",
         "file_link": "https://blog.philip-huang.tech/docs/blog_nlp_pytorch_self-attention/document.md",
         "date": "2021/03/24",
@@ -115,6 +211,18 @@
             "gpt",
             "gpt2"
         ],
+        "hidden_tags": [
+            "input",
+            "device",
+            "model",
+            "tensor",
+            "cuda",
+            "grad",
+            "fn",
+            "NllLossBackward",
+            "100",
+            "python"
+        ],
         "page_link": "https://blog.philip-huang.tech?page=blog_gpt_gpt2_nlp",
         "file_link": "https://blog.philip-huang.tech/docs/blog_gpt_gpt2_nlp/document.md",
         "date": "2020/01/01",
@@ -126,6 +234,18 @@
         "tags": [
             "bart-model",
             "nlp"
+        ],
+        "hidden_tags": [
+            "100",
+            "input",
+            "model",
+            "length",
+            "python",
+            "max",
+            "label",
+            "pad",
+            "True",
+            "torch"
         ],
         "page_link": "https://blog.philip-huang.tech?page=blog_bart-model_nlp",
         "file_link": "https://blog.philip-huang.tech/docs/blog_bart-model_nlp/document.md",
@@ -140,6 +260,18 @@
             "gh-action",
             "ssh",
             "pip-install-private"
+        ],
+        "hidden_tags": [
+            "ssh",
+            "github",
+            "docker",
+            "date",
+            "git",
+            "DOCKER",
+            "com",
+            "name",
+            "HUB",
+            "GitHub"
         ],
         "page_link": "https://blog.philip-huang.tech?page=blog_dockerfile_gh-action_ssh_pip-install-private",
         "file_link": "https://blog.philip-huang.tech/docs/blog_dockerfile_gh-action_ssh_pip-install-private/document.md",
