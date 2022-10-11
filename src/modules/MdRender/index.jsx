@@ -54,7 +54,7 @@ export default function MdRender({ doc_id }) {
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={postTitle} />
                 <meta property="og:description" content={postTitle} />
-                <meta property="og:image" content="/og.png" />
+                {/* <meta property="og:image" content="/og.png" /> */}
                 
             </Helmet>
             <br />
