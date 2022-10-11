@@ -1,13 +1,16 @@
+from asyncio.log import logger
 import glob
 import sys
 import json
 import os
+import subprocess
+import sys
+from datetime import datetime,timezone,timedelta
 
 def urljoin(base:str, *parts:str) -> str:
     for part in filter(None, parts):
         base = '{}/{}'.format(base.rstrip('/'), part.lstrip('/'))
     return base
-
 
 def create_index(doc_index):
     with open(os.path.join('public','index.json'),'w') as f:
@@ -18,7 +21,22 @@ def create_sitemap(doc_index,homepage):
         f.write(f"{homepage}\n")
         for doc in doc_index:
             f.write(f"{doc['page_link']}\n")
-            
+
+def _timestamp_to_datestr(timestamp):
+    tz = timezone(timedelta(hours=+8))
+    dt = datetime.fromtimestamp(timestamp,tz=tz).strftime("%Y/%m/%d")
+    return dt
+
+def get_file_last_modify_time(f_path):
+    timestamp = subprocess.check_output([
+        'git',
+        'log',
+        '-1',
+        '--pretty="fpr,at:%ct',
+        f_path
+    ])
+    timestamp = int(timestamp[8:-1].decode())
+    return _timestamp_to_datestr(timestamp)
 
 if __name__ == "__main__":
     homepage = sys.argv[-1]
@@ -65,19 +83,25 @@ if __name__ == "__main__":
                     
                 document_info[tag_name] = value
 
-
+            
             file_link = urljoin(homepage,file).replace("/public","")
             page_link = urljoin(homepage,os.path.dirname(file)).replace("/docs/","?page=").replace("/public","")
             
+            # 日期不存在時，從git編輯紀錄取得
+            document_date = document_info.get(
+                'date',
+                get_file_last_modify_time(file)
+            )
+
             try:
                 _index = {
                     'title':title,
                     'tags':document_info['tags'],
                     'page_link':page_link,
                     'file_link':file_link,
-                    'date':document_info['date'],
+                    'date':document_date,
                     '_has_notebook':notebook_exist,
-                    '_sort_key':int(document_info['date'].replace("/",""))
+                    '_sort_key':int(document_date.replace("/",""))
                 }
             except Exception as e:                
                 print()
