@@ -1,6 +1,7 @@
 # CHANGELOG
 ## 2022-08-23
 - 建立索引時支援自動從git解析最後日期
+- 增加對 Open Graph 的支援
 
 ## 2022-08-23
 - 新增 Dark Mode
