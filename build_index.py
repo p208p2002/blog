@@ -6,6 +6,7 @@ import os
 import subprocess
 import sys
 from datetime import datetime,timezone,timedelta
+import platform
 
 def urljoin(base:str, *parts:str) -> str:
     for part in filter(None, parts):
@@ -21,6 +22,15 @@ def create_sitemap(doc_index,homepage):
         f.write(f"{homepage}\n")
         for doc in doc_index:
             f.write(f"{doc['page_link']}\n")
+
+def create_version():
+    with open(os.path.join('public','_version.txt'),'w') as f:
+        datestr = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+        git_hash = subprocess.check_output(['git','rev-parse','HEAD']).strip().decode()
+        f.write(f"Git Hash: {git_hash}\n")
+        f.write(f"Build Time: {datestr}\n")
+        f.write(f"Build Platform: {platform.platform()}\n")
+
 
 def _timestamp_to_datestr(timestamp):
     tz = timezone(timedelta(hours=+8))
@@ -121,6 +131,5 @@ if __name__ == "__main__":
     doc_index.sort(key = lambda x:x['_sort_key'],reverse=True)
     create_index(doc_index)
     create_sitemap(doc_index,homepage)
-    
-    
+    create_version()
     
