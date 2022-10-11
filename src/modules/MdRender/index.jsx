@@ -30,7 +30,6 @@ export default function MdRender({ doc_id }) {
             .then((res) => {
                 const gistTitle = res.data.split("\n")[0].replace("# ", "")
                 const gistContent = fixImgLink(res.data, doc_id).replace(`# ${gistTitle}`, "")
-
                 setContent(gistContent)
                 setPostTitle(gistTitle)
                 setPageTitle(`${gistTitle} - ${BLOG_NAME}`)
@@ -49,6 +48,14 @@ export default function MdRender({ doc_id }) {
                 <meta charSet="utf-8" />
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDescription} />
+                
+                {/* Open Graph Metadata */}
+                <meta property="og:url" content={window.location.href} />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={postTitle} />
+                <meta property="og:description" content={postTitle} />
+                <meta property="og:image" content="/og.png" />
+                
             </Helmet>
             <br />
             <h1>{postTitle}</h1>
