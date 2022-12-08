@@ -1,5 +1,33 @@
 [
     {
+        "title": "回顧2022最佳開發工具",
+        "tags": [
+            "tools",
+            "Tailwindcss",
+            "Mobx",
+            "Gradio",
+            "Poetry",
+            "Pytorch-Lightning"
+        ],
+        "hidden_tags": [
+            "https",
+            "Mobx",
+            "css",
+            "專案",
+            "使用",
+            "元件",
+            "2022",
+            "document",
+            "info",
+            "Tailwindcss"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=best-tools-at-2022",
+        "file_link": "https://blog.philip-huang.tech/docs/best-tools-at-2022/docuemnt.md",
+        "date": "2022/12/08",
+        "_has_notebook": false,
+        "_sort_key": 20221208
+    },
+    {
         "title": "Poetry 與 PyTorch 依賴解決方案",
         "tags": [
             "peotry",
@@ -206,30 +234,6 @@
         "_sort_key": 20210324
     },
     {
-        "title": "GPT & GPT2 Fine-Tuning",
-        "tags": [
-            "gpt",
-            "gpt2"
-        ],
-        "hidden_tags": [
-            "input",
-            "device",
-            "model",
-            "tensor",
-            "cuda",
-            "grad",
-            "fn",
-            "NllLossBackward",
-            "100",
-            "python"
-        ],
-        "page_link": "https://blog.philip-huang.tech?page=blog_gpt_gpt2_nlp",
-        "file_link": "https://blog.philip-huang.tech/docs/blog_gpt_gpt2_nlp/document.md",
-        "date": "2020/01/01",
-        "_has_notebook": true,
-        "_sort_key": 20200101
-    },
-    {
         "title": "BART Model Fine-Tuning",
         "tags": [
             "bart-model",
@@ -249,6 +253,30 @@
         ],
         "page_link": "https://blog.philip-huang.tech?page=blog_bart-model_nlp",
         "file_link": "https://blog.philip-huang.tech/docs/blog_bart-model_nlp/document.md",
+        "date": "2020/01/01",
+        "_has_notebook": true,
+        "_sort_key": 20200101
+    },
+    {
+        "title": "GPT & GPT2 Fine-Tuning",
+        "tags": [
+            "gpt",
+            "gpt2"
+        ],
+        "hidden_tags": [
+            "input",
+            "device",
+            "model",
+            "tensor",
+            "cuda",
+            "grad",
+            "fn",
+            "NllLossBackward",
+            "100",
+            "python"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=blog_gpt_gpt2_nlp",
+        "file_link": "https://blog.philip-huang.tech/docs/blog_gpt_gpt2_nlp/document.md",
         "date": "2020/01/01",
         "_has_notebook": true,
         "_sort_key": 20200101
