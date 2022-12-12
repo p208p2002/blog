@@ -9,7 +9,7 @@
 一個非常靈活的`css`框架，過往我都使用 Bootstrap 較多，不過 Bootstrap 的美術風格比較不討我喜歡，雖較好上手但在小地方感覺不夠靈活。相比 tailwindcss 大量對`css`常用的屬性與設定進行封裝，在設計元件的時候就無須來回切換`html`與`css`非常能夠保持高校專注。缺點大概就是元件的`class`可讀性變差，但由於我多數時候配合使用 React 使用所以這點影響不大。
 
 2. [Mobx](https://mobx.js.org)
-React 很強大也很好用，除了元件資料共享:<。之前使用都使用 redux 作為狀態管理，但每一次設定都痛苦一次，然後回想使用方法再痛苦第二次，編寫模板痛苦第三次，實在是受不了啦。Mobx 簡單、直覺和快速；甚至允許你略過`action`直接對`store`的變數賦值；例如：`store.count+=1`(雖然這不是推薦的用法)，用過之後直上天堂完全回不去了。
+React 很強大也很好用，除了元件資料共享:<。之前使用都使用 redux 作為狀態管理，但每一次設定都痛苦一次，然後回想使用方法再痛苦第二次，編寫模板痛苦第三次，實在是受不了啦。Mobx 簡單、直覺和快速；甚至允許你略過`action`直接對`store`的變數賦值；例如：`store.count+=1`(雖然這不是推薦的用法)，完全解決跨元件傳值的瑣事。
 
 3. [Gradio](https://gradio.app/) / [Hugging Face Space](https://huggingface.co/spaces)
 可以用 Python 快速建立展示內容的框架，包含許多實用的組件。實務上偶爾需要對訓練好的模型進行一些 `demo` 展示。就算不會寫網頁要搭一個demo也不過就分分鐘的事情，非常輕鬆愜意，並且還可以推到 Hugging Face Space，跟大家分享；例如我碩論的[題組生成器]。(https://huggingface.co/spaces/p208p2002/Question-Group-Generator)。
