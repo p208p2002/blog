@@ -21,7 +21,7 @@ function PostBlock({doc,children}) {
                     <small>
                         {tags.join("#")}
                         <br />
-                        <span>{created_at}</span>
+                        <span className='post-date'>{created_at}</span>
                         <br />
                     </small>
                 </div>
