@@ -30,7 +30,7 @@
 
 #MD code{
     background-color: #FCF3CF;
-    padding: 0px 5px 0px 5px;
+    /* padding: 0px 5px 0px 5px; */
     box-sizing: border-box;
     border-radius: 2px;
     font-family: monospace;
