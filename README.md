@@ -7,9 +7,11 @@
 
 ## 特色
 - 沒有繁瑣的設定與編輯器，專注文章寫作與分享
-- 支援 MarkDown (.md) 與 Notebook (.ipynb)
-- 連結 Google Colab，立即嘗試文章範例
+- 無伺服計計算 (Serverless) 部落格系統
 - 簡潔與清晰的頁面設計
+- 支援 MarkDown (.md) 與 Notebook (.ipynb)
+- 運用 WebAssembly 與 Pyodide 可立即執行文章中程式區塊 (支援python, js)
+- 連結 Google Colab，可立即嘗試文章範例
 
 ## 運作方式
 這個部落格利用了GitHub Pages提供的靜態網頁空間，並且搭配GitHub Workflow功能在程式碼變動或文章更新時自動重新部署。
