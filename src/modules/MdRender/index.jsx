@@ -26,6 +26,68 @@ export default function MdRender({ doc_id }) {
     const [hasNotebook, setHasNotebook] = useState(false)
 
     useEffect(() => {
+        let supportLangs = ['python', 'javascript']
+        let appendNoteBook = (e) => {
+            // append a embed iframe notebook block
+            // if is a support lang in jupyterlite kernel
+            // https://jupyterlite.readthedocs.io/en/latest/
+
+            const {anchorNode,anchorNodeOffset,focusNode,focusNodeOffset} = document.getSelection()
+            if(anchorNode !== focusNode || anchorNodeOffset !== focusNodeOffset){
+                // do nothing while user selecting text
+                return
+            }
+            let codeLang = 'shell'
+            try {
+                codeLang = e.target.getElementsByTagName('code')[0].className.split('-')[1]
+            }
+            catch (e) {
+                //pass
+            }
+            let newNode = document.createElement("iframe")
+            let codeScriptEncode = encodeURI(e.target.innerText)
+            if (document.getElementById(codeScriptEncode)) {
+                document.getElementById(codeScriptEncode).remove()
+            }
+            
+            // while the code lang is support
+            if (supportLangs.includes(codeLang)) {
+                newNode.setAttribute("src", `https://jupyterlite.github.io/demo/repl/index.html?kernel=${codeLang}&toolbar=1&code=${codeScriptEncode}`);
+                newNode.style.width = "100%";
+                newNode.style.height = `${e.target.offsetHeight+80}px`;
+                newNode.id = codeScriptEncode
+                e.target.parentNode.insertBefore(newNode, e.target.nextSibling)            
+            }
+        }
+
+        let codeBlocks = document.getElementsByTagName('pre')
+        for (let i = 0; i < codeBlocks.length; i++) {
+            let referenceNode = codeBlocks[i]
+            referenceNode.addEventListener('click', appendNoteBook)
+            
+            // check a code block is support by jupyterlite
+            // if true, the ref node shold use cursor-pointer
+            let code = referenceNode.getElementsByTagName('code')[0]
+            let langStyleClasses = supportLangs.map((lang)=>`language-${lang}`)
+            let isSupportLang = false
+            langStyleClasses.forEach((styleClass)=>{
+                if (code.classList.contains(styleClass)){
+                    isSupportLang = true
+                }
+            })
+            if(isSupportLang){
+                referenceNode.classList.add('cursor-pointer')
+            }
+        }
+        return () => {
+            for (let i = 0; i < codeBlocks.length; i++) {
+                let referenceNode = codeBlocks[i]
+                referenceNode.removeEventListener('click', appendNoteBook)
+            }
+        }
+    }, [content])
+
+    useEffect(() => {
         axios.get(`/docs/${doc_id}/document.md`)
             .then((res) => {
                 const gistTitle = res.data.split("\n")[0].replace("# ", "")
@@ -48,7 +110,7 @@ export default function MdRender({ doc_id }) {
                 <meta charSet="utf-8" />
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDescription} />
-                
+
                 {/* Open Graph Metadata */}
                 <meta property="og:url" content={window.location.href} />
                 <meta property="og:type" content="article" />
@@ -56,7 +118,7 @@ export default function MdRender({ doc_id }) {
                 <meta property="og:description" content={postTitle} />
                 {/* Set on public/index.html */}
                 {/* <meta property="og:image" content="/og.png" /> */}
-                
+
             </Helmet>
             <br />
             <h1>{postTitle}</h1>

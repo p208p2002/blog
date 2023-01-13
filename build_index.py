@@ -38,14 +38,17 @@ def _timestamp_to_datestr(timestamp):
     return dt
 
 def get_file_last_modify_time(f_path):
-    timestamp = subprocess.check_output([
-        'git',
-        'log',
-        '-1',
-        '--pretty="fpr,at:%ct',
-        f_path
-    ])
-    timestamp = int(timestamp[8:-1].decode())
+    try:
+        timestamp = subprocess.check_output([
+            'git',
+            'log',
+            '-1',
+            '--pretty="fpr,at:%ct',
+            f_path
+        ])
+        timestamp = int(timestamp[8:-1].decode())
+    except:
+        return '2000/01/01'
     return _timestamp_to_datestr(timestamp)
 
 if __name__ == "__main__":
