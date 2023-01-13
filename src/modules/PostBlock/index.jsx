@@ -11,7 +11,7 @@ function PostBlock({doc,children}) {
     // let ownerName = post.owner.login
     return (
         <div key={title} id="Post-Block">
-            
+            {/* <img className='post-img' src="" alt="" srcset="" /> */}
             <div className="text-center">
                 <div>
                 <a className='post-title' href={doc.page_link}>{title}</a>
