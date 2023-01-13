@@ -1,5 +1,14 @@
 #MD-Preview{
     overflow: hidden;
+    line-height: 20px;
+    margin-top: -20px;
+    color: rgb(72, 72, 72);
+}
+#MD-Preview pre div{
+    background: rgb(88, 88, 88) !important;
+}
+#MD-Preview a{
+    color: rgb(59, 59, 59);
 }
 #MD-Preview document-info,
 #MD-Preview .md-preview h1{

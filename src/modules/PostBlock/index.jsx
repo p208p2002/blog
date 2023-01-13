@@ -1,8 +1,8 @@
 import React from 'react'
 import './index.css'
 
-function PostBlock({doc,children}) {
-   
+function PostBlock({ doc, children }) {
+
     let title = doc.title
     let created_at = doc.date
     let tags = doc.tags
@@ -11,23 +11,21 @@ function PostBlock({doc,children}) {
     // let ownerName = post.owner.login
     return (
         <div key={title} id="Post-Block">
-            {/* <img className='post-img' src="" alt="" srcset="" /> */}
-            <div className="text-center">
-                <div>
-                <a className='post-title' href={doc.page_link}>{title}</a>
-                </div>
+            <div className="post-header">
+                <div className="text-center">
+                    <div style={{marginBottom:8}}>
+                        <a className='post-title' href={doc.page_link}>{title}</a>
+                    </div>
 
-                <div>
-                    <small>
-                        {tags.join("#")}
-                        <br />
-                        <span className='post-date'>{created_at}</span>
-                        <br />
-                    </small>
+                    <div style={{marginBottom:8}}>
+                        <small>
+                            {tags.join("#")} · <span className='post-date'>{created_at}</span>
+                            <br />
+                        </small>
+                    </div>
                 </div>
+                <hr />
             </div>
-
-            <hr />
             {children}
         </div>
     )

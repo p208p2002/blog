@@ -1,7 +1,9 @@
 .badge{
     margin-right: 5px;
 }
-
+#MD {
+    line-height: 20px;
+}
 #MD .footer{
     color: gray;
     margin-top: 60px;
@@ -28,7 +30,8 @@
     box-sizing: border-box;
     border-radius: 2px;
     font-family: monospace;
-    font-size: larger;
+    /* font-size: larger; */
+    color: rgb(75, 75, 75);
 }
 
 #MD img{

@@ -51,7 +51,7 @@ function App() {
       <div className="context">
         {posts.map((post, i) => (
           <PostBlock key={i} doc={post} >
-            <MDPreviewer file_link={post.file_link}  maxLine={30}/>
+            <MDPreviewer file_link={post.file_link}  maxLine={12}/>
           </PostBlock>
         ))}
       </div>

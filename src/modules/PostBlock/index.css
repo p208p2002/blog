@@ -1,19 +1,24 @@
 #Post-Block{
     padding: 15px;
     margin-bottom: 50px;
-    /* border: #d8d8d8 solid 1px; */
+    border-color: #d8d8d8;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
     border-radius: 5px;
 }
 
 #Post-Block hr{
-    border: 1px solid #d8d8d8;
+    border: 1px solid #336699;
+    /* margin-left: 10%; */
+    /* margin-right: 10%; */
 }
 
-#Post-Block .post-img{
+
+/* #Post-Block .post-img{
     background-color: #d8d8d8;
     height: 64px;
     width: 100%;
-}
+} */
 
 #Post-Block .post-date{
     color: rgb(107,114,128);
