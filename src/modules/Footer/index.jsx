@@ -5,10 +5,14 @@ import './index.css'
 function Footer() {
     return (
         <footer id="Footer">
-            <br/>
-            {new Date().getFullYear()} © {OWNER}
-            <br/>
-            <small>Powered by <a href="https://github.com/p208p2002/blog" target="_blank" rel="noopener noreferrer">Trailer</a></small>
+            <div>
+                {new Date().getFullYear()} © {OWNER}
+            </div>
+            <small>
+                <a href="https://github.com/p208p2002/blog" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://huggingface.co/p208p2002" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+            </small>
         </footer>
     )
 }
