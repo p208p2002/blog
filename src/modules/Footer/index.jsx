@@ -9,7 +9,7 @@ function Footer() {
                 {new Date().getFullYear()} © {OWNER}
             </div>
             <small>
-                <a href="https://github.com/p208p2002/blog" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://github.com/p208p2002" target="_blank" rel="noopener noreferrer">GitHub</a>
                 &nbsp;·&nbsp;
                 <a href="https://huggingface.co/p208p2002" target="_blank" rel="noopener noreferrer">Hugging Face</a>
             </small>
