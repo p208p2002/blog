@@ -53,3 +53,15 @@ body.theme-dark{
 .theme-dark #Search-Bar button[type=submit]{
     background-color: var(--dark-text-color);
 }
+
+
+.theme-dark #MD-Preview{
+    overflow: hidden;
+    line-height: 20px;
+    margin-top: -20px;
+    color: var(--dark-text-color);
+}
+
+.theme-dark #MD-Preview a{
+    color: var(--dark-text-color);
+}
