@@ -5,10 +5,28 @@ import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/s
 import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB, GITHUB_USER_CONTENT_PREFIX } from '../../configs/general'
 import { Helmet } from 'react-helmet'
 import rehypeRaw from 'rehype-raw'
-
 import './index.css'
-const axios = require('axios');
 
+const axios = require('axios');
+const { loadPyodide } = require("pyodide");
+
+async function run_python(py_script) {
+    console.log(py_script)
+    let pyodide = await loadPyodide({
+        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.22.0/full",
+    });
+    try{
+        return pyodide.runPython(py_script);
+    }
+    catch (e){
+        return e
+    }
+    
+}
+
+run_python("import sys;sys.version").then((x) => {
+    console.log(x)
+})
 
 // https://colab.research.google.com/github/p208p2002/blog/blob/main/public/docs/blog_gpt_gpt2_nlp/document.ipynb
 function fixImgLink(content, doc_id) {
@@ -26,14 +44,11 @@ export default function MdRender({ doc_id }) {
     const [hasNotebook, setHasNotebook] = useState(false)
 
     useEffect(() => {
-        let supportLangs = ['python', 'javascript']
+        let supportLangs = ['python']
         let appendNoteBook = (e) => {
-            // append a embed iframe notebook block
-            // if is a support lang in jupyterlite kernel
-            // https://jupyterlite.readthedocs.io/en/latest/
 
-            const {anchorNode,anchorNodeOffset,focusNode,focusNodeOffset} = document.getSelection()
-            if(anchorNode !== focusNode || anchorNodeOffset !== focusNodeOffset){
+            const { anchorNode, anchorNodeOffset, focusNode, focusNodeOffset } = document.getSelection()
+            if (anchorNode !== focusNode || anchorNodeOffset !== focusNodeOffset) {
                 // do nothing while user selecting text
                 return
             }
@@ -44,19 +59,20 @@ export default function MdRender({ doc_id }) {
             catch (e) {
                 //pass
             }
-            let newNode = document.createElement("iframe")
-            let codeScriptEncode = encodeURI(e.target.innerText)
-            if (document.getElementById(codeScriptEncode)) {
-                document.getElementById(codeScriptEncode).remove()
-            }
             
+            let newNode = document.createElement("pre")
+            let codeScript = e.target.innerText
+            if (document.getElementById(codeScript)) {
+                document.getElementById(codeScript).remove()
+            }
+
             // while the code lang is support
             if (supportLangs.includes(codeLang)) {
-                newNode.setAttribute("src", `https://jupyterlite.github.io/demo/repl/index.html?kernel=${codeLang}&toolbar=1&code=${codeScriptEncode}`);
-                newNode.style.width = "100%";
-                newNode.style.height = `${e.target.offsetHeight+80}px`;
-                newNode.id = codeScriptEncode
-                e.target.parentNode.insertBefore(newNode, e.target.nextSibling)            
+                newNode.id = codeScript
+                run_python(codeScript).then((result)=>{
+                    newNode.innerText = codeScript + "\n>>> "+result
+                })
+                e.target.parentNode.insertBefore(newNode, e.target.nextSibling)
             }
         }
 
@@ -64,18 +80,18 @@ export default function MdRender({ doc_id }) {
         for (let i = 0; i < codeBlocks.length; i++) {
             let referenceNode = codeBlocks[i]
             referenceNode.addEventListener('click', appendNoteBook)
-            
+
             // check a code block is support by jupyterlite
             // if true, the ref node shold use cursor-pointer
             let code = referenceNode.getElementsByTagName('code')[0]
-            let langStyleClasses = supportLangs.map((lang)=>`language-${lang}`)
+            let langStyleClasses = supportLangs.map((lang) => `language-${lang}`)
             let isSupportLang = false
-            langStyleClasses.forEach((styleClass)=>{
-                if (code.classList.contains(styleClass)){
+            langStyleClasses.forEach((styleClass) => {
+                if (code.classList.contains(styleClass)) {
                     isSupportLang = true
                 }
             })
-            if(isSupportLang){
+            if (isSupportLang) {
                 referenceNode.classList.add('cursor-pointer')
             }
         }
