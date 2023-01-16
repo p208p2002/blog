@@ -1,5 +1,30 @@
 [
     {
+        "title": "透過瀏覽器執行 Python 程式碼",
+        "tags": [
+            "webassembley",
+            "pyodide",
+            "blog-update"
+        ],
+        "hidden_tags": [
+            "WebAssembly",
+            "pyodide",
+            "org",
+            "程式",
+            "瀏覽器",
+            "執行",
+            "語言",
+            "https",
+            "import",
+            "Pyodide"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=blog-update-230116",
+        "file_link": "https://blog.philip-huang.tech/docs/blog-update-230116/document.md",
+        "date": "2023/01/16",
+        "_has_notebook": false,
+        "_sort_key": 20230116
+    },
+    {
         "title": "回顧2022最佳開發工具",
         "tags": [
             "tools",
