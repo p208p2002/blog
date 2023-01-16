@@ -29,11 +29,6 @@ export default function MdRender({ doc_id }) {
         let supportLangs = ['python']
 
         let appendNoteBook = (e) => {
-            const { anchorNode, anchorNodeOffset, focusNode, focusNodeOffset } = document.getSelection()
-            if (anchorNode !== focusNode || anchorNodeOffset !== focusNodeOffset) {
-                // do nothing while user selecting text
-                return
-            }
             let codeLang = 'shell'
             try {
                 // detect the lang via markdown syntax (```lang ...)
