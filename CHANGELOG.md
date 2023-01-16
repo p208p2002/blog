@@ -1,7 +1,7 @@
 # CHANGELOG
 ## 2023-01-13
 - 樣式調整
-- 支援在網頁中直接執行python,js程式 (powered by Pyodide)
+- 支援在網頁中直接執行 python 程式 (powered by Pyodide)
 
 ## 2022-08-23
 - 建立索引時支援自動從git解析最後日期

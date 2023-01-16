@@ -80,8 +80,8 @@ function LiveCode({script}) {
     }
 
     return (
-        <div id="LiveCode" style={{minHeight:150,paddingBottom:24}} className='text-md relative'>
-            <p className='bg-red-100 text-xs text-slate-600'>
+        <div id="LiveCode" style={{minHeight:150,paddingBottom:28,position:'relative'}}>
+            <p style={{overflow:'hidden'}}>
                 {isReady?runPython('import sys;sys.version'):'Loading ...'}
             </p>
             {scripts.map((scirpt, scirptIndex) => {
@@ -93,30 +93,41 @@ function LiveCode({script}) {
                 )
             })}
             <form
-                className='absolute bottom-0 w-full'
-                style={{height:24}}
+                style={{
+                    height:28,
+                    position:'absolute',
+                    bottom:0,
+                    width:'100%'
+                }}
                 onSubmit={(e) => {
                     e.preventDefault()
                 }}
             >
                 <input
                     style={{
-                        width: 'calc(100% - 64px)'
+                        width: 'calc(100% - 64px)',
+                        height: 'calc(100% - 1px)',
+                        boxSizing:'border-box',
+                        borderWidth:'0px 0px 1px 0px',
                     }}
-                    className='bg-gray-200 h-full pr-2 pl-2'
                     type="text"
                     value={scriptInput}
                     onChange={(e) => { setScriptInput(e.target.value) }}
                 />
                 <button
                     disabled={!isReady}
-                    className='text-white bg-sky-800 right-0 text-center h-full'
+                    className='text-center'
                     style={{
-                        width: '64px'
+                        position:'absolute',
+                        width: '60px',
+                        right:0,
+                        height:'100%',
+                        borderWidth:0,
+                        cursor:'pointer'
                     }}
                     onClick={runButtonSubmit}
                 >
-                    run
+                    Exec
                 </button>
             </form>
         </div>

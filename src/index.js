@@ -30,8 +30,8 @@ function Index() {
               <meta name="description" content="程式筆記與心得分享" />
             </Helmet>
             <App />
-            <CornerMenu />
-            <Footer />
+            {/* <CornerMenu /> */}
+            {/* <Footer /> */}
           </div>
         ) : (
           <div className="render-container">

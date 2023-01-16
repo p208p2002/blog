@@ -6,27 +6,9 @@ import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB, GITHUB_USER_CONTEN
 import { Helmet } from 'react-helmet'
 import rehypeRaw from 'rehype-raw'
 import './index.css'
-
+import LiveCode from "../LiveCode";
+import ReactDOM from 'react-dom';
 const axios = require('axios');
-const { loadPyodide } = require("pyodide");
-
-async function run_python(py_script) {
-    console.log(py_script)
-    let pyodide = await loadPyodide({
-        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.22.0/full",
-    });
-    try{
-        return pyodide.runPython(py_script);
-    }
-    catch (e){
-        return e
-    }
-    
-}
-
-run_python("import sys;sys.version").then((x) => {
-    console.log(x)
-})
 
 // https://colab.research.google.com/github/p208p2002/blog/blob/main/public/docs/blog_gpt_gpt2_nlp/document.ipynb
 function fixImgLink(content, doc_id) {
@@ -45,8 +27,8 @@ export default function MdRender({ doc_id }) {
 
     useEffect(() => {
         let supportLangs = ['python']
-        let appendNoteBook = (e) => {
 
+        let appendNoteBook = (e) => {
             const { anchorNode, anchorNodeOffset, focusNode, focusNodeOffset } = document.getSelection()
             if (anchorNode !== focusNode || anchorNodeOffset !== focusNodeOffset) {
                 // do nothing while user selecting text
@@ -54,36 +36,35 @@ export default function MdRender({ doc_id }) {
             }
             let codeLang = 'shell'
             try {
-                codeLang = e.target.getElementsByTagName('code')[0].className.split('-')[1]
+                // detect the lang via markdown syntax (```lang ...)
+                codeLang = e.target.parentNode.getElementsByTagName('code')[0].className.split('-')[1]
             }
             catch (e) {
                 //pass
             }
-            
+
             let newNode = document.createElement("pre")
-            let codeScript = e.target.innerText
+            let codeScript = e.target.parentNode.getElementsByTagName('code')[0].innerText
+
             if (document.getElementById(codeScript)) {
+                // if the block exist alreay, remove first (for reload block)
                 document.getElementById(codeScript).remove()
             }
 
             // while the code lang is support
             if (supportLangs.includes(codeLang)) {
                 newNode.id = codeScript
-                run_python(codeScript).then((result)=>{
-                    newNode.innerText = codeScript + "\n>>> "+result
-                })
-                e.target.parentNode.insertBefore(newNode, e.target.nextSibling)
+                e.target.parentNode.insertBefore(newNode, e.target.nextSibling.nextSibling)
+                ReactDOM.render(<LiveCode script={codeScript} />, newNode)
             }
         }
 
         let codeBlocks = document.getElementsByTagName('pre')
         for (let i = 0; i < codeBlocks.length; i++) {
-            let referenceNode = codeBlocks[i]
-            referenceNode.addEventListener('click', appendNoteBook)
-
-            // check a code block is support by jupyterlite
-            // if true, the ref node shold use cursor-pointer
-            let code = referenceNode.getElementsByTagName('code')[0]
+            // check a code block is a supported lang
+            // if true, shwo the run btn
+            let codeBlock = codeBlocks[i]
+            let code = codeBlock.getElementsByTagName('code')[0]
             let langStyleClasses = supportLangs.map((lang) => `language-${lang}`)
             let isSupportLang = false
             langStyleClasses.forEach((styleClass) => {
@@ -92,13 +73,18 @@ export default function MdRender({ doc_id }) {
                 }
             })
             if (isSupportLang) {
-                referenceNode.classList.add('cursor-pointer')
+                let runBtn = document.createElement('p')
+                runBtn.innerText = 'Run'
+                runBtn.classList.add('run-btn')
+                runBtn.addEventListener('click', appendNoteBook)
+                codeBlock.appendChild(runBtn)
             }
+
         }
         return () => {
             for (let i = 0; i < codeBlocks.length; i++) {
-                let referenceNode = codeBlocks[i]
-                referenceNode.removeEventListener('click', appendNoteBook)
+                let codeBlock = codeBlocks[i]
+                codeBlock.removeEventListener('click', appendNoteBook)
             }
         }
     }, [content])

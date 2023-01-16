@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import './App.css';
+import { RootContext } from './index'
 import { BLOG_NAME,POST_PRE_PAGE } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
-import { RootContext } from './index'
 import MDPreviewer from './modules/MdRender/preview'
+// import LiveCode from './modules/LiveCode';
 
 
 const axios = require('axios');
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <div id="App">
+      {/* <LiveCode/> */}
       <div style={{marginTop:40}} className="text-center">
         <h1><a href="/" className="home-page-title">{BLOG_NAME}</a></h1>
         <Search setPosts={setPosts} fullIndex={fullIndex}/>
@@ -55,7 +57,7 @@ function App() {
           </PostBlock>
         ))}
       </div>
-      {/* pagination */}
+      
       <div style={{textAlign:'center',marginBottom:40}}>
       <a href="/">{`<<Fisrt Page`}</a>
       <span style={{marginLeft:5,marginRight:5}}> - </span>

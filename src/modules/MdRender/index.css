@@ -22,6 +22,7 @@
 #MD pre{
     max-width: 100%;
     overflow: auto;
+    position: relative;
 }
 
 #MD .cursor-pointer{
@@ -55,4 +56,11 @@
     white-space: pre;
     margin: 1em 0;
     overflow: hidden;
+}
+
+#MD .run-btn{
+    color: white;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
 }
