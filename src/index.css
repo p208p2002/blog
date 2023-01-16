@@ -73,3 +73,13 @@ a{
 a:link{
   text-decoration: none;
 }
+
+@media screen and (max-width: 576px) {
+  .render-container{
+    margin: 0 auto;
+    max-width: 800px;
+    padding-bottom: 200px;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+  }
+}
