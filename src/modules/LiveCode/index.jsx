@@ -13,6 +13,10 @@ function LiveCode({script}) {
             indexURL: "https://cdn.jsdelivr.net/pyodide/v0.22.0/full",
         }).then((pyodide) => {
             setPyodide(pyodide)
+            pyodide.runPython(`
+            import sys;import io   
+            sys.stdout = io.StringIO()
+            `)
         })
     }, [])
 
@@ -39,7 +43,7 @@ function LiveCode({script}) {
         let runResult = ""
         try {
             runResult = pyodide.runPython(py_script);
-            if (typeof runResult.toJs === 'function'){
+            if (runResult !== undefined && typeof runResult.toJs === 'function'){
                 runResult = runResult.toJs()
                 if(runResult instanceof Map){
                     runResult = Object.fromEntries(runResult)
