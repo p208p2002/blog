@@ -65,3 +65,11 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+a{
+  color: #3563bd;
+}
+
+a:link{
+  text-decoration: none;
+}
