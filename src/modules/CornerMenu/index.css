@@ -6,7 +6,7 @@
     color: gray;
     font-size: 3px;
     position: fixed;
-    bottom: 7%;
+    bottom: 75px;
     right: 2.5%;
 }
 
@@ -15,7 +15,7 @@
     width: 42px;
     border-radius: 50%;
     display: block;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 #Corner-Menu .link svg,
