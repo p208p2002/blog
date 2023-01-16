@@ -2,20 +2,6 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 const { loadPyodide } = require("pyodide");
 
-// async function run_python(py_script) {
-//     console.log(py_script)
-//     let pyodide = await loadPyodide({
-//         indexURL: "https://cdn.jsdelivr.net/pyodide/v0.22.0/full",
-//     });
-//     try{
-//         return pyodide.runPython(py_script);
-//     }
-//     catch (e){
-//         return e
-//     }
-
-// }
-
 function LiveCode({script}) {
     const [isReady,setIsReady] = useState(false)
     const [pyodide, setPyodide] = useState(undefined)
