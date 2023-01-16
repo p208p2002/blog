@@ -13,12 +13,9 @@
     /* margin-right: 10%; */
 }
 
-
-/* #Post-Block .post-img{
-    background-color: #d8d8d8;
-    height: 64px;
-    width: 100%;
-} */
+#Post-Block small{
+    color: #444444;
+}
 
 #Post-Block .post-date{
     color: rgb(107,114,128);

@@ -13,13 +13,13 @@ function PostBlock({ doc, children }) {
         <div key={title} id="Post-Block">
             <div className="post-header">
                 <div className="text-center">
-                    <div style={{marginBottom:8}}>
+                    <div style={{marginBottom:0}}>
                         <a className='post-title' href={doc.page_link}>{title}</a>
                     </div>
 
                     <div style={{marginBottom:8}}>
                         <small>
-                            {tags.join("#")} · <span className='post-date'>{created_at}</span>
+                            #{tags.join(" #")} · <span className='post-date'>{created_at}</span>
                             <br />
                         </small>
                     </div>

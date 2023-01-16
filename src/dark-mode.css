@@ -28,7 +28,7 @@ body.theme-dark{
 }
 
 .theme-dark small{
-    color: white;
+    color: white !important;
 }
 
 .theme-dark #MD blockquote{
