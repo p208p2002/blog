@@ -10,7 +10,8 @@
 - 無伺服計計算 (Serverless) 部落格系統
 - 簡潔與清晰的頁面設計
 - 支援 MarkDown (.md) 與 Notebook (.ipynb)
-- 運用 WebAssembly 與 Pyodide 可立即執行文章中 python 程式區塊
+- 運用 WebAssembly 與 Pyodide 可立即執行文章中 Python 程式區塊
+    > [透過瀏覽器執行 Python 程式碼](https://blog.philip-huang.tech/?page=blog-update-230116)
 - 連結 Google Colab，可立即嘗試文章範例
 
 ## 運作方式
