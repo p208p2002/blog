@@ -16,7 +16,11 @@ function LiveCode({script}) {
             pyodide.runPython(`
             import sys;import io   
             sys.stdout = io.StringIO()
+            print("abc")
             `)
+            // var stdout = pyodide.runPython("sys.stdout.getvalue()")
+            // console.log(stdout)
+
         })
     }, [])
 
