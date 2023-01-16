@@ -39,7 +39,17 @@ function LiveCode({script}) {
         let runResult = ""
         try {
             runResult = pyodide.runPython(py_script);
-            runResult = JSON.stringify(runResult) !== "{}" ? JSON.stringify(runResult) : JSON.stringify(runResult.toJs())
+            if (typeof runResult.toJs === 'function'){
+                runResult = runResult.toJs()
+                if(runResult instanceof Map){
+                    runResult = Object.fromEntries(runResult)
+                }
+                else if (runResult instanceof Set){
+                    runResult = Array.from(runResult)
+                }
+                
+            }
+            runResult = JSON.stringify(runResult)
         }
         catch (e) {
             runResult = JSON.stringify(e.message)
@@ -57,6 +67,9 @@ function LiveCode({script}) {
     },[isReady])
 
     const runButtonSubmit = (e) => {
+        if(scriptInput === ""){
+            return
+        }
         let newScripts = scripts.slice()
         newScripts.push(scriptInput)
         let runResult = runPython(scriptInput)
@@ -67,7 +80,7 @@ function LiveCode({script}) {
 
     return (
         <div id="LiveCode" style={{minHeight:150,paddingBottom:28,position:'relative'}}>
-            <p style={{overflow:'hidden'}}>
+            <p key={isReady} style={{overflow:'hidden'}}>
                 {isReady?runPython('import sys;sys.version'):'Loading ...'}
             </p>
             {scripts.map((scirpt, scirptIndex) => {
