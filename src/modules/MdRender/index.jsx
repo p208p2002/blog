@@ -63,7 +63,7 @@ export default function MdRender({ doc_id }) {
             let langStyleClasses = supportLangs.map((lang) => `language-${lang}`)
             let isSupportLang = false
             langStyleClasses.forEach((styleClass) => {
-                if (code.classList.contains(styleClass)) {
+                if (code !== undefined && code.classList.contains(styleClass)) {
                     isSupportLang = true
                 }
             })
