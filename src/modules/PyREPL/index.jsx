@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 const { loadPyodide } = require("pyodide");
 
-function LiveCode({ script }) {
+function PyREPL({ script }) {
     const [isReady, setIsReady] = useState(false)
     const [pyVersionInfo, setPyVersionInfo] = useState("unknow")
     const [pyodide, setPyodide] = useState(undefined)
@@ -17,7 +17,7 @@ function LiveCode({ script }) {
     }
 
     const runPython = (py_script) => {
-        let runResult = ""
+        let runResult = undefined
         let stdout = ""
 
         try {
@@ -161,4 +161,4 @@ function LiveCode({ script }) {
     )
 }
 
-export default LiveCode
+export default PyREPL

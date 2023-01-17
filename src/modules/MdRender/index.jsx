@@ -6,7 +6,7 @@ import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB, GITHUB_USER_CONTEN
 import { Helmet } from 'react-helmet'
 import rehypeRaw from 'rehype-raw'
 import './index.css'
-import LiveCode from "../LiveCode";
+import PyREPL from "../PyREPL";
 import ReactDOM from 'react-dom';
 const axios = require('axios');
 
@@ -50,7 +50,7 @@ export default function MdRender({ doc_id }) {
             if (supportLangs.includes(codeLang)) {
                 newNode.id = codeScript
                 e.target.parentNode.insertBefore(newNode, e.target.nextSibling.nextSibling)
-                ReactDOM.render(<LiveCode script={codeScript} />, newNode)
+                ReactDOM.render(<PyREPL script={codeScript} />, newNode)
             }
         }
 

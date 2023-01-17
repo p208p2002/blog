@@ -6,7 +6,7 @@ import { BLOG_NAME,POST_PRE_PAGE } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import MDPreviewer from './modules/MdRender/preview'
-// import LiveCode from './modules/LiveCode';
+// import PyREPL from './modules/PyREPL';
 
 
 const axios = require('axios');
@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div id="App">
-      {/* <LiveCode/> */}
+      {/* <PyREPL/> */}
       <div style={{marginTop:40}} className="text-center">
         <h1><a href="/" className="home-page-title">{BLOG_NAME}</a></h1>
         <Search setPosts={setPosts} fullIndex={fullIndex}/>
