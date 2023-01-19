@@ -7,7 +7,7 @@
 
 ## 特色
 - 沒有繁瑣的設定與編輯器，專注文章寫作與分享
-- 無伺服計計算 (Serverless) 部落格系統
+- 無伺服計算 (Serverless) 的部落格系統
 - 簡潔與清晰的頁面設計
 - 支援 MarkDown (.md) 與 Notebook (.ipynb)
 - 運用 WebAssembly 與 Pyodide 可立即執行文章中 Python 程式區塊
