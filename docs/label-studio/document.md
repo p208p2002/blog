@@ -6,7 +6,8 @@
 </document-info>
 
 前陣子逛GitHub的時候偶然發現一個非常強大的資料標記工具 - Label Studio，號稱支援標記各式的資料類型
-![](annotation_examples.gif)
+
+![](./annotation_examples.gif)
 
 讓我想到之前實習的時候也曾經為了標注 Question Answer (QA) 資料特別開發了一款標註工具
 
@@ -21,13 +22,13 @@
 
 ## 安裝
 安裝上也非常簡單，可以透過 Docker 或是 pip，我自己測試兩種安裝方式都非常順利。
-#### Dokcer
+### Dokcer
 ```bash
 docker pull heartexlabs/label-studio:latest
 docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
 ```
 > `-v $(pwd)/mydata:/label-studio/` 這個參數可能無法用在windows
-#### Pip
+### Pip
 ```bash
 # Requires Python >=3.7 <=3.9
 pip install label-studio
@@ -46,7 +47,9 @@ label-studio
 
 ### 資料上傳
 ![](./upload.png)
+
 上傳的資料格式大致如下，我已經先分配每一筆資料由誰來標記
+
 ![](./file_csv.png)
 
 ### 任務選擇
@@ -57,6 +60,7 @@ label-studio
 
 ### 界面設定
 這是 Label Studio 另外一個強大的地方，連標註工具都可以高度客製化
+
 ![](./create_ui.png)
 
 在 "Configure data" 中的 "Use Text from"，設定成 "\<set manually\>" 然後填入 "$sent" (對應csv 欄位，這只是一個 Place Holder) 
@@ -96,6 +100,7 @@ label-studio
 讓user標註的時候進入自己的 Tab，就會看到被分配的內容
 
 接著點選 Label Task As Displayed 就可以開始標記了 !
+
 ![](./start_label.png)
 
 > 可能是Bug, v1.7.1 一次性句選所有 ID 後 再按下藍色"Label n Task"會標註Pool裡面所有任務，不符合預期動作。

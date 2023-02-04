@@ -14,8 +14,8 @@
             "png",
             "Label",
             "一個",
-            "Studio",
-            "任務"
+            "###",
+            "Studio"
         ],
         "page_link": "https://blog.philip-huang.tech?page=label-studio",
         "file_link": "https://blog.philip-huang.tech/docs/label-studio/document.md",
