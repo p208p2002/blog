@@ -1,5 +1,29 @@
 [
     {
+        "title": "好用資料標記工具 Label Studio",
+        "tags": [
+            "label-studo",
+            "資料標記"
+        ],
+        "hidden_tags": [
+            "資料",
+            "label",
+            "標記",
+            "studio",
+            "設定",
+            "png",
+            "Label",
+            "一個",
+            "Studio",
+            "任務"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=label-studio",
+        "file_link": "https://blog.philip-huang.tech/docs/label-studio/document.md",
+        "date": "2023/02/04",
+        "_has_notebook": false,
+        "_sort_key": 20230204
+    },
+    {
         "title": "透過瀏覽器執行 Python 程式碼",
         "tags": [
             "webassembley",

@@ -1,4 +1,5 @@
 https://blog.philip-huang.tech
+https://blog.philip-huang.tech?page=label-studio
 https://blog.philip-huang.tech?page=blog-update-230116
 https://blog.philip-huang.tech?page=best-tools-at-2022
 https://blog.philip-huang.tech?page=poetry-and-pytorch
