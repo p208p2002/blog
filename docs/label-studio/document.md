@@ -43,7 +43,7 @@ label-studio
 
 ![](./templates-categories.jpg)
 
-而這次我只需要簡單的文本分類標註
+這次我需要進行一個要簡單的文本分類標註任務
 
 ### 資料上傳
 ![](./upload.png)
@@ -63,7 +63,7 @@ label-studio
 
 ![](./create_ui.png)
 
-在 "Configure data" 中的 "Use Text from"，設定成 "\<set manually\>" 然後填入 "$sent" (對應csv 欄位，這只是一個 Place Holder) 
+在 "Configure data" 中的 "Use Text from"，設定成 "\<set manually\>" 然後填入 "$sent" (對應csv 欄位，這只是一個 Placeholder) 
 
 設定好之後才會標註的時候正確帶出句子
 
