@@ -1,12 +1,12 @@
 :root {
-    --dark-background-color: #2C3333;
-    --dark-text-color: #E7F6F2;
-    --dark-text-color-2: #A5C9CA;
-    --dark-h1-color: white;
-    --dark-blockquote-background-color: #395B64;
-    --dark-blockquote-text-color: #A5C9CA;
-    --dark-code-background-color: #A5C9CA;
-    --dark-code-text-color: #2C3333;
+    --dark-background-color: #343a40;
+    --dark-text-color: #f8f9fa;
+    --dark-text-color-2: #e0e1dd;
+    --dark-h1-color: #d9dee2;
+    --dark-blockquote-background-color: #1b263b;
+    --dark-blockquote-text-color: #ced4da;
+    --dark-code-background-color: #778da9;
+    --dark-code-text-color: #ced4da;
 }
 
 
@@ -47,7 +47,7 @@ body.theme-dark{
 }
 
 .theme-dark input{
-    background-color: #2C3333;
+    background-color: var(--dark-background-color);
 }
 
 .theme-dark #Search-Bar button[type=submit]{
