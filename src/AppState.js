@@ -3,14 +3,14 @@ import { POST_PRE_PAGE } from './configs/general'
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-const {page} = params
+const {page,offset=0,limit=POST_PRE_PAGE} = params
 
 export class AppState{
     isLoading = false
     params = params
     page = page
-    offset = 0
-    limit = POST_PRE_PAGE
+    offset = offset
+    limit = limit
     
     constructor(){
         makeAutoObservable(this)
