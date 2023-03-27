@@ -1,9 +1,32 @@
-.badge{
-    margin-right: 5px;
-}
 #MD {
     line-height: 20px;
 }
+
+#MD ol {
+    display: block;
+    list-style-type: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+#MD ul {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+#MD p{
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
 #MD .footer{
     color: gray;
     margin-top: 60px;
@@ -17,6 +40,8 @@
     text-decoration: underline;
     text-decoration-color: #3498DB;
     line-height: 60px;
+    font-size: 28px;
+    margin-top: 20px;
 }
 
 #MD pre{
@@ -41,6 +66,8 @@
 
 #MD img{
     max-width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 #MD blockquote{
@@ -48,6 +75,12 @@
     background-color: #F2F3F4;
     padding: 1px 12px 1px 12px;
     font-size: smaller;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 #MD document-info{

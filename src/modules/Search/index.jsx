@@ -8,6 +8,7 @@ function Search({setPosts,fullIndex=[]}) {
         <div id="Search-Bar">
             <form id="Searrch-Form">
                 <input
+                    className='text-sm'
                     placeholder="Search post, tag, etc."
                     type="text"
                     value={keyword}
@@ -50,7 +51,7 @@ function Search({setPosts,fullIndex=[]}) {
                         setKeyword('')
                     }}
                 >
-                    <i className="fa fa-search"></i>
+                    <i className="fa fa-search p-1"></i>
                 </button>
             </form>
         </div>

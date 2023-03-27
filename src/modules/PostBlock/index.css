@@ -9,8 +9,7 @@
 
 #Post-Block hr{
     border: 1px solid #336699;
-    /* margin-left: 10%; */
-    /* margin-right: 10%; */
+    margin-bottom: 12px;
 }
 
 #Post-Block small{

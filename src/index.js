@@ -23,9 +23,9 @@ function Index() {
   return (
     <AppStateContext.Provider value={appState}>
         <LoadingView />
-        <div className="container">
+        <div>
           {page === undefined ? (
-            <div className="app-container">
+            <div>
               <Helmet>
                 <meta charSet="utf-8" />
                 <title>{BLOG_NAME}</title>
