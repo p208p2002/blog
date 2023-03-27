@@ -71,6 +71,8 @@ export default function MdRender({ doc_id }) {
                 let runBtn = document.createElement('p')
                 runBtn.innerText = 'Run'
                 runBtn.classList.add('run-btn')
+                runBtn.classList.add('text-sm')
+                runBtn.classList.add('mt-2')
                 runBtn.addEventListener('click', appendNoteBook)
                 codeBlock.appendChild(runBtn)
             }

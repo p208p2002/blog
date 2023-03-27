@@ -75,12 +75,16 @@
     background-color: #F2F3F4;
     padding: 1px 12px 1px 12px;
     font-size: smaller;
-    padding-top: 12px;
-    padding-bottom: 12px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
+    padding: 8px;
+    padding-left: 12px;
+    vertical-align: middle;
+}
+
+#MD blockquote p {
+    margin-bottom: 0px;
 }
 
 #MD document-info{
