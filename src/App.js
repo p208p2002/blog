@@ -1,13 +1,12 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import './App.css';
-import { RootContext } from './index'
-import { BLOG_NAME,POST_PRE_PAGE } from './configs/general'
+import { AppStateContext } from './index'
+import { BLOG_NAME } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import MDPreviewer from './modules/MdRender/preview'
-// import PyREPL from './modules/PyREPL';
-
+import { POST_PRE_PAGE } from './configs/general'
 
 const axios = require('axios');
 
@@ -15,14 +14,11 @@ function App() {
 
   let [fullIndex, setFullIndex] = useState([])
   let [posts, setPosts] = useState([])
-  let { setLoading,params } = useContext(RootContext)
-  let { offset = 0 ,limit = POST_PRE_PAGE} = params
-
-  offset = parseInt(offset)
-  limit = parseInt(limit)
-
+  let appState = useContext(AppStateContext)
+  let {offset,limit} = appState
+  
   let fetchPost = () => {
-    setLoading(true)
+    appState.setLoading(true)
     axios.get("/index.json")
       .then((res) => {
         posts = res.data
@@ -34,7 +30,7 @@ function App() {
         console.log(err)
       })
       .then(() => {
-        setLoading(false)
+        appState.setLoading(false)
       })
   }
 
@@ -44,7 +40,6 @@ function App() {
 
   return (
     <div id="App">
-      {/* <PyREPL/> */}
       <div style={{marginTop:40}} className="text-center">
         <h1><a href="/" className="home-page-title">{BLOG_NAME}</a></h1>
         <Search setPosts={setPosts} fullIndex={fullIndex}/>
