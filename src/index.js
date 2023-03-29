@@ -12,6 +12,17 @@ import MdRender from './modules/MdRender';
 import { Helmet } from 'react-helmet'
 import { AppState } from './AppState'
 
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+  function loadCss(filename) {
+    var cssNode = document.createElement("link");
+    cssNode.setAttribute("rel", "stylesheet");
+    cssNode.setAttribute("type", "text/css");
+    cssNode.setAttribute("href", filename);
+    document.getElementsByTagName("head")[0].appendChild(cssNode);
+  }
+  loadCss("//cdn.tailwindcss.com")
+} 
+
 export const AppStateContext = React.createContext();
 
 const urlSearchParams = new URLSearchParams(window.location.search);
