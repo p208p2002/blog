@@ -10,7 +10,7 @@ function PostBlock({ doc, children }) {
     // let isIpynb = title.match(/.*\.ipynb/) === null ? false : true
     // let ownerName = post.owner.login
     return (
-        <div key={title} id="Post-Block">
+        <div key={title} id="Post-Block" className='pt-3 pb-3'>
             <div className="post-header">
                 <div className="text-center">
                     <div style={{marginBottom:0}}>

@@ -3,6 +3,7 @@
     line-height: 1.5;
     margin-top: -20px;
     color: rgb(72, 72, 72);
+    min-height:80px
 }
 
 #MD-Preview p{
@@ -20,3 +21,75 @@
     visibility: hidden;
     line-height: 0px;
 }
+
+/* Loading */
+.loading {
+    --bg-image: var(--body-image);
+    --animation-time: 4s;
+    --dot-size: 12px;
+    --dots-length: calc(7 * var(--dot-size));
+    --loading-width: 50vw;
+    width: var(--loading-width);
+    height: 15px;
+    
+    display: flex;
+    position: relative;
+    
+    overflow: hidden;
+
+    /* background-color:orange; */
+  /*   background: rgba(0,0,0,0.2); */
+    
+  }
+  .loading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--bg-image), transparent 10% 90%, var(--bg-image));
+  }
+  .loading > span {
+    display: inline-block;
+    position: absolute;
+    background: #aaa;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    top:1px;
+    --initial-left: 0px;
+  }
+  .loading > span:nth-child(1) {
+    --initial-left: 0px;
+    --animation-delay: calc(4/10 * var(--animation-time));
+  }
+  .loading > span:nth-child(2) {
+    --initial-left: calc(1.5 * var(--dot-size));
+    --animation-delay: calc(3/10 * var(--animation-time));
+  }
+  .loading > span:nth-child(3) {
+    --initial-left: calc(3 * var(--dot-size));
+    --animation-delay: calc(2/10 * var(--animation-time));
+  }
+  .loading > span:nth-child(4) {
+    --initial-left: calc(4.5 * var(--dot-size));
+    --animation-delay: calc(1/10 * var(--animation-time));
+  }
+  .loading > span:nth-child(5) {
+    --initial-left: calc(6 * var(--dot-size));
+    --animation-delay: calc(0/10 * var(--animation-time));
+  }
+  .loading > span {
+    animation: move var(--animation-time) cubic-bezier(0.3,1,0.5,0) infinite;
+    animation-delay: var(--animation-delay);
+    
+    left: calc(var(--initial-left) - var(--dots-length));
+  }
+  
+  @keyframes move {
+    50%, 100% {
+      left: calc(100% + var(--initial-left));
+    }
+  }
+  

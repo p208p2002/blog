@@ -7,39 +7,58 @@ import rehypeRaw from 'rehype-raw'
 
 const axios = require('axios');
 
-export default function MdRender({ file_link, maxLine=20 }) {
+export default function MdRender({ file_link, maxLine = 20 }) {
     const [content, setContent] = useState("")
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
+        setLoading(true)
         axios.get(file_link)
             .then((res) => {
-                const gistContent = res.data.split("\n").slice(1,maxLine).join("\n") // remove title
+                const gistContent = res.data.split("\n").slice(1, maxLine).join("\n") // remove title
                 setContent(gistContent)
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }, [])
     return (
         <div id="MD-Preview" className="md-preview">
-            <ReactMarkdown
-            rehypePlugins={[rehypeRaw]}
-            children={content}
-            components={{
-                code({ node, inline, className, children, ...props }) {
-                    const match = /language-(\w+)/.exec(className || '')
-                    return !inline && match ? (
-                        <SyntaxHighlighter
-                            children={String(children).replace(/\n$/, '')}
-                            style={codeSyntaxStyle}
-                            language={match[1]}
-                            PreTag="div"
-                            {...props}
-                        />
-                    ) : (
-                        <code className={className} {...props}>
-                            {children}
-                        </code>
-                    )
-                }
-            }}
-        />
+            {loading === true ? (
+                <div className="w-100 text-center">
+                <div className="loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    
+                </div>
+                <p className="pt-6">Loading...</p>
+                </div>
+            ) : (
+                <ReactMarkdown
+                    rehypePlugins={[rehypeRaw]}
+                    children={content}
+                    components={{
+                        code({ node, inline, className, children, ...props }) {
+                            const match = /language-(\w+)/.exec(className || '')
+                            return !inline && match ? (
+                                <SyntaxHighlighter
+                                    children={String(children).replace(/\n$/, '')}
+                                    style={codeSyntaxStyle}
+                                    language={match[1]}
+                                    PreTag="div"
+                                    {...props}
+                                />
+                            ) : (
+                                <code className={className} {...props}>
+                                    {children}
+                                </code>
+                            )
+                        }
+                    }}
+                />
+            )}
         </div>
     )
 }
