@@ -14,7 +14,7 @@ function PostBlock({ doc, children }) {
             <div className="post-header">
                 <div className="text-center">
                     <div style={{marginBottom:0}}>
-                        <a className='post-title' href={doc.page_link}>{title}</a>
+                        <a className='post-title text-blog_blue' href={doc.page_link}>{title}</a>
                     </div>
 
                     <div style={{marginBottom:8}}>

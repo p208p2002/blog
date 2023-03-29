@@ -25,10 +25,11 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "sh -c 'python build_index.py http://localhost:3000' && react-scripts start",
-    "build": "pip install -r  requirements.txt && python build_index.py && react-scripts build",
+    "start": "npm run build-twcss && sh -c 'python build_index.py http://localhost:3000' && react-scripts start",
+    "build": "npm run build-twcss && pip install -r  requirements.txt && python build_index.py && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-twcss":"npx tailwindcss -o src/tailwindcss.css"
   },
   "eslintConfig": {
     "extends": [
@@ -53,5 +54,8 @@
       "/"
     ],
     "inlineCss": true
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
   }
 }
