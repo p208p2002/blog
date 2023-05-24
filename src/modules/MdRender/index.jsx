@@ -8,6 +8,12 @@ import rehypeRaw from 'rehype-raw'
 import './index.css'
 import PyREPL from "../PyREPL";
 import ReactDOM from 'react-dom';
+
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+
+import 'katex/dist/katex.min.css' // `rehype-katex` does not import the CSS for you
+
 const axios = require('axios');
 
 // https://colab.research.google.com/github/p208p2002/blog/blob/main/public/docs/blog_gpt_gpt2_nlp/document.ipynb
@@ -102,6 +108,9 @@ export default function MdRender({ doc_id }) {
             .then(() => {
                 setHasNotebook(true)
             })
+            .catch(()=>{
+                setHasNotebook(false)
+            })
     }, [])
     return (
         <>
@@ -144,7 +153,8 @@ export default function MdRender({ doc_id }) {
 
             <div id="MD">
                 <ReactMarkdown
-                    rehypePlugins={[rehypeRaw]}
+                    remarkPlugins={[remarkMath]}
+                    rehypePlugins={[rehypeRaw,rehypeKatex]}
                     children={content}
                     components={{
                         code({ node, inline, className, children, ...props }) {
@@ -165,6 +175,7 @@ export default function MdRender({ doc_id }) {
                         }
                     }}
                 />
+            
                 <div className="footer w-100 text-center">
                     <small>歡迎打開<a target={'_blank'} href={`${GITHUB}/blog/issues`}> Issues </a>討論問題 \ (•◡•) /</small>
                 </div>

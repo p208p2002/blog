@@ -10,7 +10,7 @@ import { useEffect,useState } from 'react'
 
 
 
-function index() {
+function Index() {
     let dm = new Darkmode()
     
     useEffect(() => {
@@ -57,4 +57,4 @@ function index() {
     )
 }
 
-export default index
+export default Index
