@@ -14,9 +14,9 @@
             "補償",
             "delta",
             "進行",
+            "variance",
             "png",
-            "量化",
-            "我們"
+            "量化"
         ],
         "page_link": "https://blog.philip-huang.tech?page=1-bit_Adam",
         "file_link": "https://blog.philip-huang.tech/docs/1-bit_Adam/document.md",
