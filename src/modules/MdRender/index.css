@@ -1,5 +1,9 @@
 #MD {
-    line-height: 20px;
+    line-height: 26px;
+}
+
+#MD document-info{
+    color: #696969;
 }
 
 #MD ol {
@@ -23,7 +27,7 @@
 }
 
 #MD p{
-    line-height: 1.5;
+    line-height: 1.8;
     margin-bottom: 12px;
 }
 
@@ -41,6 +45,22 @@
     text-decoration-color: #3498DB;
     line-height: 60px;
     font-size: 28px;
+    margin-top: 20px;
+}
+
+#MD h3{
+    text-decoration: underline;
+    text-decoration-color: #88b8d8;
+    line-height: 40px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#MD h4{
+    text-decoration: underline;
+    text-decoration-color: #8d8c8c;
+    line-height: 40px;
+    font-size: 20px;
     margin-top: 20px;
 }
 
@@ -75,8 +95,8 @@
     background-color: #F2F3F4;
     padding: 1px 12px 1px 12px;
     font-size: smaller;
-    margin-left: 5%;
-    margin-right: 5%;
+    
+    
     margin-bottom: 12px;
     padding: 8px;
     padding-left: 12px;
@@ -101,3 +121,4 @@
     right: 5px;
     cursor: pointer;
 }
+
