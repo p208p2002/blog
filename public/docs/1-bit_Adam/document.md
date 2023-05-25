@@ -40,7 +40,7 @@ $v_{t+1}$ 這條式子則是衡量當前梯度與歷史梯度的**距離**(無�
 
 這個發現使得 1-bit Adam 能夠在 Adam 方差變得穩定後"凍結"它，然後在 1-bit 誤差補償和壓縮階段將其用作前提條件。
 
-#### SGD (Vaanilla SGD)
+#### SGD (Vanilla SGD)
 $x_{t+1} = x_t - \gamma g_t$
 
 #### Momentum SGD
