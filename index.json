@@ -1,5 +1,30 @@
 [
     {
+        "title": "1-bit Adam: Communication Efficient Large-Scale Training with Adam’s Convergence Speed",
+        "tags": [
+            "論文筆記",
+            "1-bit",
+            "Adam"
+        ],
+        "hidden_tags": [
+            "Adam",
+            "壓縮",
+            "bit",
+            "誤差",
+            "補償",
+            "delta",
+            "進行",
+            "png",
+            "量化",
+            "我們"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=1-bit_Adam",
+        "file_link": "https://blog.philip-huang.tech/docs/1-bit_Adam/document.md",
+        "date": "2023/05/24",
+        "_has_notebook": false,
+        "_sort_key": 20230524
+    },
+    {
         "title": "好用資料標記工具 Label Studio",
         "tags": [
             "label-studo",

@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{466:function(e,n,t){"use strict";(function(t){var o=function(){if("undefined"!==typeof self)return self;if("undefined"!==typeof window)return window;if("undefined"!==typeof t)return t;throw new Error("unable to locate global object")}();e.exports=n=o.fetch,o.fetch&&(n.default=o.fetch.bind(t)),n.Headers=o.Headers,n.Request=o.Request,n.Response=o.Response}).call(this,t(31))}}]);
-//# sourceMappingURL=3.f4071acd.chunk.js.map

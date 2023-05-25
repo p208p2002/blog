@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktrailer=self.webpackChunktrailer||[]).push([[359],{5359:function(e,t,n){var f=function(){if("undefined"!==typeof self)return self;if("undefined"!==typeof window)return window;if("undefined"!==typeof n.g)return n.g;throw new Error("unable to locate global object")}();e.exports=t=f.fetch,f.fetch&&(t.default=f.fetch.bind(f)),t.Headers=f.Headers,t.Request=f.Request,t.Response=f.Response}}]);
+//# sourceMappingURL=359.3482c2f0.chunk.js.map
