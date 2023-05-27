@@ -13,6 +13,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 import 'katex/dist/katex.min.css' // `rehype-katex` does not import the CSS for you
+import TOC from '../TableOfContent'
 
 const axios = require('axios');
 
@@ -180,6 +181,7 @@ export default function MdRender({ doc_id }) {
                     <small>歡迎打開<a target={'_blank'} href={`${GITHUB}/blog/issues`}> Issues </a>討論問題 \ (•◡•) /</small>
                 </div>
             </div>
+            <TOC/>
         </>
     )
 }

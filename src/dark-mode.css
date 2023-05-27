@@ -51,7 +51,7 @@ body.theme-dark{
 }
 
 .theme-dark #Search-Bar button[type=submit]{
-    background-color: var(--dark-text-color);
+    background-color: var(--dark-background-color);
 }
 
 
@@ -64,4 +64,14 @@ body.theme-dark{
 
 .theme-dark #MD-Preview a{
     color: var(--dark-text-color);
+}
+
+.theme-dark #TOC .activate-h2{
+    color: var(--dark-text-color);
+    text-decoration-color: #3498DB
+}
+
+.theme-dark #TOC .activate-h3{
+    color: var(--dark-text-color);
+    text-decoration-color: #88b8d8
 }
