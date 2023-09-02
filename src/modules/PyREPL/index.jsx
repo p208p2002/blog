@@ -93,6 +93,7 @@ function PyREPL({ script }) {
             setPyVersionInfo(runPython('import sys;sys.version'))
         }
         setUpMircopip()
+    // eslint-disable-next-line
     }, [pyodide])
 
 
@@ -104,6 +105,7 @@ function PyREPL({ script }) {
             setScripts(newScripts)
             saveRunResult(runPython(script))
         }
+    // eslint-disable-next-line
     }, [isReady])
 
     return (
