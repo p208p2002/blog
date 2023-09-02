@@ -14,6 +14,8 @@ import rehypeKatex from 'rehype-katex'
 
 import 'katex/dist/katex.min.css' // `rehype-katex` does not import the CSS for you
 import TOC from '../TableOfContent'
+import 'gitalk/dist/gitalk.css'
+import GitalkComponent from "gitalk/dist/gitalk-component";
 
 const axios = require('axios');
 
@@ -112,6 +114,7 @@ export default function MdRender({ doc_id }) {
             .catch(()=>{
                 setHasNotebook(false)
             })
+    // eslint-disable-next-line
     }, [])
     return (
         <>
@@ -177,8 +180,15 @@ export default function MdRender({ doc_id }) {
                     }}
                 />
             
-                <div className="footer w-100 text-center">
+                {/* <div className="footer w-100 text-center">
                     <small>歡迎打開<a target={'_blank'} href={`${GITHUB}/blog/issues`}> Issues </a>討論問題 \ (•◡•) /</small>
+                </div> */}
+                <div>
+                <GitalkComponent options={{
+                    clientID: "1026ba5908c2c038e457",
+                // ...
+                // options below
+                }} />
                 </div>
             </div>
             <TOC/>
