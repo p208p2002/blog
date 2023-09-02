@@ -198,6 +198,7 @@ export default function MdRender({ doc_id }) {
                 <div>
                 
                 {/* for comment render */}
+                <br />
                 <div id="comments"></div>
                 
                 </div>
