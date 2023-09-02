@@ -1,3 +1,4 @@
+# coding: utf8
 import glob
 import sys
 import json
@@ -92,14 +93,18 @@ if __name__ == "__main__":
                 if tag_name == 'tags':
                     value = value.split("#")
                     if value[0] == "":
-                        value.pop(0)
-                    
+                        value.pop(0)    
                 document_info[tag_name] = value
 
-            
-            file_link = urljoin(homepage,file).replace("/public","")
-            page_link = urljoin(homepage,os.path.dirname(file)).replace("/docs/","?page=").replace("/public","")
-            
+            if sys.platform == "win32":
+                file_link = urljoin(homepage,file).replace("/public","").replace("\\","/")
+                page_link = urljoin(homepage,os.path.dirname(file))\
+                    .replace("\\","/")\
+                    .replace("/docs/","?page=").replace("/public","")
+            else:
+                file_link = urljoin(homepage,file).replace("/public","")
+                page_link = urljoin(homepage,os.path.dirname(file)).replace("/docs/","?page=").replace("/public","")
+                
             # 日期不存在時，從git編輯紀錄取得
             document_date = document_info.get(
                 'date',
