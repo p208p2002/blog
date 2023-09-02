@@ -29,7 +29,7 @@ function Index() {
             <ul className='pl-4 pt-4 lg:pl-10 lg:pt-8 text-md'>
                 {
                     docTitles.map((docTitle, docTitleIdx) => {
-                        console.log(docTitle.getBoundingClientRect())
+                        // console.log(docTitle.getBoundingClientRect())
                         let eleStyle = docTitle.tagName === "H2" ? "cursor-pointer text-zinc-500" : "pl-3 cursor-pointer text-zinc-500"
                         if (docTitleIdx === activateIdx) {
                             if (docTitle.tagName === "H2") {
