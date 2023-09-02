@@ -715,8 +715,8 @@ video {
   }
 }
 
-@media (min-width: 1280px) {
-  .xl\:block {
+@media (min-width: 1536px) {
+  .\32xl\:block {
     display: block;
   }
 }

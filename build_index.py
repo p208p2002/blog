@@ -19,11 +19,18 @@ def create_index(doc_index):
         json.dump(doc_index,f,ensure_ascii=False,indent=4)
 
 def create_sitemap(doc_index,homepage):
+    unique_tags = []
     with open(os.path.join('public','sitemap.txt'),'w') as f:
         f.write(f"{homepage}\n")
         for doc in doc_index:
             f.write(f"{doc['page_link']}\n")
-
+            for tag in doc["tags"]:
+                if tag not in unique_tags:
+                    unique_tags.append(tag)
+        
+        for tag in unique_tags:
+            f.write(f"{homepage}?q={tag}\n")
+            
 def create_version():
     with open(os.path.join('public','_version.txt'),'w') as f:
         datestr = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
