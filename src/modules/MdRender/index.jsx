@@ -14,8 +14,9 @@ import rehypeKatex from 'rehype-katex'
 
 import 'katex/dist/katex.min.css' // `rehype-katex` does not import the CSS for you
 import TOC from '../TableOfContent'
+
 import 'gitalk/dist/gitalk.css'
-import GitalkComponent from "gitalk/dist/gitalk-component";
+import Gitalk from 'gitalk'
 
 const axios = require('axios');
 
@@ -116,6 +117,20 @@ export default function MdRender({ doc_id }) {
             })
     // eslint-disable-next-line
     }, [])
+
+    useEffect(()=>{
+        const gitalk = new Gitalk({
+            clientID: '1026ba5908c2c038e457',
+            clientSecret: 'e89b2d013165eed176f47ba9afa49cf27cd2b63f',
+            repo: 'blog',      // The repository of store comments,
+            owner: 'p208p2002',
+            admin: ['p208p2002'],
+            id: doc_id,      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+        gitalk.render("comments")
+    },[doc_id])
+
     return (
         <>
             <Helmet>
@@ -181,17 +196,10 @@ export default function MdRender({ doc_id }) {
                 />
               
                 <div>
-                {(doc_id !== undefined || doc_id !== "") &&
-                     <GitalkComponent options={{
-                        "clientID": "1026ba5908c2c038e457",
-                        "clientSecret": "e89b2d013165eed176f47ba9afa49cf27cd2b63f",
-                        "repo":"blog",
-                        "owner":"p208p2002",
-                        "admin":["p208p2002"],
-                        "id":doc_id
-                    }} />
-                }
-               
+                
+                {/* for comment render */}
+                <div id="comments"></div>
+                
                 </div>
             </div>
             <TOC/>
