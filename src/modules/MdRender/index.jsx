@@ -179,15 +179,13 @@ export default function MdRender({ doc_id }) {
                         }
                     }}
                 />
-            
-                {/* <div className="footer w-100 text-center">
-                    <small>歡迎打開<a target={'_blank'} href={`${GITHUB}/blog/issues`}> Issues </a>討論問題 \ (•◡•) /</small>
-                </div> */}
+              
                 <div>
                 <GitalkComponent options={{
-                    clientID: "1026ba5908c2c038e457",
-                // ...
-                // options below
+                    "clientID": "1026ba5908c2c038e457",
+                    "clientSecret": "e89b2d013165eed176f47ba9afa49cf27cd2b63f",
+                    "repo":"blog",
+                    "owner":"me@philip-huang.tech"
                 }} />
                 </div>
             </div>
