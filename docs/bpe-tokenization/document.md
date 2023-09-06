@@ -2,7 +2,7 @@
 
 <document-info>
 - tags: #論文筆記#gpt2#bpe#tokenizer#tokenization
-- date: 2023/09/6
+- date: 2023/09/06
 </document-info>
 
 論文連結: https://arxiv.org/abs/1508.07909
