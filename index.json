@@ -331,6 +331,33 @@
         "_sort_key": 20200101
     },
     {
+        "title": "Neural Machine Translation of Rare Words with Subword Units",
+        "tags": [
+            "論文筆記",
+            "gpt2",
+            "bpe",
+            "tokenizer",
+            "tokenization"
+        ],
+        "hidden_tags": [
+            "翻譯",
+            "BPE",
+            "vocab",
+            "step",
+            "你好",
+            "back",
+            "off",
+            "word",
+            "我們",
+            "out"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=bpe-tokenization",
+        "file_link": "https://blog.philip-huang.tech/docs/bpe-tokenization/document.md",
+        "date": "2023/09/6",
+        "_has_notebook": false,
+        "_sort_key": 2023096
+    },
+    {
         "title": "在Dockerfile與GitHub Action中安裝私有Python套件",
         "tags": [
             "dockerfile",
