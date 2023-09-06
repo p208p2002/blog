@@ -14,7 +14,7 @@
     "mobx": "^6.9.0",
     "mobx-react": "^8.0.0",
     "moment": "^2.29.1",
-    "pyodide": "^0.22.0",
+    "pyodide": "^0.23.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",

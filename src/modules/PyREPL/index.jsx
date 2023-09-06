@@ -65,7 +65,7 @@ function PyREPL({ script }) {
     // load/init pyodide
     useEffect(() => {
         loadPyodide({
-            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.22.0/full",
+            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full",
         }).then((pyodide) => {
             setPyodide(pyodide)
             // redirect the python std out to io.String
