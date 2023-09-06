@@ -15,6 +15,9 @@ import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css' // `rehype-katex` does not import the CSS for you
 import TOC from '../TableOfContent'
 
+import 'gitalk/dist/gitalk.css'
+import Gitalk from 'gitalk'
+
 const axios = require('axios');
 
 // https://colab.research.google.com/github/p208p2002/blog/blob/main/public/docs/blog_gpt_gpt2_nlp/document.ipynb
@@ -112,7 +115,22 @@ export default function MdRender({ doc_id }) {
             .catch(()=>{
                 setHasNotebook(false)
             })
+    // eslint-disable-next-line
     }, [])
+
+    useEffect(()=>{
+        const gitalk = new Gitalk({
+            clientID: '1026ba5908c2c038e457',
+            clientSecret: 'e89b2d013165eed176f47ba9afa49cf27cd2b63f',
+            repo: 'blog',      // The repository of store comments,
+            owner: 'p208p2002',
+            admin: ['p208p2002'],
+            id: doc_id,      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+        gitalk.render("comments")
+    },[doc_id])
+
     return (
         <>
             <Helmet>
@@ -176,9 +194,13 @@ export default function MdRender({ doc_id }) {
                         }
                     }}
                 />
-            
-                <div className="footer w-100 text-center">
-                    <small>歡迎打開<a target={'_blank'} href={`${GITHUB}/blog/issues`}> Issues </a>討論問題 \ (•◡•) /</small>
+              
+                <div>
+                
+                {/* for comment render */}
+                <br />
+                <div id="comments"></div>
+                
                 </div>
             </div>
             <TOC/>

@@ -3,7 +3,15 @@ import { POST_PRE_PAGE } from './configs/general'
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-const {page,offset=0,limit=POST_PRE_PAGE} = params
+let {page,offset=0,limit=POST_PRE_PAGE} = params
+
+if(typeof(offset) === 'string'){
+    offset = parseInt(offset)
+}
+
+if(typeof(limit) === 'string'){
+    limit = parseInt(limit)
+}
 
 export class AppState{
     isLoading = false

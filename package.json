@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "drkmd-js": "^1.0.12",
+    "gitalk": "^1.8.0",
+    "gitment": "^0.0.3",
     "mobx": "^6.9.0",
     "mobx-react": "^8.0.0",
     "moment": "^2.29.1",
