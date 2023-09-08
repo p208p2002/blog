@@ -41,6 +41,10 @@ body.theme-dark{
     color: var(--dark-code-text-color);
 }
 
+.theme-dark #MD pre{
+    background-color: rgb(45, 45, 45) !important; 
+}
+
 .theme-dark #MD pre code{
     /* fix color */
     background-color: rgb(45, 45, 45) !important; 

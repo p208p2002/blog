@@ -68,20 +68,31 @@
     max-width: 100%;
     overflow: auto;
     position: relative;
+    background-color: #F9FAFB;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+
+#MD code{
+    /* inline code */
+    background-color: #FCF3CF;
+    padding: 2px 4px 2px 4px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-family: monospace;
+    color: #f44336;
+}
+
+
+#MD pre code {
+    /* default style for code in <pre> */
+    background-color: #F9FAFB;
+    color: #515558;
 }
 
 #MD .cursor-pointer{
     cursor: pointer;
-}
-
-#MD code{
-    background-color: #FCF3CF;
-    /* padding: 0px 5px 0px 5px; */
-    box-sizing: border-box;
-    border-radius: 2px;
-    font-family: monospace;
-    /* font-size: larger; */
-    color: rgb(75, 75, 75);
 }
 
 #MD img{
@@ -118,7 +129,8 @@
 #MD .run-btn{
     color: white;
     position: absolute;
-    right: 5px;
+    right: 8px;
+    top: 3px;
     cursor: pointer;
 }
 
