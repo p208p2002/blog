@@ -2,16 +2,33 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import './index.css'
 
+let getTitleNodes=()=>{
+    let nodes = []
+    let targetNodeNames = ["h1","h2","h3"]
+    targetNodeNames.forEach((nodeName)=>{
+        let targetNodes = Array.from(document.querySelectorAll(nodeName))
+        targetNodes.forEach((node)=>{
+            nodes.push(node)
+        })
+    })
+    
+    // 依照元素位置排序
+    nodes.sort((a,b)=>{
+        return a.getBoundingClientRect().top - b.getBoundingClientRect().top
+    })
+
+    return nodes
+}
+
 function Index() {
-    let docTitles = Array.from(document.querySelectorAll("h2, h3"))
-    let [activateIdx, setActivateIdx] = useState(-1)
+    // let docTitles = Array.from(document.querySelectorAll("h1","h2", "h3"))
+    let docTitles = getTitleNodes()
+    
+    let [activateIdx, setActivateIdx] = useState(0)
 
     let handleScroll = () => {
-        let docTitles = Array.from(document.querySelectorAll("h2, h3"))
+        let docTitles = getTitleNodes()
         docTitles.forEach((docTitle, docTitleIdx) => {
-            if (docTitleIdx === 0 && docTitle.getBoundingClientRect().top > 0) {
-                setActivateIdx(-1)
-            }
             if (docTitle.getBoundingClientRect().top <=20) {
                 setActivateIdx(docTitleIdx)
             }
@@ -25,14 +42,14 @@ function Index() {
     }, [])
 
     return (
-        <div className='fixed hidden 2xl:block top-0 left-0' id="TOC">
-            <ul className='pl-4 pt-4 lg:pl-10 lg:pt-8 text-md'>
+        <div className='fixed top-0 left-0' id="TOC">
+            <ul className='pl-4 pt-4 lg:pl-10 lg:pt-8 text-md break-words hidden xl:block xl:w-72 2xl:w-96'>
                 {
                     docTitles.map((docTitle, docTitleIdx) => {
                         // console.log(docTitle.getBoundingClientRect())
-                        let eleStyle = docTitle.tagName === "H2" ? "cursor-pointer text-zinc-500" : "pl-3 cursor-pointer text-zinc-500"
+                        let eleStyle = docTitle.tagName === "H1" || docTitle.tagName === "H2" ? "cursor-pointer text-zinc-500" : "pl-3 cursor-pointer text-zinc-500"
                         if (docTitleIdx === activateIdx) {
-                            if (docTitle.tagName === "H2") {
+                            if (docTitle.tagName === "H1" || docTitle.tagName === "H2") {
                                 eleStyle += " underline activate-h2 decoration-2 underline-offset-2"
                             }
                             else {
