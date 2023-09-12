@@ -2,7 +2,7 @@
 
 <document-info>
 - tags: #gpu#fast-api#inference#optimize
-- date: 2022/09/12
+- date: 2023/09/12
 </document-info>
 
 GPU 推論是計算密集型任務，一個推論往往是秒鐘起跳，而 Fast API 對多個請求的處理主要是基於異步(async)，其本質是線程(threading)，也就是說在 Fast API 中直接執行推論任務會卡住其他請求。
