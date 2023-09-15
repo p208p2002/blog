@@ -66,7 +66,7 @@ async def use_global_porcess_pool():
 async def without_global_porcess_pool():
     return gen_text_from_gpt2()
 ```
-```
+```bash
 $ uvicorn main:app
 ```
 
