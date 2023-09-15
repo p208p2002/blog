@@ -10,14 +10,14 @@
         "hidden_tags": [
             "推論",
             "model",
-            "進程",
             "gp",
-            "請求",
+            "進程",
             "import",
             "max",
             "return",
             "-------",
-            "Fast"
+            "Fast",
+            "API"
         ],
         "page_link": "https://blog.philip-huang.tech?page=fast-api-gpu-inference",
         "file_link": "https://blog.philip-huang.tech/docs/fast-api-gpu-inference/document.md",
