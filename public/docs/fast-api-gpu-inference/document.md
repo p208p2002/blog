@@ -22,17 +22,11 @@ import asyncio
 import concurrent.futures
 from fastapi import FastAPI
 from transformers import GPT2Tokenizer,GPT2LMHeadModel
-import multiprocessing
+import multiprocessing as mp
 
-# 指定子進程建立方法
-try:
-    multiprocessing.set_start_method("spawn")
-except:
-    pass
-
-# 建立全域 ProcessPoolExecutor
 max_workers = 8
-global_pool = concurrent.futures.ProcessPoolExecutor(max_workers=max_workers)
+# 建立全域 ProcessPoolExecutor
+global_pool = concurrent.futures.ProcessPoolExecutor(max_workers=max_workers,mp_context=mp.get_context("spawn"))
 
 app = FastAPI()
 
@@ -61,8 +55,7 @@ def gen_text_from_gpt2():
 @app.get("/w_gp")
 async def use_global_porcess_pool():
     loop = asyncio.get_event_loop()
-    # 在路由中使用全域進程池
-    # 等待運算時，服務能夠響應其他請求
+    # 在路由中使用全域 ProcessPool
     result = await loop.run_in_executor(
         global_pool, 
         gen_text_from_gpt2
@@ -71,8 +64,10 @@ async def use_global_porcess_pool():
 
 @app.get("/wo_gp")
 async def without_global_porcess_pool():
-    # 推論時，不能夠響應其他請求
     return gen_text_from_gpt2()
+```
+```
+$ uvicorn main:app
 ```
 
 - `/w_gp`: 會建立一個子進程進行推論，這段期間不會阻塞主程式，而當進程池滿了，其他推論請求則必須等待。
