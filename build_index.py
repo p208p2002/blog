@@ -28,8 +28,8 @@ def create_sitemap(doc_index,homepage):
                 if tag not in unique_tags:
                     unique_tags.append(tag)
         
-        for tag in unique_tags:
-            f.write(f"{homepage}?q={tag}\n")
+        # for tag in unique_tags:
+            # f.write(f"{homepage}?q={tag}\n")
             
 def create_version():
     with open(os.path.join('public','_version.txt'),'w') as f:
