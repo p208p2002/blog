@@ -1,5 +1,30 @@
 [
     {
+        "title": "Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning",
+        "tags": [
+            "論文筆記",
+            "PEFT",
+            "IA3"
+        ],
+        "hidden_tags": [
+            "ICL",
+            "PEFT",
+            "訓練",
+            "模型",
+            "微調",
+            "Few",
+            "參數",
+            "選擇",
+            "###",
+            "hat"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=IA3",
+        "file_link": "https://blog.philip-huang.tech/docs/IA3/document.md",
+        "date": "2023/12/05",
+        "_has_notebook": false,
+        "_sort_key": 20231205
+    },
+    {
         "title": "Fast API GPU 推論性能優化",
         "tags": [
             "gpu",
