@@ -43,7 +43,7 @@ function Index() {
 
     return (
         <div className='fixed top-0 left-0' id="TOC">
-            <ul className='pl-4 pt-4 lg:pl-10 lg:pt-8 text-md break-words hidden xl:block xl:w-72 2xl:w-96'>
+            <ul className='pl-4 pt-4 lg:pl-10 lg:pt-8 text-sm break-words hidden xl:block xl:w-72 2xl:w-96'>
                 {
                     docTitles.map((docTitle, docTitleIdx) => {
                         // console.log(docTitle.getBoundingClientRect())

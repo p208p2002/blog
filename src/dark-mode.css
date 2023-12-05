@@ -31,6 +31,10 @@ body.theme-dark{
     color: white !important;
 }
 
+.theme-dark #MD {
+    color: var(--dark-text-color);
+}
+
 .theme-dark #MD blockquote{
     background-color: var(--dark-blockquote-background-color) !important;
     color: var(--dark-blockquote-text-color) !important;   

@@ -631,6 +631,10 @@ video {
   cursor: pointer;
 }
 
+.break-words {
+  overflow-wrap: break-word;
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -729,8 +733,18 @@ video {
   }
 }
 
-@media (min-width: 1536px) {
-  .\32xl\:block {
+@media (min-width: 1280px) {
+  .xl\:block {
     display: block;
+  }
+
+  .xl\:w-72 {
+    width: 18rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:w-96 {
+    width: 24rem;
   }
 }
