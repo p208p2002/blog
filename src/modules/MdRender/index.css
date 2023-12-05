@@ -3,6 +3,12 @@
     color: rgb(17, 24, 39);
 }
 
+#MD a{
+    color: #3563bd;
+    text-decoration: underline;
+    text-decoration-color: #3563bd;
+}
+
 #MD document-info{
     color: #696969;
 }
