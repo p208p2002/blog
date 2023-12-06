@@ -7,12 +7,12 @@
 
 ## 特色
 - 沒有繁瑣的設定與編輯器，專注文章寫作與分享
-- 無伺服計算 (Serverless) 的部落格系統
+- Serverless 的部落格系統
 - 簡潔與清晰的頁面設計
+- 支援並且針對 Dark-mode 最佳化
 - 支援 MarkDown (.md) 與 Notebook (.ipynb)
-- 運用 WebAssembly 與 Pyodide 可立即執行文章中 Python 程式區塊
+- 運用 WebAssembly 與 Pyodide 可在網頁環境中執行文章內的 Python 程式區塊
     > [透過瀏覽器執行 Python 程式碼](https://blog.philip-huang.tech/?page=blog-update-230116)
-- 連結 Google Colab，可立即使用文章範例
 
 ## 運作方式
 這個部落格利用了GitHub Pages提供的靜態網頁空間，並且搭配GitHub Workflow功能在程式碼變動或文章更新時自動重新部署。
