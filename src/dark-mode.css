@@ -1,6 +1,6 @@
 :root {
     --dark-background-color: #343a40;
-    --dark-text-color: #d3dbe2;
+    --dark-text-color: #d4dbe0;
     --dark-text-color-2: #e0e1dd;
     --dark-h1-color: #d9dee2;
     --dark-blockquote-background-color: #626468;
@@ -9,11 +9,14 @@
     --dark-code-text-color: #ced4da;
 }
 
-
 body.theme-dark{
     background-color: var(--dark-background-color);
     color: var(--dark-text-color);
 }
+
+.theme-dark img {
+    filter: invert(85%);
+} 
 
 .theme-dark .home-page-title{
     color: var(--dark-text-color-2) !important;
@@ -31,8 +34,9 @@ body.theme-dark{
     color: white !important;
 }
 
+.theme-dark #MD > document-info,
 .theme-dark #MD {
-    color: var(--dark-text-color);
+    color: var(--dark-text-color) !important;
 }
 
 .theme-dark #MD blockquote{
