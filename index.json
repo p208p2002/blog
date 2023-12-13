@@ -15,9 +15,9 @@
             "token",
             "訓練",
             "prefix",
+            "rate",
             "預訓練",
-            "學習",
-            "suffix"
+            "學習"
         ],
         "page_link": "https://blog.philip-huang.tech?page=fill-in-middle",
         "file_link": "https://blog.philip-huang.tech/docs/fill-in-middle/document.md",
