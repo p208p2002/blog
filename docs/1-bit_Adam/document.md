@@ -1,4 +1,4 @@
-# 論文筆記 1-bit Adam: Communication Efficient Large-Scale Training with Adam’s Convergence Speed
+# 1-bit Adam: Communication Efficient Large-Scale Training with Adam’s Convergence Speed
 
 <document-info>
 - tags: #論文筆記#1-bit#Adam

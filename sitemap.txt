@@ -1,4 +1,5 @@
 https://blog.philip-huang.tech
+https://blog.philip-huang.tech?page=fill-in-middle
 https://blog.philip-huang.tech?page=IA3
 https://blog.philip-huang.tech?page=fast-api-gpu-inference
 https://blog.philip-huang.tech?page=bpe-tokenization
