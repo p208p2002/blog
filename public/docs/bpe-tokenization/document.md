@@ -1,4 +1,4 @@
-# Neural Machine Translation of Rare Words with Subword Units
+# 論文筆記 Neural Machine Translation of Rare Words with Subword Units
 
 <document-info>
 - tags: #論文筆記#gpt2#bpe#tokenizer#tokenization
