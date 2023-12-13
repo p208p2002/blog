@@ -1,6 +1,6 @@
 [
     {
-        "title": "Efficient Training of Language Models to Fill in the Middle",
+        "title": "論文筆記 Efficient Training of Language Models to Fill in the Middle",
         "tags": [
             "論文筆記",
             "FIM",
@@ -26,7 +26,7 @@
         "_sort_key": 20231213
     },
     {
-        "title": "Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning",
+        "title": "論文筆記 Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning",
         "tags": [
             "論文筆記",
             "PEFT",
@@ -77,7 +77,7 @@
         "_sort_key": 20230912
     },
     {
-        "title": "Neural Machine Translation of Rare Words with Subword Units",
+        "title": "論文筆記 Neural Machine Translation of Rare Words with Subword Units",
         "tags": [
             "論文筆記",
             "gpt2",
@@ -104,7 +104,7 @@
         "_sort_key": 20230906
     },
     {
-        "title": "1-bit Adam: Communication Efficient Large-Scale Training with Adam’s Convergence Speed",
+        "title": "論文筆記 1-bit Adam: Communication Efficient Large-Scale Training with Adam’s Convergence Speed",
         "tags": [
             "論文筆記",
             "1-bit",
