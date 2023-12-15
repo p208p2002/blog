@@ -1,5 +1,33 @@
 [
     {
+        "title": "概覽 Parameter-Efficient Fine-Tuning (PEFT)",
+        "tags": [
+            "peft",
+            "overview",
+            "LLM",
+            "fine-tune",
+            "LoRA",
+            "Adapter"
+        ],
+        "hidden_tags": [
+            "參數",
+            "image",
+            "模型",
+            "png",
+            "####",
+            "https",
+            "Tuning",
+            "訓練",
+            "tuning",
+            "ICL"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=peft-overview",
+        "file_link": "https://blog.philip-huang.tech/docs/peft-overview/document.md",
+        "date": "2023/12/15",
+        "_has_notebook": false,
+        "_sort_key": 20231215
+    },
+    {
         "title": "論文筆記 Efficient Training of Language Models to Fill in the Middle",
         "tags": [
             "論文筆記",
