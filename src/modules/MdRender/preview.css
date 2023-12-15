@@ -22,6 +22,10 @@
     line-height: 0px;
 }
 
+#MD-Preview img{
+  visibility: hidden;
+}
+
 /* Loading */
 .loading {
     --bg-image: var(--body-image);
