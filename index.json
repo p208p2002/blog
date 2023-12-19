@@ -1,5 +1,31 @@
 [
     {
+        "title": "設定聊天模板讓 chat model 更好用",
+        "tags": [
+            "chat-template",
+            "transformers",
+            "LLM",
+            "chat-model"
+        ],
+        "hidden_tags": [
+            "chat",
+            "template",
+            "content",
+            "role",
+            "tokenizer",
+            "user",
+            "system",
+            "assistant",
+            "message",
+            "prompt"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=chat-template",
+        "file_link": "https://blog.philip-huang.tech/docs/chat-template/document.md",
+        "date": "2023/12/19",
+        "_has_notebook": false,
+        "_sort_key": 20231219
+    },
+    {
         "title": "概覽 Parameter-Efficient Fine-Tuning (PEFT)",
         "tags": [
             "peft",
