@@ -9,7 +9,7 @@
 
 許多第三方的部屬框架 (如: vllm, openllm) 也已經開始支援這個屬性，但如果沒有設置 `.chat_template` 則會使用 `.default_chat_template` ，需要特別注意。
 
-> 這些框架號稱支援多種不同模型與 `chat_template` ，但以 [chatglm3](https://huggingface.co/THUDM/chatglm3-6b) 和 [vllm](https://github.com/vllm-project/vllm/blob/main/vllm/entrypoints/openai/api_server.py) 舉例來說，就會發現因為 chatglm3 的 `chat_template` 缺失，導致套用到非正確的聊天模板。
+> 部份框架號稱支援多種不同模型與 `chat_template` ，但以 [chatglm3](https://huggingface.co/THUDM/chatglm3-6b) 和 [vllm](https://github.com/vllm-project/vllm/blob/main/vllm/entrypoints/openai/api_server.py) 舉例來說，就會發現因為 chatglm3 並沒有提供 `chat_template` ，導致套用到非正確的聊天模板。
 
 ### chatglm3 聊天模板
 chatglm3是能力不錯的中文 chat model，不過目前尚未提供 `.chat_template` ，使用起來不太方便:
@@ -137,7 +137,7 @@ print(official_result:=tokenizer.decode(tokenizer.build_chat_input(query=message
  Can I ask a question?<|assistant|>
 ```
 
-現在是 `jinja_template` 與 `.build_chat_input` 對齊了:)
+現在 `jinja_template` 與 `.build_chat_input` 對齊了:)
 
 ##### 模板除錯
 用肉眼一個一個比對太累了，直接使用difflib比較兩組字串差異。
