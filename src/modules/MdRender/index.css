@@ -1,6 +1,6 @@
 #MD {
     line-height: 26px;
-    color: rgb(17, 24, 39);
+    color: rgb(72, 72, 72);
 }
 
 #MD a{
@@ -83,12 +83,12 @@
 
 #MD code{
     /* inline code */
-    background-color: #FCF3CF;
+    background-color: #f2f1f1;
     padding: 2px 4px 2px 4px;
     box-sizing: border-box;
     border-radius: 2px;
     font-family: monospace;
-    color: #f44336;
+    color: #1b1b1b;
 }
 
 
