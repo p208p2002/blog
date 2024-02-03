@@ -34,6 +34,14 @@
     padding-left: 40px;
 }
 
+#App a{
+    color: #3563bd;
+}
+  
+#App a:link{
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
     #App .context {
         width: 100%;
