@@ -30,7 +30,7 @@ function Index() {
               <Helmet>
                 <meta charSet="utf-8" />
                 <title>{BLOG_NAME}</title>
-                <meta name="description" content="💻 順手整理的程式技術,自然語言處理和論文筆記 🛠️" />
+                <meta name="description" content="💻 程式技術、自然語言處理和論文筆記 🛠️" />
               </Helmet>
               <App />
               <CornerMenu />
