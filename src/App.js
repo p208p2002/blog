@@ -42,7 +42,7 @@ function App() {
   return (
     <div id="App">
       <div style={{marginTop:40}} className="text-center">
-        <h1><a href="/" className="home-page-title font-bold">{BLOG_NAME}</a></h1>
+        <h1><a href="/" className="home-page-title font-medium">{BLOG_NAME}</a></h1>
         <Search setPosts={setPosts} fullIndex={fullIndex}/>
       </div>
       
