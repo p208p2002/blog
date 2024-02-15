@@ -32,7 +32,7 @@ body.theme-dark{
 }
 
 .theme-dark a {
-    color: var(--dark-text-color-2);
+    color: var(--dark-text-color-2) !important;
 }
 
 .theme-dark small{
