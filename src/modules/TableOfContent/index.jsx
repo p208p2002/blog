@@ -47,7 +47,7 @@ function Index() {
                 {
                     docTitles.map((docTitle, docTitleIdx) => {
                         // console.log(docTitle.getBoundingClientRect())
-                        let eleStyle = docTitle.tagName === "H1" || docTitle.tagName === "H2" ? "cursor-pointer text-zinc-500" : "pl-3 cursor-pointer text-zinc-500"
+                        let eleStyle = docTitle.tagName === "H1" || docTitle.tagName === "H2" ? "cursor-pointer text-zinc-500" : "ml-5 cursor-pointer text-zinc-500 list-disc"
                         if (docTitleIdx === activateIdx) {
                             if (docTitle.tagName === "H1" || docTitle.tagName === "H2") {
                                 eleStyle += " underline activate-h2 decoration-2 underline-offset-2"
