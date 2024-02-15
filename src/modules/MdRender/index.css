@@ -71,6 +71,26 @@
     margin-top: 20px;
 }
 
+#MD h5{
+    text-decoration: underline;
+    text-decoration-color: #8d8c8c;
+    line-height: 40px;
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+#MD h6{
+    text-decoration: none;
+    text-decoration-color: #8d8c8c;
+    line-height: 40px;
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
 #MD pre{
     max-width: 100%;
     overflow: auto;
