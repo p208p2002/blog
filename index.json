@@ -1,5 +1,31 @@
 [
     {
+        "title": "Azuer ML Studio GPU Cluster 使用體驗",
+        "tags": [
+            "gpu-cluster",
+            "multi-node-training",
+            "LLM",
+            "model-training"
+        ],
+        "hidden_tags": [
+            "ML",
+            "環境",
+            "Azure",
+            "資料",
+            "Studio",
+            "python",
+            "image",
+            "azureml",
+            "node",
+            "####"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=az-multi-node-training",
+        "file_link": "https://blog.philip-huang.tech/docs/az-multi-node-training/document.md",
+        "date": "2024/02/15",
+        "_has_notebook": false,
+        "_sort_key": 20240215
+    },
+    {
         "title": "設定聊天模板讓 chat model 更好用",
         "tags": [
             "chat-template",
