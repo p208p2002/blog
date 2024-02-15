@@ -15,14 +15,14 @@ function App() {
   let [fullIndex, setFullIndex] = useState([])
   let [posts, setPosts] = useState([])
   let appState = useContext(AppStateContext)
-  let {offset,limit} = appState
-  
+  let { offset, limit } = appState
+
   let fetchPost = () => {
     appState.setLoading(true)
     axios.get("/index.json")
       .then((res) => {
         posts = res.data
-        posts = posts.slice(offset,limit)
+        posts = posts.slice(offset, limit)
         setPosts(posts)
         setFullIndex(res.data)
       })
@@ -36,30 +36,39 @@ function App() {
 
   useEffect(() => {
     fetchPost()
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [])
 
   return (
     <div id="App">
-      <div style={{marginTop:40}} className="text-center">
-        <h1><a href="/" className="home-page-title font-medium">{BLOG_NAME}</a></h1>
-        <Search setPosts={setPosts} fullIndex={fullIndex}/>
+      <div style={{ marginTop: 40 }} className="text-center">
+        <h1>
+          <a href="/" className="home-page-title font-medium">
+            <span className='blog-icon'>
+              {'>_'}
+            </span>
+            &nbsp;
+            {BLOG_NAME}
+          </a>
+        </h1>
+        <small className='text-slate-700'>程式技術、自然語言處理和論文筆記</small>
+        <Search setPosts={setPosts} fullIndex={fullIndex} />
       </div>
-      
+
       <div className="context">
         {posts.map((post, i) => (
           <PostBlock key={i} doc={post} >
-            <MDPreviewer file_link={post.file_link}  maxLine={12}/>
+            <MDPreviewer file_link={post.file_link} maxLine={12} />
           </PostBlock>
         ))}
       </div>
-      
-      <div style={{textAlign:'center',marginBottom:40}}>
-      <a href="/">{`<<Fisrt Page`}</a>
-      <span style={{marginLeft:5,marginRight:5}}> - </span>
-      <a href={`/?offset=${offset+POST_PRE_PAGE}&limit=${offset+POST_PRE_PAGE*2}`}>{'Older Post >>'}</a>
+
+      <div style={{ textAlign: 'center', marginBottom: 40 }}>
+        <a href="/">{`<<Fisrt Page`}</a>
+        <span style={{ marginLeft: 5, marginRight: 5 }}> - </span>
+        <a href={`/?offset=${offset + POST_PRE_PAGE}&limit=${offset + POST_PRE_PAGE * 2}`}>{'Older Post >>'}</a>
       </div>
-      <br/>
+      <br />
     </div>
   );
 }
