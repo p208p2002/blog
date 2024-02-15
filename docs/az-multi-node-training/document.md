@@ -192,4 +192,4 @@ returned_job = ml_client.jobs.create_or_update(job)
 如果有掛載**資料存放區**可以直接瀏覽或下載儲存區上的資料：
 ![image](./7.png)
 
-至此我們已經成功使用 AZ GPU Cluster 進行訓練。
+至此我們已經成功使用 Azure GPU Cluster 進行訓練。
