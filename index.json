@@ -1,6 +1,6 @@
 [
     {
-        "title": "Azuer ML Studio GPU Cluster 使用體驗",
+        "title": "Azure ML Studio GPU Cluster 使用體驗",
         "tags": [
             "gpu-cluster",
             "multi-node-training",
@@ -8,9 +8,9 @@
             "model-training"
         ],
         "hidden_tags": [
+            "Azure",
             "ML",
             "環境",
-            "Azure",
             "資料",
             "Studio",
             "python",

@@ -1,4 +1,4 @@
-# Azuer ML Studio GPU Cluster 使用體驗
+# Azure ML Studio GPU Cluster 使用體驗
 
 <document-info>
 - tags: #gpu-cluster#multi-node-training#LLM#model-training
