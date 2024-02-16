@@ -52,7 +52,8 @@
     text-decoration-color: #3498DB;
     line-height: 60px;
     font-size: 28px;
-    margin-top: 20px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 #MD h3{
@@ -60,7 +61,8 @@
     text-decoration-color: #88b8d8;
     line-height: 40px;
     font-size: 24px;
-    margin-top: 20px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 #MD h4{
@@ -68,7 +70,8 @@
     text-decoration-color: #8d8c8c;
     line-height: 40px;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 #MD h5{
@@ -85,8 +88,8 @@
     text-decoration: none;
     text-decoration-color: #8d8c8c;
     line-height: 40px;
-    font-size: 16px;
-    margin-top: 16px;
+    font-size: 14px;
+    margin-top: 14px;
     margin-bottom: 16px;
     font-weight: 500;
 }
