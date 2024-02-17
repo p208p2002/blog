@@ -2,18 +2,18 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import './index.css'
 
-let getTitleNodes=()=>{
+let getTitleNodes = () => {
     let nodes = []
-    let targetNodeNames = ["h1","h2","h3"]
-    targetNodeNames.forEach((nodeName)=>{
+    let targetNodeNames = ["h1", "h2", "h3"]
+    targetNodeNames.forEach((nodeName) => {
         let targetNodes = Array.from(document.querySelectorAll(nodeName))
-        targetNodes.forEach((node)=>{
+        targetNodes.forEach((node) => {
             nodes.push(node)
         })
     })
-    
+
     // 依照元素位置排序
-    nodes.sort((a,b)=>{
+    nodes.sort((a, b) => {
         return a.getBoundingClientRect().top - b.getBoundingClientRect().top
     })
 
@@ -23,13 +23,13 @@ let getTitleNodes=()=>{
 function Index() {
     // let docTitles = Array.from(document.querySelectorAll("h1","h2", "h3"))
     let docTitles = getTitleNodes()
-    
+
     let [activateIdx, setActivateIdx] = useState(0)
 
     let handleScroll = () => {
         let docTitles = getTitleNodes()
         docTitles.forEach((docTitle, docTitleIdx) => {
-            if (docTitle.getBoundingClientRect().top <=20) {
+            if (docTitle.getBoundingClientRect().top <= 20) {
                 setActivateIdx(docTitleIdx)
             }
         })
@@ -58,6 +58,7 @@ function Index() {
 
                         }
                         return <li
+                            key={docTitleIdx}
                             onClick={(e) => {
                                 e.preventDefault()
                                 docTitle.scrollIntoView({ behavior: "smooth" })

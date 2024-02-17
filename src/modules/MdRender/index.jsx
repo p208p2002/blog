@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB, GITHUB_USER_CONTENT_PREFIX } from '../../configs/general'
+// import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB, GITHUB_USER_CONTENT_PREFIX } from '../../configs/general'
+import { BLOG_NAME, IMG_FILE_PREFIX } from '../../configs/general'
 import { Helmet } from 'react-helmet'
 import rehypeRaw from 'rehype-raw'
 import './index.css'
@@ -28,12 +29,30 @@ function fixImgLink(content, doc_id) {
     return content
 }
 
+function parseDocumentInfo(documentInfoText) {
+    let documentInfo = {}
+    let lines = documentInfoText.split("\n")
+    lines = lines.slice(1, lines.length - 1)
+    lines.forEach((line) => {
+        let kv = line.split(":")
+        let k = kv[0].replace("-", "").trim()
+        let v = kv[1].trim()
+        if (k === "tags") {
+            v = v.split("#")
+            v.shift()
+        }
+        documentInfo[k] = v
+    })
+    return documentInfo
+}
+
 export default function MdRender({ doc_id }) {
     const [content, setContent] = useState("")
+    const [documentInfo, setDocumentInfo] = useState("")
     const [pageTitle, setPageTitle] = useState(BLOG_NAME)
     const [postTitle, setPostTitle] = useState("")
     const [pageDescription, setPageDescription] = useState("")
-    const [hasNotebook, setHasNotebook] = useState(false)
+    // const [hasNotebook, setHasNotebook] = useState(false)
 
     useEffect(() => {
         let supportLangs = ['python']
@@ -100,7 +119,11 @@ export default function MdRender({ doc_id }) {
         axios.get(`/docs/${doc_id}/document.md`)
             .then((res) => {
                 const gistTitle = res.data.split("\n")[0].replace("# ", "")
-                const gistContent = fixImgLink(res.data, doc_id).replace(`# ${gistTitle}`, "")
+                let gistContent = fixImgLink(res.data, doc_id).replace(`# ${gistTitle}`, "")
+                const documentInfoText = gistContent.match(/<document-info>((.|\n)*)<\/document-info>/)[0]
+                gistContent = gistContent.replace(/<document-info>((.|\n)*)<\/document-info>/, "")
+
+                setDocumentInfo(parseDocumentInfo(documentInfoText))
                 setContent(gistContent)
                 setPostTitle(gistTitle)
                 setPageTitle(`${gistTitle} - ${BLOG_NAME}`)
@@ -108,17 +131,17 @@ export default function MdRender({ doc_id }) {
             })
 
         // test notebook exist
-        axios.get(`/docs/${doc_id}/document.ipynb`)
-            .then(() => {
-                setHasNotebook(true)
-            })
-            .catch(()=>{
-                setHasNotebook(false)
-            })
-    // eslint-disable-next-line
+        // axios.get(`/docs/${doc_id}/document.ipynb`)
+        //     .then(() => {
+        //         setHasNotebook(true)
+        //     })
+        //     .catch(() => {
+        //         setHasNotebook(false)
+        //     })
+        // eslint-disable-next-line
     }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         const gitalk = new Gitalk({
             clientID: '1026ba5908c2c038e457',
             clientSecret: 'e89b2d013165eed176f47ba9afa49cf27cd2b63f',
@@ -129,7 +152,9 @@ export default function MdRender({ doc_id }) {
             distractionFreeMode: false  // Facebook-like distraction free mode
         })
         gitalk.render("comments")
-    },[doc_id])
+    }, [doc_id])
+
+    let { date = "", tags = [] } = documentInfo
 
     return (
         <>
@@ -149,7 +174,19 @@ export default function MdRender({ doc_id }) {
             </Helmet>
             <br />
             <h1 className="text-3xl font-bold mb-3">{postTitle}</h1>
+            <div className="document-info">
+                <div className="post-date text-zinc-500">
+                    日期:&nbsp;{date}
+                </div>
+                <div className="post-tags text-zinc-500">
+                    標籤:&nbsp;
+                    {tags.map((tag, i) => {
+                        return <span className="post-tag" key={i}>{tag}</span>
+                    })}
+                </div>
 
+            </div>
+            {/* 
             <span className="w-100">
 
                 <a href={`${GITHUB}/blog/tree/main/public/docs/${doc_id}`} target="_blank" rel="noopener noreferrer">
@@ -168,12 +205,12 @@ export default function MdRender({ doc_id }) {
                     <></>
                 }
 
-            </span>
+            </span> */}
 
             <div id="MD">
                 <ReactMarkdown
                     remarkPlugins={[remarkMath]}
-                    rehypePlugins={[rehypeRaw,rehypeKatex]}
+                    rehypePlugins={[rehypeRaw, rehypeKatex]}
                     children={content}
                     components={{
                         code({ node, inline, className, children, ...props }) {
@@ -194,16 +231,16 @@ export default function MdRender({ doc_id }) {
                         }
                     }}
                 />
-              
+
                 <div>
-                
-                {/* for comment render */}
-                <br />
-                <div id="comments"></div>
-                
+
+                    {/* for comment render */}
+                    <br />
+                    <div id="comments"></div>
+
                 </div>
             </div>
-            <TOC/>
+            <TOC />
         </>
     )
 }

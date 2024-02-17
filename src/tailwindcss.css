@@ -591,8 +591,8 @@ video {
   top: 0px;
 }
 
-.mb-5 {
-  margin-bottom: 1.25rem;
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .ml-5 {
@@ -631,6 +631,10 @@ video {
   display: none;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -641,6 +645,10 @@ video {
 
 .break-words {
   overflow-wrap: break-word;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 
 .bg-gray-100 {

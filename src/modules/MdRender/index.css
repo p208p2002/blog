@@ -1,3 +1,18 @@
+.document-info{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.document-info .post-tag{
+    background-color: #a0a0a0;
+    color: #F9FAFB;
+    margin-right: 5px;
+    font-size: 12px;
+    padding: 2px 6px 2px 6px;
+    border-radius: 3px;
+}
+
 #MD {
     line-height: 26px;
     color: rgb(72, 72, 72);
@@ -178,14 +193,6 @@
 
 #MD blockquote p {
     margin-bottom: 0px;
-}
-
-#MD document-info {
-    display: block;
-    font-family: monospace;
-    white-space: pre;
-    overflow: hidden;
-    margin-bottom: 25px;
 }
 
 #MD .run-btn {
