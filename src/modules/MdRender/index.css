@@ -108,7 +108,7 @@
 #MD pre {
     max-width: 100%;
     position: relative;
-    background-color: #F9FAFB;
+    background-color: rgb(45, 45, 45) !important; 
     margin-bottom: 25px;
 }
 
@@ -123,8 +123,8 @@
 }
 
 #MD pre>code {
-    background-color: #F9FAFB;
-    color: #515558;
+    background-color: rgb(45, 45, 45) !important; 
+    color: rgb(204, 204, 204);
     position: relative;
     left: 8px;
 }
