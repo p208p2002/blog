@@ -145,6 +145,24 @@
     padding-right: 2px;
 }
 
+#MD blockquote{
+    position: relative;
+    margin-top: 25px;
+}
+#MD blockquote::before{
+    content: "! Note";
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background-color: #a0a0a0;
+    text-align: left;
+    line-height: 10px;
+    font-size: 8px;
+    color: #F9FAFB;
+    padding-left: 2px;
+}
 
 /* width */
 #MD pre ::-webkit-scrollbar {
