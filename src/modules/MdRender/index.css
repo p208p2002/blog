@@ -9,10 +9,6 @@
     text-decoration-color: #3563bd;
 }
 
-#MD document-info {
-    color: #696969;
-}
-
 #MD ol {
     display: block;
     list-style-type: decimal;
@@ -188,8 +184,8 @@
     display: block;
     font-family: monospace;
     white-space: pre;
-    margin: 1em 0;
     overflow: hidden;
+    margin-bottom: 25px;
 }
 
 #MD .run-btn {

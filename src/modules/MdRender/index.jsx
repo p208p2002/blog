@@ -148,16 +148,16 @@ export default function MdRender({ doc_id }) {
 
             </Helmet>
             <br />
-            <h1 className="text-3xl font-bold mb-5">{postTitle}</h1>
+            <h1 className="text-3xl font-bold mb-3">{postTitle}</h1>
 
             <span className="w-100">
 
                 <a href={`${GITHUB}/blog/tree/main/public/docs/${doc_id}`} target="_blank" rel="noopener noreferrer">
-                    <img className="mr-2 inline-block" src="https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=%23181717&color=gray" alt="" srcSet="" />
+                    <img className="mr-2 inline-block rounded-sm h-5" src="https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=%23181717&color=gray" alt="" srcSet="" />
                 </a>
 
                 <a href={`${GITHUB_USER_CONTENT_PREFIX}/docs/${doc_id}/document.md`}>
-                    <img className="mr-2 inline-block" src="https://img.shields.io/badge/document-000?style=for-the-badge&logo=markdown&color=gray" alt="" srcSet="" />
+                    <img className="mr-2 inline-block rounded-sm h-5" src="https://img.shields.io/badge/document-000?style=for-the-badge&logo=markdown&color=gray" alt="" srcSet="" />
                 </a>
 
                 {hasNotebook ?
