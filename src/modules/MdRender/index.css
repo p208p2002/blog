@@ -3,13 +3,13 @@
     color: rgb(72, 72, 72);
 }
 
-#MD a{
+#MD a {
     color: #3563bd;
     text-decoration: underline;
     text-decoration-color: #3563bd;
 }
 
-#MD document-info{
+#MD document-info {
     color: #696969;
 }
 
@@ -33,21 +33,21 @@
     padding-left: 40px;
 }
 
-#MD p{
+#MD p {
     line-height: 1.8;
     margin-bottom: 12px;
 }
 
-#MD .footer{
+#MD .footer {
     color: gray;
     margin-top: 60px;
 }
 
-#MD .footer a{
+#MD .footer a {
     color: #6699FF;
 }
 
-#MD h2{
+#MD h2 {
     text-decoration: underline;
     text-decoration-color: #3498DB;
     line-height: 60px;
@@ -56,7 +56,7 @@
     margin-bottom: 18px;
 }
 
-#MD h3{
+#MD h3 {
     text-decoration: underline;
     text-decoration-color: #88b8d8;
     line-height: 40px;
@@ -65,7 +65,7 @@
     margin-bottom: 18px;
 }
 
-#MD h4{
+#MD h4 {
     text-decoration: underline;
     text-decoration-color: #8d8c8c;
     line-height: 40px;
@@ -74,7 +74,7 @@
     margin-bottom: 18px;
 }
 
-#MD h5{
+#MD h5 {
     text-decoration: underline;
     text-decoration-color: #8d8c8c;
     line-height: 40px;
@@ -84,7 +84,7 @@
     font-weight: 500;
 }
 
-#MD h6{
+#MD h6 {
     text-decoration: none;
     text-decoration-color: #8d8c8c;
     line-height: 40px;
@@ -94,17 +94,15 @@
     font-weight: 500;
 }
 
-#MD pre{
+#MD pre {
     max-width: 100%;
-    overflow: auto;
     position: relative;
     background-color: #F9FAFB;
-    margin-bottom: 10px;
-    padding: 3px;
+    margin-bottom: 25px;
 }
 
 
-#MD code{
+#MD code {
     /* inline code */
     background-color: #f2f1f1;
     box-sizing: border-box;
@@ -113,30 +111,69 @@
     color: #1b1b1b;
 }
 
-
-#MD pre code {
-    /* default style for code in <pre> */
+#MD pre>code {
     background-color: #F9FAFB;
     color: #515558;
+    position: relative;
+    left: 8px;
 }
 
-#MD .cursor-pointer{
+
+#MD pre::before {
+    content: ":: Code Block ::";
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3563bd;
+    text-align: right;
+    line-height: 10px;
+    font-size: 8px;
+    color: #F9FAFB;
+    padding-right: 2px;
+}
+
+
+/* width */
+#MD pre ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+#MD pre ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+#MD pre ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 0px;
+}
+
+/* Handle on hover */
+#MD pre ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#MD .cursor-pointer {
     cursor: pointer;
 }
 
-#MD img{
+#MD img {
     max-width: 100%;
     margin-top: 12px;
     margin-bottom: 12px;
 }
 
-#MD blockquote{
+#MD blockquote {
     color: #626567;
     background-color: #F2F3F4;
     padding: 1px 12px 1px 12px;
     font-size: smaller;
-    
-    
+
+
     margin-bottom: 12px;
     padding: 8px;
     padding-left: 12px;
@@ -147,7 +184,7 @@
     margin-bottom: 0px;
 }
 
-#MD document-info{
+#MD document-info {
     display: block;
     font-family: monospace;
     white-space: pre;
@@ -155,11 +192,10 @@
     overflow: hidden;
 }
 
-#MD .run-btn{
+#MD .run-btn {
     color: white;
     position: absolute;
     right: 8px;
     top: 3px;
     cursor: pointer;
 }
-
