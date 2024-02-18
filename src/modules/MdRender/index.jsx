@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism'
-// import { BLOG_NAME, IMG_FILE_PREFIX, CODE_LAB_PREFIX, GITHUB, GITHUB_USER_CONTENT_PREFIX } from '../../configs/general'
+import { oneLight as codeSyntaxStyleLight, tomorrow as codeSyntaxStyleDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { BLOG_NAME, IMG_FILE_PREFIX } from '../../configs/general'
 import { Helmet } from 'react-helmet'
 import rehypeRaw from 'rehype-raw'
@@ -18,6 +17,8 @@ import TOC from '../TableOfContent'
 
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
+
+import Darkmode from 'drkmd-js'
 
 const axios = require('axios');
 
@@ -47,12 +48,41 @@ function parseDocumentInfo(documentInfoText) {
 }
 
 export default function MdRender({ doc_id }) {
+    let dm = new Darkmode()
     const [content, setContent] = useState("")
     const [documentInfo, setDocumentInfo] = useState("")
     const [pageTitle, setPageTitle] = useState(BLOG_NAME)
     const [postTitle, setPostTitle] = useState("")
     const [pageDescription, setPageDescription] = useState("")
-    // const [hasNotebook, setHasNotebook] = useState(false)
+    const [codeSyntaxStyle, setCodeSyntaxStyle] = useState(dm.isDark() ? codeSyntaxStyleDark : codeSyntaxStyleLight)
+
+    useEffect(() => {
+        // if dom (body) on change, update the state of code syntax style
+
+        // Select the node that will be observed for mutations
+        const targetNode = document.getElementsByTagName('body')[0];
+
+        // Options for the observer (which mutations to observe)
+        const config = { attributes: true, childList: true, subtree: true };
+
+        // Create an observer instance linked to the callback function
+        const observer = new MutationObserver(() => {
+            const targetNode = document.getElementsByTagName('body')[0];
+            let { className = "theme-light" } = targetNode
+            if (className === "theme-dark" && JSON.stringify(codeSyntaxStyleDark) !== JSON.stringify(codeSyntaxStyle)) {
+                setCodeSyntaxStyle(codeSyntaxStyleDark)
+            }
+            if (className === "theme-light" && JSON.stringify(codeSyntaxStyleLight) !== JSON.stringify(codeSyntaxStyle)) {
+                setCodeSyntaxStyle(codeSyntaxStyleLight)
+            }
+
+        });
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config)
+
+        // eslint-disable-next-line
+    }, [codeSyntaxStyle])
 
     useEffect(() => {
         let supportLangs = ['python']
@@ -129,15 +159,6 @@ export default function MdRender({ doc_id }) {
                 setPageTitle(`${gistTitle} - ${BLOG_NAME}`)
                 setPageDescription(gistContent.replaceAll("#", " ").slice(0, 500))
             })
-
-        // test notebook exist
-        // axios.get(`/docs/${doc_id}/document.ipynb`)
-        //     .then(() => {
-        //         setHasNotebook(true)
-        //     })
-        //     .catch(() => {
-        //         setHasNotebook(false)
-        //     })
         // eslint-disable-next-line
     }, [])
 
@@ -186,26 +207,6 @@ export default function MdRender({ doc_id }) {
                 </div>
 
             </div>
-            {/* 
-            <span className="w-100">
-
-                <a href={`${GITHUB}/blog/tree/main/public/docs/${doc_id}`} target="_blank" rel="noopener noreferrer">
-                    <img className="mr-2 inline-block rounded-sm h-5" src="https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=%23181717&color=gray" alt="" srcSet="" />
-                </a>
-
-                <a href={`${GITHUB_USER_CONTENT_PREFIX}/docs/${doc_id}/document.md`}>
-                    <img className="mr-2 inline-block rounded-sm h-5" src="https://img.shields.io/badge/document-000?style=for-the-badge&logo=markdown&color=gray" alt="" srcSet="" />
-                </a>
-
-                {hasNotebook ?
-                    <a href={`${CODE_LAB_PREFIX}/docs/${doc_id}/document.ipynb`} target="_blank" rel="noopener noreferrer">
-                        <img className="mr-2 inline-block" src="https://img.shields.io/badge/colaboratory-000?style=for-the-badge&logo=googlecolab&logoColor=%23F9AB00&color=gray" alt="" srcSet="" />
-                    </a>
-                    :
-                    <></>
-                }
-
-            </span> */}
 
             <div id="MD">
                 <ReactMarkdown
@@ -217,6 +218,7 @@ export default function MdRender({ doc_id }) {
                             const match = /language-(\w+)/.exec(className || '')
                             return !inline && match ? (
                                 <SyntaxHighlighter
+                                    key={JSON.stringify(codeSyntaxStyle)}
                                     children={String(children).replace(/\n$/, '')}
                                     style={codeSyntaxStyle}
                                     language={match[1]}

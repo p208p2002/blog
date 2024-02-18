@@ -9,7 +9,7 @@
     --dark-code-text-color: #ced4da;
 }
 
-body.theme-dark{
+body.theme-dark {
     background-color: var(--dark-background-color);
     color: var(--dark-text-color);
 }
@@ -21,9 +21,9 @@ body.theme-dark{
 /* do not apply img filter to comments block */
 #comments img {
     filter: invert(0%);
-} 
+}
 
-.theme-dark .home-page-title{
+.theme-dark .home-page-title {
     color: var(--dark-text-color-2) !important;
 }
 
@@ -35,60 +35,50 @@ body.theme-dark{
     color: var(--dark-text-color-2) !important;
 }
 
-.theme-dark small{
+.theme-dark small {
     color: white !important;
 }
 
-.theme-dark #MD > document-info,
+.theme-dark #MD>document-info,
 .theme-dark #MD {
     color: var(--dark-text-color) !important;
 }
 
-.theme-dark #MD blockquote{
+.theme-dark #MD blockquote {
     background-color: var(--dark-blockquote-background-color) !important;
-    color: var(--dark-blockquote-text-color) !important;   
+    color: var(--dark-blockquote-text-color) !important;
 }
 
 .theme-dark #MD code {
-    background-color: var(--dark-code-background-color) !important;
     color: var(--dark-code-text-color);
 }
 
-.theme-dark #MD pre{
-    background-color: rgb(45, 45, 45) !important; 
-}
-
-.theme-dark #MD pre code{
-    /* fix color */
-    background-color: rgb(45, 45, 45) !important; 
-}
-
-.theme-dark input{
+.theme-dark input {
     background-color: var(--dark-background-color);
 }
 
-.theme-dark #Search-Bar button[type=submit]{
+.theme-dark #Search-Bar button[type=submit] {
     background-color: var(--dark-background-color);
 }
 
 
-.theme-dark #MD-Preview{
+.theme-dark #MD-Preview {
     overflow: hidden;
     line-height: 20px;
     margin-top: -20px;
     color: var(--dark-text-color);
 }
 
-.theme-dark #MD-Preview a{
+.theme-dark #MD-Preview a {
     color: var(--dark-text-color);
 }
 
-.theme-dark #TOC .activate-h2{
+.theme-dark #TOC .activate-h2 {
     color: var(--dark-text-color);
     text-decoration-color: #3498DB
 }
 
-.theme-dark #TOC .activate-h3{
+.theme-dark #TOC .activate-h3 {
     color: var(--dark-text-color);
     text-decoration-color: #88b8d8
 }
