@@ -93,7 +93,7 @@ export default function MdRender({ doc_id }) {
             if (targetEle !== null) {
                 targetEle.scrollIntoView()
             }
-        }, 0);
+        }, 1000);
     }, [])
 
     useEffect(() => {
