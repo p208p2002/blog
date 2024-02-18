@@ -9,7 +9,6 @@ https://blog.philip-huang.tech?page=bpe-tokenization
 https://blog.philip-huang.tech?page=1-bit_Adam
 https://blog.philip-huang.tech?page=label-studio
 https://blog.philip-huang.tech?page=blog-update-230116
-https://blog.philip-huang.tech?page=best-tools-at-2022
 https://blog.philip-huang.tech?page=poetry-and-pytorch
 https://blog.philip-huang.tech?page=custom_bart_model
 https://blog.philip-huang.tech?page=elasticsearch-chinese-search-optimize

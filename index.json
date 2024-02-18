@@ -258,34 +258,6 @@
         "_sort_key": 20230116
     },
     {
-        "title": "回顧2022最佳開發工具",
-        "tags": [
-            "tools",
-            "Tailwindcss",
-            "Mobx",
-            "Gradio",
-            "Poetry",
-            "Pytorch-Lightning"
-        ],
-        "hidden_tags": [
-            "https",
-            "專案",
-            "Mobx",
-            "一個",
-            "css",
-            "不過",
-            "元件",
-            "使用",
-            "2022",
-            "document"
-        ],
-        "page_link": "https://blog.philip-huang.tech?page=best-tools-at-2022",
-        "file_link": "https://blog.philip-huang.tech/docs/best-tools-at-2022/document.md",
-        "date": "2022/12/08",
-        "_has_notebook": false,
-        "_sort_key": 20221208
-    },
-    {
         "title": "Poetry 與 PyTorch 依賴解決方案",
         "tags": [
             "peotry",
