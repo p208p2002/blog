@@ -85,6 +85,18 @@ export default function MdRender({ doc_id }) {
     }, [codeSyntaxStyle])
 
     useEffect(() => {
+        // scroll into a html-id with hash link
+        let pageHash = decodeURI(window.location.hash)
+        let targetId = pageHash.replace("#", "")
+        setTimeout(() => {
+            let targetEle = document.getElementById(targetId)
+            if (targetEle !== null) {
+                targetEle.scrollIntoView()
+            }
+        }, 0);
+    }, [])
+
+    useEffect(() => {
         let supportLangs = ['python']
 
         let appendNoteBook = (e) => {
@@ -214,6 +226,30 @@ export default function MdRender({ doc_id }) {
                     rehypePlugins={[rehypeRaw, rehypeKatex]}
                     children={content}
                     components={{
+                        h2({ node, inline, className, children, ...props }) {
+                            const eleId = node.children[0].value
+                            return <h2
+                                id={eleId}
+                                className="cursor-pointer"
+                                onClick={()=>{
+                                    window.location.hash = eleId
+                                }}
+                            >
+                                {children}
+                            </h2>
+                        },
+                        h3({ node, inline, className, children, ...props }) {
+                            const eleId = node.children[0].value
+                            return <h3
+                                id={eleId}
+                                className="cursor-pointer"
+                                onClick={()=>{
+                                    window.location.hash = eleId
+                                }}
+                            >
+                                {children}
+                            </h3>
+                        },
                         code({ node, inline, className, children, ...props }) {
                             const match = /language-(\w+)/.exec(className || '')
                             return !inline && match ? (
