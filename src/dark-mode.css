@@ -53,6 +53,10 @@ body.theme-dark {
     color: var(--dark-code-text-color);
 }
 
+.theme-dark #MD .run-btn {
+    color: var(--dark-text-color);
+}
+
 .theme-dark input {
     background-color: var(--dark-background-color);
 }
