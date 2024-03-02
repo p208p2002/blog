@@ -1,5 +1,30 @@
 [
     {
+        "title": "Distributed Training with multi data worker for iterable-style dataset",
+        "tags": [
+            "distributed-training",
+            "iterable-dataset",
+            "worker-setting"
+        ],
+        "hidden_tags": [
+            "worker",
+            "data",
+            "self",
+            "id",
+            "total",
+            "next",
+            "資料",
+            "torch",
+            "process",
+            "num"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=iterable-style-dataset-worker-setting",
+        "file_link": "https://blog.philip-huang.tech/docs/iterable-style-dataset-worker-setting/document.md",
+        "date": "2024/03/02",
+        "_has_notebook": false,
+        "_sort_key": 20240302
+    },
+    {
         "title": "Azure ML Studio GPU Cluster 使用體驗",
         "tags": [
             "gpu-cluster",
