@@ -599,10 +599,6 @@ video {
   margin-left: 1.25rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -613,10 +609,6 @@ video {
 
 .block {
   display: block;
-}
-
-.inline-block {
-  display: inline-block;
 }
 
 .\!inline {
@@ -631,10 +623,6 @@ video {
   display: none;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -645,10 +633,6 @@ video {
 
 .break-words {
   overflow-wrap: break-word;
-}
-
-.rounded-sm {
-  border-radius: 0.125rem;
 }
 
 .bg-gray-100 {
