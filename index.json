@@ -1,5 +1,31 @@
 [
     {
+        "title": "論文筆記 Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+        "tags": [
+            "論文筆記",
+            "DPO",
+            "PPO",
+            "RLHF"
+        ],
+        "hidden_tags": [
+            "pi",
+            "獎勵",
+            "我們",
+            "theta",
+            "DPO",
+            "偏好",
+            "模型",
+            "ref",
+            "學習",
+            "函數"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=dpo",
+        "file_link": "https://blog.philip-huang.tech/docs/dpo/document.md",
+        "date": "2024/04/02",
+        "_has_notebook": false,
+        "_sort_key": 20240402
+    },
+    {
         "title": "Distributed Training with multi data worker for iterable-style dataset",
         "tags": [
             "distributed-training",
