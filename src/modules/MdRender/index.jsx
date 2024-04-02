@@ -8,16 +8,11 @@ import rehypeRaw from 'rehype-raw'
 import './index.css'
 import PyREPL from "../PyREPL";
 import ReactDOM from 'react-dom';
-
 import remarkMath from 'remark-math'
-import rehypeKatex from 'rehype-katex'
-
-import 'katex/dist/katex.min.css' // `rehype-katex` does not import the CSS for you
+import katex from 'katex';
 import TOC from '../TableOfContent'
-
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
-
 import Darkmode from 'drkmd-js'
 
 const axios = require('axios');
@@ -223,7 +218,8 @@ export default function MdRender({ doc_id }) {
             <div id="MD">
                 <ReactMarkdown
                     remarkPlugins={[remarkMath]}
-                    rehypePlugins={[rehypeRaw, rehypeKatex]}
+                    rehypePlugins={[rehypeRaw]}
+                    // remarkRehypeOptions={{displayMode:true}}
                     children={content}
                     components={{
                         h2({ node, inline, className, children, ...props }) {
@@ -231,7 +227,7 @@ export default function MdRender({ doc_id }) {
                             return <h2
                                 id={eleId}
                                 className="cursor-pointer"
-                                onClick={()=>{
+                                onClick={() => {
                                     window.location.hash = eleId
                                 }}
                             >
@@ -243,13 +239,14 @@ export default function MdRender({ doc_id }) {
                             return <h3
                                 id={eleId}
                                 className="cursor-pointer"
-                                onClick={()=>{
+                                onClick={() => {
                                     window.location.hash = eleId
                                 }}
                             >
                                 {children}
                             </h3>
                         },
+
                         code({ node, inline, className, children, ...props }) {
                             const match = /language-(\w+)/.exec(className || '')
                             return !inline && match ? (
@@ -266,7 +263,24 @@ export default function MdRender({ doc_id }) {
                                     {children}
                                 </code>
                             )
+                        },
+
+                        span({ node, inline, className, children, ...props }) {
+                            console.log({ node, inline, className, children, ...props })
+                            if (className === "math math-inline") {
+                                let math_tex = children[0] || "";
+                                let math_html = katex.renderToString(math_tex, {
+                                    throwOnError: false,
+                                    // Auto enable display mode while use \tag
+                                    displayMode: math_tex.match(/\\tag/) ? true:false
+                                });
+                                return <span className={className} {...props} dangerouslySetInnerHTML={{ __html: math_html }} />
+                            }
+                            else {
+                                return <span className={className} {...props}>{children}</span>
+                            }
                         }
+
                     }}
                 />
 
