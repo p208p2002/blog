@@ -27,11 +27,11 @@ RLHF 的訓練流程複雜而且不穩定；首先我們訓練一個獎勵模型
 2. 偏好抽樣和獎勵學習。
 3. 強化學習調參。
 
-#### 自監督訓練階段 
+### 自監督訓練階段 
 在預訓練模型上微調高品質的下游任務(dialogue, summarization, etc.)是RLHF的起點，在這個過程中我們可以獲得*策略*$\pi^{SFT}$，相當於基礎模型。
 > *策略* (Policy) 可以理解為通過某種方式解決給定問題的模型。
 > 一個問題可以被多種策略解決，而我們希望透過RL找到最佳*策略*。
-#### 獎勵模型建模階段
+### 獎勵模型建模階段
 $\pi^{SFT}$會由許多提示 $x$ 驅動以獲得一對答案：
 
 $(y_1,y_2)\sim\pi^{SFT}(y|x)$
@@ -65,7 +65,7 @@ $$\mathcal{L}_R(r_{\phi},\mathcal{D})=-\mathbb{E}_{(x,y_w,y_l)~\sim \mathcal{D}}
 
 > $r_{\phi}(x,y_w)$ 與 $r_{\phi}(x,y_l)$ 拉的越開，損失會越趨近於0。
 
-#### 強化學習微調階段
+### 強化學習微調階段
 在RL訓練階段，我們使用可學習的獎勵函式來提供回饋給語言模型。具體來說我們制定了最佳化問題：
 
 $$\underset{\pi_{\theta}}{\operatorname{max}} \mathbb{E}_{x\sim \mathcal{D},y\sim\pi_{\theta}(y|x)}[r_{\phi}(x,y)]-\beta\mathbb{D}_{KL}[\pi_{\theta(y|x)}||\pi_{ref}(y|x)]\tag{3}$$
@@ -155,7 +155,7 @@ $$\pi_{ref}=\underset{\pi}{\text{arg max}}\ \mathbb{E}_{x,y_w\sim\mathcal{D}}[\l
 
 <!-- ![image](https://hackmd.io/_uploads/HyPrsAdyA.png) -->
 
-#### 可控情緒生成
+### 可控情緒生成
 
 ![image](./exp1.png)
 
@@ -170,7 +170,7 @@ $$\pi_{ref}=\underset{\pi}{\text{arg max}}\ \mathbb{E}_{x,y_w\sim\mathcal{D}}[\l
 實驗顯示 DPO 能在獲得較高的獎勵下，同時保持較低的KL。
 
 
-##### 摘要生成
+### 摘要生成
 
 ![image](./exp2.png)
 
@@ -182,7 +182,7 @@ $$\pi_{ref}=\underset{\pi}{\text{arg max}}\ \mathbb{E}_{x,y_w\sim\mathcal{D}}[\l
 
 使用GPT-4作為裁判，與人類撰寫總結進行1v1對戰，結果顯示DPO的表現最佳，並且在較高的溫度(sampling temperature)下也保持較佳的表現。
 
-##### 單輪對話
+### 單輪對話
 
 在單輪對話中，我們在[Anthropic HH數據集](https://huggingface.co/datasets/Anthropic/hh-rlhf)的測試集子集上評估不同的方法。
 
