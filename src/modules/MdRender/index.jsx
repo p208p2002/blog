@@ -265,8 +265,7 @@ export default function MdRender({ doc_id }) {
                             )
                         },
 
-                        span({ node, inline, className, children, ...props }) {
-                            console.log({ node, inline, className, children, ...props })
+                        span({ node, inline, className, children, ...props }) {                        
                             if (className === "math math-inline") {
                                 let math_tex = children[0] || "";
                                 let math_html = katex.renderToString(math_tex, {
