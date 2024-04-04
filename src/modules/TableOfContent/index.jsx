@@ -65,7 +65,11 @@ function Index() {
                             }}
                             className={eleStyle}
                         >
-                            {docTitle.innerText}
+                            <div className="box">
+                                <div className="ellipsis">
+                                    {docTitle.innerText}
+                                </div>
+                            </div>
                         </li>
                     })
                 }
