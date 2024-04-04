@@ -1,5 +1,29 @@
 [
     {
+        "title": "Exif 資訊解析",
+        "tags": [
+            "exif",
+            "blog-update"
+        ],
+        "hidden_tags": [
+            "document",
+            "info",
+            "04",
+            "ExifReader",
+            "example",
+            "jpeg",
+            "解析",
+            "Exif",
+            "資訊",
+            "tags"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=js-exif-support",
+        "file_link": "https://blog.philip-huang.tech/docs/js-exif-support/document.md",
+        "date": "2024/04/04",
+        "_has_notebook": false,
+        "_sort_key": 20240404
+    },
+    {
         "title": "論文筆記 Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
         "tags": [
             "論文筆記",
