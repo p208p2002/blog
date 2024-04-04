@@ -201,7 +201,7 @@ export default function MdRender({ doc_id }) {
 
             </Helmet>
             <br />
-            <h1 className="text-3xl font-bold mb-3">{postTitle}</h1>
+            <h1 className="post-title text-3xl font-bold mb-3">{postTitle}</h1>
             <div className="document-info">
                 <div className="post-date text-zinc-500">
                     日期:&nbsp;{date}

@@ -1,3 +1,6 @@
+.post-title{
+    color: var(--text-1);
+}
 .document-info{
     margin-top: 10px;
     margin-bottom: 25px;

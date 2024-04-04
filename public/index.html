@@ -3,6 +3,9 @@
 
 <head>
   <script>
+  </script>
+  <script>
+    // load for dev
     if ('%NODE_ENV%' === 'development') {
       function loadCss(filename) {
         var cssNode = document.createElement("script");
@@ -10,9 +13,25 @@
         document.getElementsByTagName("head")[0].appendChild(cssNode);
       }
       loadCss("https://cdn.tailwindcss.com/3.3.0")
-    } 
+    }
+
+    // dynamic load a default theme
+    var head = document.head;
+    var link = document.createElement("link");
+
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    
+    if (localStorage.getItem("darkmode").toLowerCase() === "true") {
+      link.href = '/theme-dark.css';
+    }
+    else {
+      link.href = '/theme.css';
+    }
+
+    head.appendChild(link);  
   </script>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NTJ9NFK1RC"></script>
   <script>
@@ -25,7 +44,8 @@
   <!-- <script src="https://cdn.tailwindcss.com/3.2.6"></script> -->
 
   <!-- katex -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+    integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -55,6 +75,8 @@
 </head>
 
 <body>
+
+
   <noscript>
     You need to enable JavaScript to run this app.<br />
     您需要啟用JavaScript來瀏覽這個部落格。
@@ -71,13 +93,4 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
-
-<!-- <script src="https://utteranc.es/client.js"
-        repo="p208p2002/blog"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script> -->
-
 </html>

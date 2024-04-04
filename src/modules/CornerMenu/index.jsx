@@ -6,20 +6,39 @@ import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md'
 // eslint-disable-next-line
 import { HOME_PAGE, GITHUB } from '../../configs/general'
 import Darkmode from 'drkmd-js'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 
 function Index() {
     let dm = new Darkmode()
-    
-    useEffect(() => {
-        dm.attach()
-    // eslint-disable-next-line
-    }, [])
 
     // eslint-disable-next-line
-    const [theme,setTheme] = useState(dm.currentTheme())
+    const [theme, setTheme] = useState(dm.currentTheme())
+
+    useEffect(() => {
+        dm.attach()
+        // eslint-disable-next-line
+    }, [])
+
+    useEffect(() => {
+        var head = document.head;
+        var link = document.createElement("link");
+
+        link.type = "text/css";
+        link.rel = "stylesheet";
+
+        if(theme === "dark"){
+            link.href = '/theme-dark.css';    
+        }
+        else{
+            link.href = '/theme.css';
+        }
+
+        head.appendChild(link);
+        return () => { head.removeChild(link); }
+
+    }, [theme])
 
     return (
         <div id="Corner-Menu">
