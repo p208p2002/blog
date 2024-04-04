@@ -14,6 +14,9 @@ import TOC from '../TableOfContent'
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
 import Darkmode from 'drkmd-js'
+import ExifReader from 'exifreader';
+import { siNikon, siLens, siApple } from 'simple-icons'
+
 
 const axios = require('axios');
 
@@ -265,19 +268,75 @@ export default function MdRender({ doc_id }) {
                             )
                         },
 
-                        span({ node, inline, className, children, ...props }) {                        
+                        span({ node, inline, className, children, ...props }) {
                             if (className === "math math-inline") {
                                 let math_tex = children[0] || "";
                                 let math_html = katex.renderToString(math_tex, {
                                     throwOnError: false,
                                     // Auto enable display mode while use \tag
-                                    displayMode: math_tex.match(/\\tag/) ? true:false
+                                    displayMode: math_tex.match(/\\tag/) ? true : false
                                 });
                                 return <span className={className} {...props} dangerouslySetInnerHTML={{ __html: math_html }} />
                             }
                             else {
                                 return <span className={className} {...props}>{children}</span>
                             }
+                        },
+
+                        img({ node, inline, className, children, ...props }) {
+                            let img_url = props.src || ""
+                            let getExif = async () => {
+                                let src = { props }
+                                if (src !== undefined) {
+                                    const tags = await ExifReader.load(img_url, { async: true });
+                                    let Make = tags['Make'].description || undefined
+                                    let SVGPath = siLens.path
+                                    document.getElementById(img_url + "SVG").style.height="12px";
+                                    if (Make === "NIKON CORPORATION") {
+                                        SVGPath = siNikon.path;
+                                        document.getElementById(img_url + "SVG").style.height="32px";
+                                    }
+                                    else if(Make === "Canon"){
+                                        // 
+                                    }
+                                    else if(Make ==="Apple" ){
+                                        SVGPath = siApple.path;
+                                    }
+                                    let FocalLength = tags['FocalLength'].description
+                                    let FNumber = tags['FNumber'].description
+                                    let ExposureTime = tags['ExposureTime'].description
+                                    // set text
+                                    document.getElementById(img_url + "SVGPath").setAttribute("d", SVGPath);
+                                    document.getElementById(img_url + "FocalLength").innerText = FocalLength
+                                    document.getElementById(img_url + "FNumber").innerText = FNumber
+                                    document.getElementById(img_url + "ExposureTime").innerText = ExposureTime
+                                }
+
+                            }
+
+                            
+                            getExif()
+                            .then(()=>{
+                                document.getElementById(img_url+"IMG").className += " exif"
+                            })
+                            .catch(()=>{
+                                // image without exif info
+                            })
+                            
+                                
+                            return <span id={img_url+"IMG"} className="flex flex-col justify-center items-center">
+                                <img {...props}>{children}</img>
+                                <span className="exif-text flex flex-row items-center relative w-full justify-center pr-2">
+                                    <span className="absolute right-3">
+                                        <svg id={img_url + "SVG"} role="img" viewBox="0 0 24 24">
+                                            <path id={img_url + "SVGPath"} d={siLens.path}/>
+                                        </svg>
+                                    </span>
+                                    <span className="exif-item" id={img_url + "FocalLength"} />
+                                    <span className="exif-item" id={img_url + "FNumber"} />
+                                    <span className="exif-item" id={img_url + "ExposureTime"} />
+                                </span>
+                            </span>
                         }
 
                     }}

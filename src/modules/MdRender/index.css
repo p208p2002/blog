@@ -206,11 +206,34 @@
     margin-bottom: 12px;
 }
 
-
 #MD .run-btn {
     color: var(--text-1);
     position: absolute;
     right: 8px;
     top: 3px;
     cursor: pointer;
+}
+
+#MD .exif{
+    font-family: monospace;
+    color: var(--text-2);
+    font-style: italic;
+    border-width: 0px;
+    border-style: solid;
+    background-color: var(--support-3);
+}
+
+#MD .exif img{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#MD .exif-text{
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+#MD .exif-item{
+    padding-right: 5px;
+    margin-left: 8px;
 }
