@@ -1,0 +1,21 @@
+:root {
+    --main-1:#6b84b5;
+    --main-2:#6b84b5;
+    --main-3:#6b84b5;
+    --support-1:#40464c;
+    --support-2:#40464c;
+    --support-3:#40464c;
+    --text-1:#c0c0c0;
+    --text-2:#c0c0c0;
+    --text-3:#c0c0c0;
+    --main-bg-1:#343a40;
+}  
+
+.theme-dark img {
+    filter: invert(85%);
+}
+
+/* do not apply img filter to comments block */
+#comments img {
+    filter: invert(0%);
+}
