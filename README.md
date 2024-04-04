@@ -11,7 +11,7 @@
 - 簡潔與清晰的頁面設計。
 - 支援 Dark-mode 。
 - 支援 MarkDown (.md) 與 Notebook (.ipynb)。
-- 整合 KaTex 支援數學公式編輯。
+- 整合 KaTex 支援數學公式顯示。
 - 運用 WebAssembly 與 Pyodide 可在網頁環境中執行文章內的 Python 程式區塊。
     > [透過瀏覽器執行 Python 程式碼](https://blog.philip-huang.tech/?page=blog-update-230116)
 - 支援照片 Exif 資訊解析。
