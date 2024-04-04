@@ -1,13 +1,14 @@
 #TOC .activate-h2{
-    color: black;
+    color: var(--text-1);
     text-decoration-color: var(--main-3);
 }
 
 #TOC .activate-h3{
-    color: black;
-    text-decoration-color: var(--support-1);
+    color: var(--text-1);
+    text-decoration-color: var(--main-3);
 }
 
 #TOC li{
+    color: var(--text-2);
     line-height: 1.6;
 }

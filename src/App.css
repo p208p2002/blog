@@ -23,7 +23,7 @@
 }
 
 #App .home-page-title {
-    color: black;
+    color: var(--text-1);
     text-decoration: none;
 }
 
@@ -53,6 +53,10 @@
   
 #App a:link{
     text-decoration: none;
+}
+
+#App small{
+    color: var(--text-2);
 }
 
 @media screen and (max-width: 768px) {

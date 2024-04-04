@@ -51,7 +51,7 @@ function App() {
             {BLOG_NAME}
           </a>
         </h1>
-        <small className='text-slate-700'>程式技術、自然語言處理和論文筆記</small>
+        <small>程式技術、自然語言處理和論文筆記</small>
         <Search setPosts={setPosts} fullIndex={fullIndex} />
       </div>
 
