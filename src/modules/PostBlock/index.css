@@ -1,22 +1,22 @@
 #Post-Block{
     margin-bottom: 50px;
-    border-color: #d8d8d8;
+    border-color: var(--support-2);
     border-style: solid;
     border-width: 0px 0px 1px 0px;
     /* border-radius: 5px; */
 }
 
 #Post-Block hr{
-    border: 1px solid #336699;
+    border: 1px solid var(--support-1);
     margin-bottom: 12px;
 }
 
 #Post-Block small{
-    color: #444444;
+    color: var(--text-1);
 }
 
 #Post-Block .post-date{
-    color: rgb(107,114,128);
+    color: var(--text-2);
 }
 
 #Post-Block .title-badge{

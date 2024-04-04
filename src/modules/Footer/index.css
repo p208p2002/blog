@@ -1,6 +1,6 @@
 #Footer{
     text-align: center;
-    color: gray;
+    color: var(--text-2);
     font-size: 10pt;
     position: fixed;
     bottom: 2.5%;
@@ -8,7 +8,7 @@
 }
 
 #Footer a{
-    color: #6699FF;
+    color: var(--main-3);
 }
 
 #Footer a:link{
@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 768px){
     #Footer{
-        color: gray;
+        color: var(--text-2);
         font-size: 10pt;
         position: initial;
     }

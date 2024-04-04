@@ -11,6 +11,7 @@ import { BLOG_NAME } from './configs/general'
 import MdRender from './modules/MdRender';
 import { Helmet } from 'react-helmet'
 import { AppState } from './AppState'
+import './theme.css'
 
 export const AppStateContext = React.createContext();
 

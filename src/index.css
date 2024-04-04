@@ -46,7 +46,7 @@ code {
 }
 
 a{
-  color: #3563bd;
+  color: var(--main-2);
 }
 
 a:link{

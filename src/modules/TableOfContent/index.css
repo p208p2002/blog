@@ -1,11 +1,11 @@
 #TOC .activate-h2{
     color: black;
-    text-decoration-color: #3498DB;
+    text-decoration-color: var(--main-3);
 }
 
 #TOC .activate-h3{
     color: black;
-    text-decoration-color: #88b8d8;
+    text-decoration-color: var(--support-1);
 }
 
 #TOC li{

@@ -157,8 +157,7 @@ module.exports = {
       purple: colors.purple,
       fuchsia: colors.fuchsia,
       pink: colors.pink,
-      rose: colors.rose,
-      blog_blue:"#3563bd"
+      rose: colors.rose
     }),
     columns: {
       auto: 'auto',

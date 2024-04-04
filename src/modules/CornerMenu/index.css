@@ -3,7 +3,7 @@
 }
 
 #Corner-Menu {
-    color: gray;
+    color: var(--support-1);
     font-size: 3px;
     position: fixed;
     bottom: 75px;
@@ -20,20 +20,20 @@
 
 #Corner-Menu .link svg,
 #Corner-Menu .link a {
-    color: #b7b7b7;
+    color: var(--support-2);
     background-color: rgba(0, 0, 0, 0);
     border: none;
 }
 
 #Corner-Menu .link svg:hover,
 #Corner-Menu .link a:hover{
-    color: gray;
+    color: var(--support-1);
     cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
     #Corner-Menu {
-        color: gray;
+        color: var(--support-2);
         font-size: 3px;
         position: fixed;
         bottom: 30px;

@@ -2,7 +2,7 @@
     overflow: hidden;
     line-height: 1.5;
     margin-top: -20px;
-    color: rgb(72, 72, 72);
+    color: var(--text-1);
     min-height:80px
 }
 
@@ -11,10 +11,10 @@
 }
 
 #MD-Preview pre div{
-    background: rgb(88, 88, 88) !important;
+    background: var(--support-1) !important;
 }
 #MD-Preview a{
-    color: rgb(59, 59, 59);
+    color: var(--text-1);
 }
 #MD-Preview document-info,
 #MD-Preview .md-preview h1{
@@ -35,15 +35,9 @@
     --loading-width: 50vw;
     width: var(--loading-width);
     height: 15px;
-    
     display: flex;
     position: relative;
-    
     overflow: hidden;
-
-    /* background-color:orange; */
-  /*   background: rgba(0,0,0,0.2); */
-    
   }
   .loading::after {
     content: '';
@@ -57,7 +51,7 @@
   .loading > span {
     display: inline-block;
     position: absolute;
-    background: #aaa;
+    background: var(--support-2);
     width: var(--dot-size);
     height: var(--dot-size);
     border-radius: 50%;
