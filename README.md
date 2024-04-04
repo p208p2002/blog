@@ -3,7 +3,7 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Jupyter Notebook](https://img.shields.io/badge/jupyter-darkorange.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 
 
-輕量化、無後端的自建落格系統。盡可能地提供舒適的寫作與閱讀體驗。
+輕量化、無後端的自建部落格系統。盡可能地提供舒適的寫作與閱讀體驗。
 
 ## 特色
 - 沒有繁瑣的設定與編輯器，專注文章寫作與分享
