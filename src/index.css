@@ -7,6 +7,10 @@ html, body, #root {
   background-color: var(--main-bg-1);
 }
 
+#root{
+  transition: background-color 0.8s;
+}
+
 .render-container{
   margin: 0 auto;
   max-width: 770px;
