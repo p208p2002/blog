@@ -9,13 +9,13 @@
             "document",
             "info",
             "04",
-            "ExifReader",
             "example",
             "jpeg",
-            "解析",
             "Exif",
             "資訊",
-            "tags"
+            "tags",
+            "exif",
+            "blog"
         ],
         "page_link": "https://blog.philip-huang.tech?page=js-exif-support",
         "file_link": "https://blog.philip-huang.tech/docs/js-exif-support/document.md",
