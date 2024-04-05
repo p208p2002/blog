@@ -6,16 +6,16 @@
             "blog-update"
         ],
         "hidden_tags": [
+            "image",
+            "Exif",
+            "資訊",
             "document",
             "info",
             "04",
-            "example",
+            "ExifReader",
             "jpeg",
-            "Exif",
-            "資訊",
-            "tags",
-            "exif",
-            "blog"
+            "相片",
+            "解析"
         ],
         "page_link": "https://blog.philip-huang.tech?page=js-exif-support",
         "file_link": "https://blog.philip-huang.tech/docs/js-exif-support/document.md",
