@@ -5,12 +5,13 @@
 - date: 2024/04/04
 </document-info>
 
-測試樣張：
+藉由 [ExifReader](https://github.com/mattiasw/ExifReader) 的整合，現在相片中含有 Exif 資訊的部分能夠被部落格直接解析。
 
-![example](./nikon.jpeg)
+相關的拍攝資訊將會直接附加在相片底部：
 
-> 台南神農街
+![image 1](./nikon.jpeg)
 
-![example](./apple.jpeg)
-> 嘉義梅山太平雲梯
+![image 2](./apple.jpeg)
+
+![image 3](./apple2.jpg)
 

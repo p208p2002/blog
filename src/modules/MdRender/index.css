@@ -216,7 +216,7 @@
 
 #MD .exif{
     font-family: monospace;
-    color: var(--text-2);
+    color: var(--text-1);
     font-style: italic;
     border-width: 0px;
     border-style: solid;
@@ -231,6 +231,7 @@
 #MD .exif-text{
     margin-left: 5px;
     font-size: 12px;
+    height: 36px;
 }
 
 #MD .exif-item{

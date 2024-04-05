@@ -291,22 +291,24 @@ export default function MdRender({ doc_id }) {
                                     const tags = await ExifReader.load(img_url, { async: true });
                                     let Make = tags['Make'].description || undefined
                                     let SVGPath = siLens.path
-                                    document.getElementById(img_url + "SVG").style.height="12px";
+                                    document.getElementById(img_url + "SVG").style.height = "12px";
                                     if (Make === "NIKON CORPORATION") {
                                         SVGPath = siNikon.path;
-                                        document.getElementById(img_url + "SVG").style.height="32px";
+                                        document.getElementById(img_url + "SVG").style.height = "32px";
                                     }
-                                    else if(Make === "Canon"){
+                                    else if (Make === "Canon") {
                                         // 
                                     }
-                                    else if(Make ==="Apple" ){
+                                    else if (Make === "Apple") {
                                         SVGPath = siApple.path;
                                     }
+                                    let Model = tags['Model'].description
                                     let FocalLength = tags['FocalLength'].description
                                     let FNumber = tags['FNumber'].description
                                     let ExposureTime = tags['ExposureTime'].description
                                     // set text
                                     document.getElementById(img_url + "SVGPath").setAttribute("d", SVGPath);
+                                    document.getElementById(img_url + "Model").innerText = Model
                                     document.getElementById(img_url + "FocalLength").innerText = FocalLength
                                     document.getElementById(img_url + "FNumber").innerText = FNumber
                                     document.getElementById(img_url + "ExposureTime").innerText = ExposureTime
@@ -314,23 +316,24 @@ export default function MdRender({ doc_id }) {
 
                             }
 
-                            
+
                             getExif()
-                            .then(()=>{
-                                document.getElementById(img_url+"IMG").className += " exif"
-                            })
-                            .catch(()=>{
-                                // image without exif info
-                            })
-                            
-                                
-                            return <span id={img_url+"IMG"} className="flex flex-col justify-center items-center">
-                                <img {...props}>{children}</img>
-                                <span className="exif-text flex flex-row items-center relative w-full justify-center pr-2">
-                                    <span className="absolute right-3">
+                                .then(() => {
+                                    document.getElementById(img_url + "IMG").className += " exif"
+                                })
+                                .catch(() => {
+                                    // image without exif info
+                                })
+
+
+                            return <span id={img_url + "IMG"} className="flex flex-col justify-center items-center">
+                                <img {...props} alt="">{children}</img>
+                                <span className="exif-text flex flex-row items-center relative w-full justify-start md:justify-center pr-2">
+                                    <span className="absolute right-3 flex flex-row items-center">
                                         <svg id={img_url + "SVG"} role="img" viewBox="0 0 24 24">
-                                            <path id={img_url + "SVGPath"} d={siLens.path}/>
+                                            <path id={img_url + "SVGPath"} d={siLens.path} />
                                         </svg>
+                                        <span>&nbsp;|&nbsp;<span id={img_url + "Model"} /></span>
                                     </span>
                                     <span className="exif-item" id={img_url + "FocalLength"} />
                                     <span className="exif-item" id={img_url + "FNumber"} />
