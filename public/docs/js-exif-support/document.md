@@ -5,8 +5,6 @@
 - date: 2024/04/04
 </document-info>
 
-部落格整合 [ExifReader](https://github.com/mattiasw/ExifReader) 解析相片資料，可以顯示一些重要的拍攝資訊。
-
 測試樣張：
 
 ![example](./nikon.jpeg)
