@@ -20,12 +20,3 @@
 ## 運作方式
 這個部落格利用了GitHub Pages提供的靜態網頁空間，並且搭配GitHub Workflow功能在程式碼變動或文章更新時自動重新部署。
 
-## 文件
-### 配置
-- 部落格設定/變數
-    - `src/configs/general.js`
-    - `package.json`
-
-### 輔助工具
-- build_index.py: 建立網站索引、Sitemap等資訊
-- convert_ipynb_to_md.py: 轉換 `.ipynb` -> `.md`
