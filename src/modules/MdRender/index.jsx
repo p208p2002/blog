@@ -338,7 +338,7 @@ export default function MdRender({ doc_id }) {
                                         <svg id={img_url + "SVG"} role="img" viewBox="0 0 24 24">
                                             <path id={img_url + "SVGPath"} d={siLens.path} />
                                         </svg>
-                                        <span>&nbsp;|&nbsp;<span id={img_url + "Model"} /></span>
+                                        <span style={{fontSize:'normal'}}>&nbsp;|&nbsp;<span style={{fontSize:'italic'}} id={img_url + "Model"} /></span>
                                     </span>
                                     <span className="exif-item" id={img_url + "FocalLength"} />
                                     <span className="exif-item" id={img_url + "FNumber"} />
