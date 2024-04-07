@@ -333,7 +333,7 @@ export default function MdRender({ doc_id }) {
 
                             return <span id={img_url + "IMG"} className="flex flex-col justify-center items-center">
                                 <img {...props} alt="">{children}</img>
-                                <span id={img_url + "EXIF-Text"} className="exif-text flex flex-row items-center relative w-full justify-start md:justify-center pr-2">
+                                <span id={img_url + "EXIF-Text"} className="exif-text flex flex-row items-center relative w-full justify-start pr-2">
                                     <span className="absolute right-3 flex flex-row items-center">
                                         <svg id={img_url + "SVG"} role="img" viewBox="0 0 24 24">
                                             <path id={img_url + "SVGPath"} d={siLens.path} />

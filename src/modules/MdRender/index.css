@@ -218,9 +218,10 @@
     font-family: monospace;
     color: var(--text-1);
     font-style: italic;
-    border-width: 0px;
+    border-width: 1px;
     border-style: solid;
-    background-color: var(--support-3);
+    border-color: var(--support-3);
+    padding: 12px 12px 0px 12px;
 }
 
 #MD .exif img{
@@ -231,10 +232,11 @@
 #MD .exif-text{
     margin-left: 5px;
     font-size: 12px;
-    height: 36px;
+    height: 48px;
 }
 
 #MD .exif-item{
     padding-right: 5px;
-    margin-left: 8px;
+    margin-left: 6px;
+    color: var(--text-2);
 }
