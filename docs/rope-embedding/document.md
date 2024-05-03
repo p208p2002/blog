@@ -5,6 +5,7 @@
 - date: 2024/05/03
 </document-info>
 
+### 理解 RoPE
 - [图解RoPE旋转位置编码及其特性](https://mp.weixin.qq.com/s/-1xVXjoM0imXMC7DKqo-Gw)
 - [详解基于调整RoPE旋转角度的大模型长度外推方法](https://mp.weixin.qq.com/s?__biz=MzA3MTgwODE1Ng==&mid=2247484826&idx=1&sn=8935f0bcb2e09f438cbf3ae63825d671&chksm=9f26a069a851297f568ba7cd111082e603108716928b8444a253457233f24d09d3a18447d6b9&cur_album_id=3199751010206973953&scene=189)
 
@@ -91,6 +92,7 @@ $$
 
 該插值方案沒有直接對傅立葉特徵進行縮放，因此不同位置間的特徵保持獨特和可識別。在傅立葉特徵中，每一個位置都有其對應的特徵波形，直接縮放傅立葉特徵可能會導致不同位置的特徵波形重疊或變得難以區分。但是，通過改變 base 而非 $\theta$，每個位置的特徵仍然保持獨特，即使在極端擴展下也能夠被精確地識別。
 
+### Dynamic NTK-Aware
 - [Dynamically Scaled RoPE](https://www.reddit.com/r/LocalLLaMA/comments/14mrgpr/dynamically_scaled_rope_further_increases/)
 
 ![image](./dynamic-ntk.png)

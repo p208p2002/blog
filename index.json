@@ -14,9 +14,9 @@
             "pmatrix",
             "位置",
             "RoPE",
+            "###",
             "vdots",
-            "base",
-            "弧度"
+            "base"
         ],
         "page_link": "https://blog.philip-huang.tech?page=rope-embedding",
         "file_link": "https://blog.philip-huang.tech/docs/rope-embedding/document.md",
