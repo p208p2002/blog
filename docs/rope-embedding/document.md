@@ -11,26 +11,32 @@
 ### 簡單旋轉矩陣
 一個簡單的二維旋轉矩陣，其中$\theta$表示弧度：
 
-$$M(\theta) = \begin{pmatrix}
+$$
+M(\theta) = \begin{pmatrix}
 \cos \theta & -\sin \theta \\
 \sin \theta & \cos \theta 
-\end{pmatrix}$$
+\end{pmatrix}
+$$
 
 將一個二維的向量乘上該旋轉矩陣可以進行旋轉，而不改變其長度。
 
 我們還可以引入位置資訊 $m$ (token 位置) 來讓不同位置擁有不同的旋轉弧度：
 
-$$R_m = \begin{pmatrix}
+$$
+R_m = \begin{pmatrix}
 \cos m\theta & -\sin m\theta \\
 \sin m\theta & \cos m\theta 
-\end{pmatrix}$$
+\end{pmatrix}
+$$
 
 現在我們有 RoPE 位置編碼函數，可以對一個二維的 token query 向量 $q$ 加上位置資訊：
 
-$$f(q,m)=q\times R_m=\begin{pmatrix}
+$$
+f(q,m)=q\times R_m=\begin{pmatrix}
 \cos m\theta & -\sin m\theta \\
 \sin m\theta & \cos m\theta 
-\end{pmatrix}\begin{pmatrix}q_0\\q_1\end{pmatrix}$$
+\end{pmatrix}\begin{pmatrix}q_0\\q_1\end{pmatrix}
+$$
 
 ### 高維旋轉矩陣
 
@@ -50,7 +56,9 @@ $$
 
 我們注重弧度如何變化，$d$ 表示維度，$i$ 表示分量，$base$ 是常數，在 LLaMA 中設定為10000：
 
-$$\theta_i=base^{-2i/d}$$
+$$
+\theta_i=base^{-2i/d}
+$$
 
 在這邊我們還可以發現在每一個分量中，會有不同的旋轉頻率。
 
@@ -63,7 +71,9 @@ $$\theta_i=base^{-2i/d}$$
 
 設原始訓練長度 $L$ 要外推到 $L'$， PI 方法縮小每個位置的旋轉弧度，讓向量旋轉得慢一些，每個位置的旋轉弧度變為原來的$\frac{L}{L'}$，長度擴大幾倍，則旋轉弧度縮小幾倍。
 
-$$\theta_i=base^{-2i/d}\times\frac{L}{L^{'}}$$
+$$
+\theta_i=base^{-2i/d}\times\frac{L}{L^{'}}
+$$
 
 
 ### NTK-Aware
@@ -75,7 +85,9 @@ $$\theta_i=base^{-2i/d}\times\frac{L}{L^{'}}$$
 
 
 NTK-Aware 是一種非線性插值方法，它不是直接均勻地縮放弧度而是通過改變base去達到調整旋轉頻率的目的：
-$$\theta_i = (base\times\alpha)^{-2i/d}$$
+$$
+\theta_i = (base\times\alpha)^{-2i/d}
+$$
 
 該插值方案沒有直接對傅立葉特徵進行縮放，因此不同位置間的特徵保持獨特和可識別。在傅立葉特徵中，每一個位置都有其對應的特徵波形，直接縮放傅立葉特徵可能會導致不同位置的特徵波形重疊或變得難以區分。但是，通過改變 base 而非 $\theta$，每個位置的特徵仍然保持獨特，即使在極端擴展下也能夠被精確地識別。
 
