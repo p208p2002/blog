@@ -1,11 +1,11 @@
-# 旋轉位置編碼 (RoPE) 筆記與外推方法 
+# 旋轉位置編碼 (RoPE) 筆記與長度拓展方法 
 
 <document-info>
 - tags: #旋轉矩陣#RoPE#position-embedding
 - date: 2024/05/03
 </document-info>
 
-### 理解 RoPE
+## 理解 RoPE
 - [图解RoPE旋转位置编码及其特性](https://mp.weixin.qq.com/s/-1xVXjoM0imXMC7DKqo-Gw)
 - [详解基于调整RoPE旋转角度的大模型长度外推方法](https://mp.weixin.qq.com/s?__biz=MzA3MTgwODE1Ng==&mid=2247484826&idx=1&sn=8935f0bcb2e09f438cbf3ae63825d671&chksm=9f26a069a851297f568ba7cd111082e603108716928b8444a253457233f24d09d3a18447d6b9&cur_album_id=3199751010206973953&scene=189)
 
@@ -63,7 +63,7 @@ $$
 
 在這邊我們還可以發現在每一個分量中，會有不同的旋轉頻率。
 
-## 拓展方法
+## RoPE 拓展方法
 ### Position Interpolation
 - [Extending Context Window of Large Language Models via Positional Interpolation](https://arxiv.org/abs/2306.15595)
 

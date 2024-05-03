@@ -1,6 +1,6 @@
 [
     {
-        "title": "旋轉位置編碼 (RoPE) 筆記與外推方法",
+        "title": "旋轉位置編碼 (RoPE) 筆記與長度拓展方法",
         "tags": [
             "旋轉矩陣",
             "RoPE",
@@ -12,11 +12,11 @@
             "sin",
             "旋轉",
             "pmatrix",
-            "位置",
             "RoPE",
-            "###",
+            "位置",
             "vdots",
-            "base"
+            "base",
+            "弧度"
         ],
         "page_link": "https://blog.philip-huang.tech?page=rope-embedding",
         "file_link": "https://blog.philip-huang.tech/docs/rope-embedding/document.md",
