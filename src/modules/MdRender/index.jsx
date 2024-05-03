@@ -267,8 +267,22 @@ export default function MdRender({ doc_id }) {
                                 </code>
                             )
                         },
-
+                        div({ node, inline, className, children, ...props }) {
+                            if (className === "math math-display") {
+                                let math_tex = children[0] || "";
+                                let math_html = katex.renderToString(math_tex, {
+                                    throwOnError: false,
+                                    // Auto enable display mode while use \tag
+                                    displayMode: true
+                                });
+                                return <div className={className} {...props} dangerouslySetInnerHTML={{ __html: math_html }} />
+                            }
+                            else {
+                                return <div className={className} {...props}>{children}</div>
+                            }
+                        },
                         span({ node, inline, className, children, ...props }) {
+                            
                             if (className === "math math-inline") {
                                 let math_tex = children[0] || "";
                                 let math_html = katex.renderToString(math_tex, {
@@ -278,6 +292,7 @@ export default function MdRender({ doc_id }) {
                                 });
                                 return <span className={className} {...props} dangerouslySetInnerHTML={{ __html: math_html }} />
                             }
+                            
                             else {
                                 return <span className={className} {...props}>{children}</span>
                             }
