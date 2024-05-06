@@ -655,6 +655,10 @@ video {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -716,6 +720,10 @@ video {
 
 .font-medium {
   font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-gray-500 {

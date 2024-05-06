@@ -169,21 +169,26 @@ export default function MdRender({ doc_id }) {
                 setPageTitle(`${gistTitle} - ${BLOG_NAME}`)
                 setPageDescription(gistContent.replaceAll("#", " ").slice(0, 500))
             })
+            .catch(()=>{
+                window.location.href = "/?page=code-404"
+            })
         // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
-        const gitalk = new Gitalk({
-            clientID: '1026ba5908c2c038e457',
-            clientSecret: 'e89b2d013165eed176f47ba9afa49cf27cd2b63f',
-            repo: 'blog',      // The repository of store comments,
-            owner: 'p208p2002',
-            admin: ['p208p2002'],
-            id: doc_id,      // Ensure uniqueness and length less than 50
-            distractionFreeMode: false  // Facebook-like distraction free mode
-        })
-        gitalk.render("comments")
-    }, [doc_id])
+        if (postTitle !== "") {
+            const gitalk = new Gitalk({
+                clientID: '1026ba5908c2c038e457',
+                clientSecret: 'e89b2d013165eed176f47ba9afa49cf27cd2b63f',
+                repo: 'blog',      // The repository of store comments,
+                owner: 'p208p2002',
+                admin: ['p208p2002'],
+                id: doc_id,      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render("comments")
+        }
+    }, [doc_id,postTitle])
 
     let { date = "", tags = [] } = documentInfo
 

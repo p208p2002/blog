@@ -20,32 +20,47 @@ let { page = undefined } = params
 
 function Index() {
   let appState = new AppState()
+  let pageContext
+
+  if (page === undefined) {
+    pageContext = (
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{BLOG_NAME}</title>
+          <meta name="description" content="💻 程式技術、自然語言處理和論文筆記 🛠️" />
+        </Helmet>
+        <App />
+        <CornerMenu />
+        <Footer />
+      </div>
+    )
+  }
+  else if (page === "code-404") {
+    pageContext = (
+    <div className='flex flex-col p-2'>
+      <p>很抱歉，您要求的文章不存在。</p>
+      <p><a style={{color:'blue',textDecoration:'underline'}} href='/'>回首頁</a></p>
+    </div>
+    )
+  }
+  else {
+    pageContext = (
+      <div className="render-container">
+        <MdRender doc_id={page} />
+        <CornerMenu />
+        <Footer />
+      </div>
+    )
+  }
 
   return (
     <AppStateContext.Provider value={appState}>
-        <LoadingView />
-        <div>
-          {page === undefined ? (
-            <div>
-              <Helmet>
-                <meta charSet="utf-8" />
-                <title>{BLOG_NAME}</title>
-                <meta name="description" content="💻 程式技術、自然語言處理和論文筆記 🛠️" />
-              </Helmet>
-              <App />
-              <CornerMenu />
-              <Footer />
-            </div>
-          ) : (
-            <div className="render-container">
-              <MdRender doc_id={page} />
-              <CornerMenu />
-              <Footer />
-            </div>
-          )}
-
-        </div>
-    </AppStateContext.Provider>
+      <LoadingView />
+      <div>
+        {pageContext}
+      </div>
+    </AppStateContext.Provider >
   )
 }
 
