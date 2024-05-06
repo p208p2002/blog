@@ -2,7 +2,7 @@
 
 <document-info>
 - tags: #SSE#text-streaming
-- date: YYYY/MM/dd
+- date: 2024/05/06
 </document-info>
 
 Streaming text is a popular feature in chatting with AI systems just as ChatGPT does.
@@ -14,8 +14,8 @@ The technology behind is Server-Sent Events, which creates a long-lived connecti
 
 It's very simple to implement in Python and JavaScript. The minimal example below creates an SSE server using FastAPI, and a client for sending requests in JS.
 
-### Minimal SSE Example
-#### Server (FastAPI)
+## Minimal SSE Example
+### Server (FastAPI)
 ```python
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
@@ -35,7 +35,7 @@ def text_completions():
     return StreamingResponse(text_streamer())
 ```
 
-#### Client (Vanilla JS)
+### Client (Vanilla JS)
 ```javascript
 fetch("http://127.0.0.1:8000/text-completions",{
     method:'POST'

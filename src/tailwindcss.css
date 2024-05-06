@@ -676,6 +676,10 @@ video {
   padding: 0.25rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
