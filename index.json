@@ -1,5 +1,29 @@
 [
     {
+        "title": "Streaming text with FastAPI and JavaScript",
+        "tags": [
+            "SSE",
+            "text-streaming"
+        ],
+        "hidden_tags": [
+            "text",
+            "FastAPI",
+            "reader",
+            "SSE",
+            "streaming",
+            "import",
+            "test",
+            "message",
+            "completions",
+            "return"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=server-sent-events",
+        "file_link": "https://blog.philip-huang.tech/docs/server-sent-events/document.md",
+        "date": "2024/05/06",
+        "_has_notebook": false,
+        "_sort_key": 20240506
+    },
+    {
         "title": "旋轉位置編碼 (RoPE) 筆記與長度拓展方法",
         "tags": [
             "旋轉矩陣",
