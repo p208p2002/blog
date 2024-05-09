@@ -1,5 +1,30 @@
 [
     {
+        "title": "Mixture of experts (MoE) 的路由設計與訓練",
+        "tags": [
+            "論文筆記",
+            "MoE",
+            "Mixtral"
+        ],
+        "hidden_tags": [
+            "專家",
+            "路由",
+            "token",
+            "MoE",
+            "訓練",
+            "text",
+            "Switch",
+            "capacity",
+            "一個",
+            "sum"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=moe-routing-design",
+        "file_link": "https://blog.philip-huang.tech/docs/moe-routing-design/document.md",
+        "date": "2024/05/09",
+        "_has_notebook": false,
+        "_sort_key": 20240509
+    },
+    {
         "title": "Streaming text with FastAPI and JavaScript",
         "tags": [
             "SSE",
