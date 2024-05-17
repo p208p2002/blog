@@ -89,8 +89,5 @@ $$
 \mathcal{L}_{aux} = \alpha \cdot N \cdot \sum_{i=1}^N f_i \cdot P_i
 $$
 
-
-而在 Hugging Face 中的[實現](https://github.com/huggingface/transformers/blob/main/src/transformers/models/mixtral/modeling_mixtral.py#L149)：
-```python
-aux_loss = num_experts * torch.sum(tokens_per_expert * router_prob_per_expert.unsqueeze(0))
+輔助損失函數的最小值會發生在每一位專家的 $f_i$ 和 $P_i$ 相等處，即 Token 被平均分配到每一位專家。
 ```
