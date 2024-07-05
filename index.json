@@ -1,5 +1,28 @@
 [
     {
+        "title": "Reasons to Reject? Aligning Language Models with Judgments",
+        "tags": [
+            "論文筆記"
+        ],
+        "hidden_tags": [
+            "判斷",
+            "回應",
+            "mid",
+            "mathcal",
+            "Align",
+            "LLM",
+            "sum",
+            "log",
+            "rightarrow",
+            "####"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=reason-to-reject",
+        "file_link": "https://blog.philip-huang.tech/docs/reason-to-reject/document.md",
+        "date": "2024/07/05",
+        "_has_notebook": false,
+        "_sort_key": 20240705
+    },
+    {
         "title": "Mixture of experts (MoE) 的路由設計與訓練",
         "tags": [
             "論文筆記",
@@ -588,30 +611,6 @@
         "_sort_key": 20210324
     },
     {
-        "title": "BART Model Fine-Tuning",
-        "tags": [
-            "bart-model",
-            "nlp"
-        ],
-        "hidden_tags": [
-            "100",
-            "input",
-            "model",
-            "length",
-            "python",
-            "max",
-            "label",
-            "pad",
-            "True",
-            "torch"
-        ],
-        "page_link": "https://blog.philip-huang.tech?page=blog_bart-model_nlp",
-        "file_link": "https://blog.philip-huang.tech/docs/blog_bart-model_nlp/document.md",
-        "date": "2020/01/01",
-        "_has_notebook": true,
-        "_sort_key": 20200101
-    },
-    {
         "title": "GPT & GPT2 Fine-Tuning",
         "tags": [
             "gpt",
@@ -631,6 +630,30 @@
         ],
         "page_link": "https://blog.philip-huang.tech?page=blog_gpt_gpt2_nlp",
         "file_link": "https://blog.philip-huang.tech/docs/blog_gpt_gpt2_nlp/document.md",
+        "date": "2020/01/01",
+        "_has_notebook": true,
+        "_sort_key": 20200101
+    },
+    {
+        "title": "BART Model Fine-Tuning",
+        "tags": [
+            "bart-model",
+            "nlp"
+        ],
+        "hidden_tags": [
+            "100",
+            "input",
+            "model",
+            "length",
+            "python",
+            "max",
+            "label",
+            "pad",
+            "True",
+            "torch"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=blog_bart-model_nlp",
+        "file_link": "https://blog.philip-huang.tech/docs/blog_bart-model_nlp/document.md",
         "date": "2020/01/01",
         "_has_notebook": true,
         "_sort_key": 20200101
