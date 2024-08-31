@@ -16,7 +16,7 @@ import Gitalk from 'gitalk'
 import Darkmode from 'drkmd-js'
 import ExifReader from 'exifreader';
 import { siNikon, siLens, siApple } from 'simple-icons'
-
+import { mdTableToHTML } from './md-table-to-html'
 
 const axios = require('axios');
 
@@ -169,7 +169,7 @@ export default function MdRender({ doc_id }) {
                 setPageTitle(`${gistTitle} - ${BLOG_NAME}`)
                 setPageDescription(gistContent.replaceAll("#", " ").slice(0, 500))
             })
-            .catch(()=>{
+            .catch(() => {
                 window.location.href = "/?page=code-404"
             })
         // eslint-disable-next-line
@@ -188,7 +188,7 @@ export default function MdRender({ doc_id }) {
             })
             gitalk.render("comments")
         }
-    }, [doc_id,postTitle])
+    }, [doc_id, postTitle])
 
     let { date = "", tags = [] } = documentInfo
 
@@ -286,8 +286,21 @@ export default function MdRender({ doc_id }) {
                                 return <div className={className} {...props}>{children}</div>
                             }
                         },
+                        p({ node, inline, className, children, ...props }) {
+                            if (Array.isArray(children)) {
+                                children = children.map((child, childIdx) => {
+                                    if (typeof (child) === "string" && child.length > 1 && child[0] === "|") {
+                                        return <div className="md-table-container" key={childIdx}
+                                            dangerouslySetInnerHTML={{ __html: mdTableToHTML(child).html }}
+                                        />
+                                    }
+                                    return child
+                                })
+                            }
+                            return <p className={className} {...props} >{children}</p>
+                        },
                         span({ node, inline, className, children, ...props }) {
-                            
+
                             if (className === "math math-inline") {
                                 let math_tex = children[0] || "";
                                 let math_html = katex.renderToString(math_tex, {
@@ -297,7 +310,7 @@ export default function MdRender({ doc_id }) {
                                 });
                                 return <span className={className} {...props} dangerouslySetInnerHTML={{ __html: math_html }} />
                             }
-                            
+
                             else {
                                 return <span className={className} {...props}>{children}</span>
                             }
@@ -343,9 +356,9 @@ export default function MdRender({ doc_id }) {
                                 })
                                 .catch(() => {
                                     // image without exif info
-                                    let exifText = document.getElementById(img_url+"EXIF-Text")
+                                    let exifText = document.getElementById(img_url + "EXIF-Text")
                                     try {
-                                        exifText.parentNode.removeChild(exifText)    
+                                        exifText.parentNode.removeChild(exifText)
                                     } catch (error) {
                                         // pass
                                     }
@@ -358,7 +371,7 @@ export default function MdRender({ doc_id }) {
                                         <svg id={img_url + "SVG"} role="img" viewBox="0 0 24 24">
                                             <path id={img_url + "SVGPath"} d={siLens.path} />
                                         </svg>
-                                        <span style={{fontSize:'normal'}}>&nbsp;|&nbsp;<span style={{fontSize:'italic'}} id={img_url + "Model"} /></span>
+                                        <span style={{ fontSize: 'normal' }}>&nbsp;|&nbsp;<span style={{ fontSize: 'italic' }} id={img_url + "Model"} /></span>
                                     </span>
                                     <span className="exif-item" id={img_url + "FocalLength"} />
                                     <span className="exif-item" id={img_url + "FNumber"} />

@@ -240,3 +240,11 @@
     margin-left: 6px;
     color: var(--text-2);
 }
+#MD tr:first-child{
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: var(--main-1);;
+}
+#MD td{
+    padding: 5px;
+}
