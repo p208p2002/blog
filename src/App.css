@@ -22,6 +22,13 @@
     font-size: 32px;
 }
 
+#App h1 img{
+    display: inline;
+    height: 36px;
+    padding-bottom: 6px;
+    padding-right: 6px;
+}
+
 #App .home-page-title {
     color: var(--text-1);
     text-decoration: none;

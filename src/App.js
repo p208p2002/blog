@@ -44,10 +44,7 @@ function App() {
       <div style={{ marginTop: 40 }} className="text-center">
         <h1>
           <a href="/" className="home-page-title font-medium">
-            <span className='blog-icon'>
-              {'>_'}
-            </span>
-            &nbsp;
+              <img src="/icon.svg" alt="" srcSet="" />
             {BLOG_NAME}
           </a>
         </h1>
