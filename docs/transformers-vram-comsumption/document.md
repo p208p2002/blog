@@ -124,13 +124,16 @@ $$
 
 
 ### Optimizer
+
+優化模型有許多的 optimizer 可以選擇。通常，每個參數需要 4 Bytes 的儲存空間，而某些 optimizer 會儲存額外的資訊。
+
 | Optimizer              | First Moments | Second Moments | Bytes per Param |
 |------------------------|---------------|----------------|-----------------|
 | SGD                  | ❌             | ❌              | 4               |
 | SGD w momentum       | ✅             | ❌              | 8               |
 | ADAM                 | ✅             | ✅              | 12              |
 
-我們以常用的 Adam optimizer 計算記憶體占用：
+下面以常用的 Adam optimizer 計算記憶體占用：
 
 $$
 \text{Optimizer Memory} = \text{Model Params} \times 12\ \text{Bytes} \tag{4}

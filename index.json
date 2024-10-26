@@ -17,7 +17,7 @@
             "FP16",
             "10",
             "FP32",
-            "計算"
+            "模型"
         ],
         "page_link": "https://blog.philip-huang.tech?page=transformers-vram-comsumption",
         "file_link": "https://blog.philip-huang.tech/docs/transformers-vram-comsumption/document.md",
