@@ -239,12 +239,21 @@
     padding-right: 5px;
     margin-left: 6px;
     color: var(--text-2);
-}
-#MD tr:first-child{
-    border-width: 0px 0px 2px 0px;
+}ㄕ
+
+#MD .md-table-container tr:first-child{
+    border-width: 1px 0px 2px 0px;
     border-style: solid;
     border-color: var(--main-1);;
 }
-#MD td{
-    padding: 5px;
+
+#MD .md-table-container tr{
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: var(--support-1);;
+}
+
+#MD .md-table-container th, td{
+    padding-right: 10px;
+    padding-left: 3px;
 }
