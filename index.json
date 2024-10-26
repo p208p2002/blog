@@ -1,5 +1,29 @@
 [
     {
+        "title": "VLMo: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts",
+        "tags": [
+            "vision",
+            "transformer"
+        ],
+        "hidden_tags": [
+            "影像",
+            "文字",
+            "專家",
+            "預訓練",
+            "編碼器",
+            "視覺",
+            "text",
+            "輸入",
+            "MoME",
+            "mathcal"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=vlmo",
+        "file_link": "https://blog.philip-huang.tech/docs/vlmo/document.md",
+        "date": "2024/10/26",
+        "_has_notebook": false,
+        "_sort_key": 20241026
+    },
+    {
         "title": "Reasons to Reject? Aligning Language Models with Judgments",
         "tags": [
             "論文筆記"
