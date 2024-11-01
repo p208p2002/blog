@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'openhuninn';
+  src: url('https://d2h4b4qokk4jtl.cloudfront.net/fonts/jf-openhuninn-2.1.woff');
+  unicode-range: U+4E00-9FFF;
+}
+
 html, body, #root {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;
+  font-family: openhuninn,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;
   background-color: var(--main-bg-1);
 }
 
