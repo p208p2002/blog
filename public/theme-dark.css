@@ -11,11 +11,11 @@
     --main-bg-1:#343a40;
 }  
 
-.theme-dark img {
+.theme-dark #MD img {
     filter: invert(85%);
 }
 
-.theme-dark .exif img {
+.theme-dark #MD .exif img {
     filter: invert(0%);
 }
 
