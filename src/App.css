@@ -1,37 +1,13 @@
-.blog-icon{
-    color: white;
-    font-family: Verdana;
-    font-size: 12px;
-    background-color: var(--main-2);
-    border-radius: 4px;
-    padding: 5px;
-    font-weight: 700;
-    height: 18px;
-    position: relative;
-    top: -8px;
+#App a{
+    color: var(--main-2);
 }
-
-#App .context {
-    max-width: 800px;
-    min-width: 600px;
-    margin: 0 auto;
-    position: relative;
-}
-
-#App h1 {
-    font-size: 32px;
-}
-
-#App h1 img{
-    display: inline;
-    height: 36px;
-    padding-bottom: 6px;
-    padding-right: 6px;
-}
-
-#App .home-page-title {
-    color: var(--text-1);
+  
+#App a:link{
     text-decoration: none;
+}
+
+#App small{
+    color: var(--text-2);
 }
 
 #App ol {
@@ -54,20 +30,15 @@
     padding-left: 40px;
 }
 
-#App a{
-    color: var(--main-2);
-}
-  
-#App a:link{
-    text-decoration: none;
-}
-
-#App small{
-    color: var(--text-2);
+.context {
+    max-width: 800px;
+    min-width: 600px;
+    margin: 0 auto;
+    position: relative;
 }
 
 @media screen and (max-width: 768px) {
-    #App .context {
+    .context {
         width: 100%;
         margin: 0 auto;
         position: relative;
@@ -76,7 +47,7 @@
 }
 
 @media screen and (max-width: 576px) {
-    #App .context {
+    .context {
         margin-left: 0px;
         box-sizing: border-box;
         max-width: 576px;

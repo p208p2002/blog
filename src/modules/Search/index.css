@@ -1,6 +1,6 @@
 #Search-Bar {
     margin-top: 16px;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
     background-color: var(--main-bg-1);
 }
 
@@ -8,7 +8,8 @@
     border-color: var(--support-1);
     border-style: solid;
     border-width: 0px 0px 1px 0px;
-    height: 24px;
+    height: 30px;
+    text-align: center;
     padding-left: 5px;
     margin-right: 5px;
     background-color: var(--main-bg-1);

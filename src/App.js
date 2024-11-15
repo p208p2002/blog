@@ -2,11 +2,11 @@ import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import './App.css';
 import { AppStateContext } from './index'
-import { BLOG_NAME } from './configs/general'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import MDPreviewer from './modules/MdRender/preview'
 import { POST_PRE_PAGE } from './configs/general'
+import Banner from './modules/Banner';
 
 const axios = require('axios');
 
@@ -41,16 +41,10 @@ function App() {
 
   return (
     <div id="App">
-      <div style={{ marginTop: 40 }} className="text-center">
-        <h1>
-          <a href="/" className="home-page-title font-medium">
-              <img src="/icon.svg" alt="" srcSet="" />
-            {BLOG_NAME}
-          </a>
-        </h1>
-        <small>程式技術、自然語言處理和論文筆記</small>
+
+      <Banner>
         <Search setPosts={setPosts} fullIndex={fullIndex} />
-      </div>
+      </Banner>
 
       <div className="context">
         {posts.map((post, i) => (

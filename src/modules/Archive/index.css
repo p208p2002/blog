@@ -1,0 +1,29 @@
+#Archive p {
+    color: var(--text-1);
+    white-space: nowrap;       /* 不換行 */
+    overflow: hidden;          /* 隱藏超出範圍的內容 */
+    text-overflow: ellipsis;   /* 顯示省略號 */
+    width: 100%;              /* 設定固定寬度 */
+    line-height: 20px;
+}
+
+#Archive small{
+    color: var(--text-2);
+    margin-right: 5px;
+}
+
+#Archive .row{
+    margin-bottom: 12px;
+}
+
+#Archive a{
+    color: var(--main-2);
+}
+  
+#Archive a:link{
+    text-decoration: none;
+}
+
+#Archive small{
+    color: var(--text-2);
+}

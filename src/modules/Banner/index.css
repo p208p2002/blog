@@ -1,0 +1,57 @@
+#Banner {
+    margin-bottom: 10px;
+}
+#Banner .blog-icon{
+    color: white;
+    font-size: 12px;
+    background-color: var(--main-2);
+    border-radius: 4px;
+    padding: 5px;
+    font-weight: 700;
+    height: 18px;
+    position: relative;
+    top: -8px;
+}
+
+#Banner h1 {
+    font-size: 32px;
+}
+
+#Banner h1 img{
+    display: inline;
+    height: 36px;
+    padding-bottom: 6px;
+    padding-right: 6px;
+}
+
+#Banner .home-page-title {
+    color: var(--text-1);
+    text-decoration: none;
+}
+
+#Banner a{
+    color: var(--main-2);
+}
+  
+#Banner a:link{
+    text-decoration: none;
+}
+
+#Banner small{
+    color: var(--text-2);
+}
+
+#Banner small.spec-page{
+    color: var(--text-2);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#Banner small.spec-page a{
+    color: var(--text-2);
+}
+
+#Banner span.sep::before {
+    content: '·';
+    color: var(--text-2);
+}

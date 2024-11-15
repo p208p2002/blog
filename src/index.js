@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import LoadingView from './modules/Loading'
 import CornerMenu from './modules/CornerMenu'
 import Footer from './modules/Footer'
+import Archive from './modules/Archive'
 import { BLOG_NAME } from './configs/general'
 import MdRender from './modules/MdRender';
 import { Helmet } from 'react-helmet'
@@ -36,12 +37,21 @@ function Index() {
       </div>
     )
   }
+  else if (page === "archive") {
+    pageContext = (
+      <div>
+        <Archive />
+        <CornerMenu />
+        <Footer />
+      </div>
+    )
+  }
   else if (page === "code-404") {
     pageContext = (
-    <div className='flex flex-col p-2'>
-      <p>很抱歉，您要求的文章不存在。</p>
-      <p><a style={{color:'blue',textDecoration:'underline'}} href='/'>回首頁</a></p>
-    </div>
+      <div className='flex flex-col p-2'>
+        <p>很抱歉，您要求的文章不存在。</p>
+        <p><a style={{ color: 'blue', textDecoration: 'underline' }} href='/'>回首頁</a></p>
+      </div>
     )
   }
   else {
