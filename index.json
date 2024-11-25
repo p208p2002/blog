@@ -1,5 +1,28 @@
 [
     {
+        "title": "2024 是文藝復興的一年",
+        "tags": [
+            "生活"
+        ],
+        "hidden_tags": [
+            "時間",
+            "手機",
+            "E5%",
+            "E7%",
+            "這些",
+            "E9%",
+            "內容",
+            "2024",
+            "閱讀",
+            "E6%"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=my-2024-review",
+        "file_link": "https://blog.philip-huang.tech/docs/my-2024-review/document.md",
+        "date": "2024/11/25",
+        "_has_notebook": false,
+        "_sort_key": 20241125
+    },
+    {
         "title": "Transformer 模型的記憶體使用量估算",
         "tags": [
             "transformer",
