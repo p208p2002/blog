@@ -48,8 +48,8 @@
 }
 
 #MD p {
-    line-height: 1.8;
-    margin-bottom: 12px;
+    line-height: 2.2;
+    margin-bottom: 24px;
 }
 
 #MD .footer {
@@ -140,11 +140,6 @@
     color: var(--text-3);
     padding-right: 2px;
 }
-
-#MD blockquote{
-    position: relative;
-    margin-top: 25px;
-}
 #MD blockquote::before{
     content: "! Note";
     width: 100%;
@@ -162,9 +157,11 @@
 
 
 #MD blockquote {
+    position: relative;
+    margin-top: 16px;
     background-color: var(--support-3);
     font-size: smaller;
-    margin-bottom: 12px;
+    margin-bottom: 34px;
     padding: 8px;
     padding-left: 12px;
     vertical-align: middle;
