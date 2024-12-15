@@ -42,9 +42,12 @@ function App() {
   return (
     <div id="App">
 
-      <Banner>
+      <Banner/>
+
+      <div className='text-center'>
         <Search setPosts={setPosts} fullIndex={fullIndex} />
-      </Banner>
+      </div>
+
 
       <div className="context">
         {posts.map((post, i) => (
