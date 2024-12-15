@@ -318,6 +318,8 @@ export default function MdRender({ doc_id }) {
 
                         img({ node, inline, className, children, ...props }) {
                             let img_url = props.src || ""
+
+                            console.log("IMG",img_url)
                             let getExif = async () => {
                                 let src = { props }
                                 if (src !== undefined) {
