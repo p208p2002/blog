@@ -1,26 +1,27 @@
 [
     {
-        "title": "2024 是文藝復興的一年",
+        "title": "VLMo: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts",
         "tags": [
-            "生活"
+            "vision",
+            "transformer"
         ],
         "hidden_tags": [
-            "時間",
-            "手機",
-            "E5%",
-            "E7%",
-            "這些",
-            "E9%",
-            "內容",
-            "2024",
-            "閱讀",
-            "E6%"
+            "影像",
+            "文字",
+            "專家",
+            "預訓練",
+            "編碼器",
+            "視覺",
+            "text",
+            "輸入",
+            "MoME",
+            "mathcal"
         ],
-        "page_link": "https://blog.philip-huang.tech?page=my-2024-review",
-        "file_link": "https://blog.philip-huang.tech/docs/my-2024-review/document.md",
-        "date": "2024/11/25",
+        "page_link": "https://blog.philip-huang.tech?page=vlmo",
+        "file_link": "https://blog.philip-huang.tech/docs/vlmo/document.md",
+        "date": "2024/10/26",
         "_has_notebook": false,
-        "_sort_key": 20241125
+        "_sort_key": 20241026
     },
     {
         "title": "Transformer 模型的記憶體使用量估算",
@@ -44,30 +45,6 @@
         ],
         "page_link": "https://blog.philip-huang.tech?page=transformers-vram-comsumption",
         "file_link": "https://blog.philip-huang.tech/docs/transformers-vram-comsumption/document.md",
-        "date": "2024/10/26",
-        "_has_notebook": false,
-        "_sort_key": 20241026
-    },
-    {
-        "title": "VLMo: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts",
-        "tags": [
-            "vision",
-            "transformer"
-        ],
-        "hidden_tags": [
-            "影像",
-            "文字",
-            "專家",
-            "預訓練",
-            "編碼器",
-            "視覺",
-            "text",
-            "輸入",
-            "MoME",
-            "mathcal"
-        ],
-        "page_link": "https://blog.philip-huang.tech?page=vlmo",
-        "file_link": "https://blog.philip-huang.tech/docs/vlmo/document.md",
         "date": "2024/10/26",
         "_has_notebook": false,
         "_sort_key": 20241026
