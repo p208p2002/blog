@@ -1,29 +1,79 @@
-#Footer{
+#Footer {
     text-align: center;
     color: var(--text-2);
     font-size: 10pt;
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.04);
+    border-radius: 8px 8px 0 0;
+    padding: 6px 0 2px 0;
     position: fixed;
-    bottom: 2.5%;
-    right: 2.5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: unset;
+    z-index: 10;
+    margin: 0 auto;
+    max-width: 420px;
+    transition: background 0.2s;
 }
 
-#Footer a{
+.footer-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-size: 10pt;
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 8px;
+}
+
+.footer-icons a {
     color: var(--main-3);
+    opacity: 0.85;
+    transition: color 0.2s, opacity 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
 }
 
-#Footer a:link{
-    text-decoration: none;
+.footer-icons a:hover {
+    color: #ffb300;
+    opacity: 1;
+    transform: translateY(-2px) scale(1.08);
 }
 
-#Footer div{
-    margin-bottom: 5px;
+#Footer.footer-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+#Footer.footer-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-
-@media screen and (max-width: 768px){
-    #Footer{
-        color: var(--text-2);
+@media screen and (max-width: 768px) {
+    #Footer {
         font-size: 10pt;
-        position: initial;
+        position: static;
+        background: rgba(255,255,255,0.98);
+        box-shadow: none;
+        border-radius: 0;
+        max-width: unset;
+        padding: 12px 0 6px 0;
+    }
+    .footer-main {
+        flex-direction: column;
+        gap: 2px;
+    }
+    .footer-icons {
+        gap: 12px;
     }
 }

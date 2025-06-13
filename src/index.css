@@ -17,11 +17,6 @@ html, body, #root {
   transition: background-color 0.8s;
 }
 
-.render-container{
-  margin: 0 auto;
-  max-width: 770px;
-  padding-bottom: 200px;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -63,13 +58,7 @@ a:link{
 }
 
 @media screen and (max-width: 576px) {
-  .render-container{
-    margin: 0 auto;
-    max-width: 800px;
-    padding-bottom: 100px;
-    padding-left: 3.5%;
-    padding-right: 3.5%;
-  }
+
   
   .app-container{
     padding-bottom: 100px;

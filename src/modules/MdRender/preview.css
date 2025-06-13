@@ -3,7 +3,7 @@
     line-height: 2;
     margin-top: -20px;
     color: var(--text-1);
-    min-height:80px
+    min-height:80px;
 }
 
 #MD-Preview p{
@@ -90,4 +90,4 @@
       left: calc(100% + var(--initial-left));
     }
   }
-  
+

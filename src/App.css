@@ -35,6 +35,7 @@
     min-width: 600px;
     margin: 0 auto;
     position: relative;
+    padding-bottom: 70px; /* 預留 Footer 空間 */
 }
 
 @media screen and (max-width: 768px) {
@@ -42,7 +43,7 @@
         width: 100%;
         margin: 0 auto;
         position: relative;
-
+        padding-bottom: 80px; /* 手機版預留更多空間 */
     }
 }
 
@@ -53,5 +54,6 @@
         max-width: 576px;
         min-width: 380px;
         position: relative;
+        padding-bottom: 90px; /* 小螢幕再多一點 */
     }
 }
