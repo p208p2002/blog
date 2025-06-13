@@ -9,17 +9,4 @@
     --text-2:#c0c0c0;
     --text-3:#c0c0c0;
     --main-bg-1:#343a40;
-}  
-
-.theme-dark #MD img {
-    filter: invert(85%);
-}
-
-.theme-dark #MD .exif img {
-    filter: invert(0%);
-}
-
-/* do not apply img filter to comments block */
-#comments img {
-    filter: invert(0%);
 }

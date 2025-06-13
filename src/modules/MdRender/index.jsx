@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneLight as codeSyntaxStyleLight, tomorrow as codeSyntaxStyleDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneLight as codeSyntaxStyleLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { BLOG_NAME, IMG_FILE_PREFIX } from '../../configs/general';
 import { Helmet } from 'react-helmet';
 import rehypeRaw from 'rehype-raw';
@@ -14,7 +14,6 @@ import katex from 'katex';
 import TOC from '../TableOfContent';
 import 'gitalk/dist/gitalk.css';
 import Gitalk from 'gitalk';
-import Darkmode from 'drkmd-js';
 import ExifReader from 'exifreader';
 import { siNikon, siLens, siApple } from 'simple-icons';
 import { mdTableToHTML } from './md-table-to-html';
@@ -196,28 +195,11 @@ function useSyncScroll(editorRef, renderRef) {
     }, [editorRef, renderRef]);
 }
 
-// 自訂 hook：主題切換
-function useThemeSync(setCodeSyntaxStyle) {
-    useEffect(() => {
-        // eslint-disable-next-line
-        const dm = new Darkmode();
-        const targetNode = document.body;
-        const config = { attributes: true, childList: true, subtree: true };
-        const observer = new MutationObserver(() => {
-            let { className = "theme-light" } = targetNode;
-            if (className === "theme-dark") setCodeSyntaxStyle(codeSyntaxStyleDark);
-            if (className === "theme-light") setCodeSyntaxStyle(codeSyntaxStyleLight);
-        });
-        observer.observe(targetNode, config);
-        return () => observer.disconnect();
-    }, [setCodeSyntaxStyle]);
-}
-
 // 新增 PostContent 元件，統一渲染標題、日期、標籤、Markdown
 function PostContent({ postTitle, date, tags, content, codeSyntaxStyle, renderContainerRef }) {
     return (
         <div id="Render" ref={renderContainerRef} className="overflow-y-auto h-full max-h-full">
-            <h1 className="post-title text-4xl font-extrabold mb-4 text-zinc-800 dark:text-zinc-100 tracking-tight leading-tight border-b border-zinc-200 dark:border-zinc-700 pb-2">
+            <h1 className="post-title text-4xl font-extrabold mb-4 text-zinc-800 tracking-tight leading-tight border-b border-zinc-200 pb-2">
                 {postTitle}
             </h1>
             <div className="document-info flex flex-row items-center gap-6 mb-6 text-sm">
@@ -230,7 +212,7 @@ function PostContent({ postTitle, date, tags, content, codeSyntaxStyle, renderCo
                     標籤:&nbsp;
                     {tags.map((tag, i) => (
                         <span
-                            className="post-tag bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 px-2 py-0.5 rounded-full mx-1 text-xs font-semibold shadow"
+                            className="post-tag bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full mx-1 text-xs font-semibold shadow"
                             key={i}
                         >
                             #{tag}
@@ -238,7 +220,7 @@ function PostContent({ postTitle, date, tags, content, codeSyntaxStyle, renderCo
                     ))}
                 </div>
             </div>
-            <div id="MD" className="prose prose-zinc dark:prose-invert max-w-none">
+            <div id="MD" className="prose prose-zinc max-w-none">
                 <MarkdownRenderer content={content} codeSyntaxStyle={codeSyntaxStyle} />
             </div>
         </div>
@@ -252,11 +234,10 @@ export default function MdRender({ doc_id, mode = "edit" }) {
     const [pageTitle, setPageTitle] = useState(BLOG_NAME);
     const [postTitle, setPostTitle] = useState("");
     const [pageDescription, setPageDescription] = useState("");
-    const [codeSyntaxStyle, setCodeSyntaxStyle] = useState(codeSyntaxStyleLight);
+    const [codeSyntaxStyle] = useState(codeSyntaxStyleLight);
     const editorTextAreaRef = useRef();
     const renderContainerRef = useRef();
 
-    useThemeSync(setCodeSyntaxStyle);
     useSyncScroll(editorTextAreaRef, renderContainerRef);
 
     // 取得文章內容
@@ -337,7 +318,7 @@ export default function MdRender({ doc_id, mode = "edit" }) {
     let { date = "", tags = [] } = documentInfo;
 
     return (
-        <div className="bg-gradient-to-br from-zinc-100 via-white to-zinc-200 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 min-h-screen">
+        <div className="bg-gradient-to-br from-zinc-100 via-white to-zinc-200 min-h-screen">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>{pageTitle}</title>
@@ -351,9 +332,9 @@ export default function MdRender({ doc_id, mode = "edit" }) {
             {mode === "edit" ? (
                 <div className="flex h-screen overflow-hidden justify-center">
                     <div className="w-full flex h-full">
-                        <div className="flex-1 h-full max-h-full mx-4 my-6 bg-white dark:bg-zinc-800 rounded-xl shadow-lg p-6 overflow-hidden border border-zinc-200 dark:border-zinc-700 transition-all duration-300">
-                            <h3 className="text-xl font-bold mb-3 text-blue-700 dark:text-blue-300 flex items-center gap-2">
-                                <svg className="w-6 h-6 text-blue-400 dark:text-blue-200" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m0 0H3" /></svg>
+                        <div className="flex-1 h-full max-h-full mx-4 my-6 bg-white rounded-xl shadow-lg p-6 overflow-hidden border border-zinc-200 transition-all duration-300">
+                            <h3 className="text-xl font-bold mb-3 text-blue-700 flex items-center gap-2">
+                                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m0 0H3" /></svg>
                                 編輯模式
                             </h3>
                             <p className="text-sm text-zinc-500 mb-4">您可以在左側編輯 Markdown 內容，右側即時預覽。</p>
@@ -375,14 +356,14 @@ export default function MdRender({ doc_id, mode = "edit" }) {
                                 <textarea
                                     id="EditorTextArea"
                                     ref={editorTextAreaRef}
-                                    className="w-full h-full bg-zinc-100 dark:bg-zinc-700 p-4 rounded-lg border border-zinc-300 dark:border-zinc-600 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-blue-600 font-mono text-base shadow-inner transition-all duration-200"
+                                    className="w-full h-full bg-zinc-100 p-4 rounded-lg border border-zinc-300 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono text-base shadow-inner transition-all duration-200"
                                     value={content}
                                     onChange={(e) => setContent(e.target.value)}
                                     spellCheck={false}
                                 />
                             </div>
                         </div>
-                        <div className="flex-1 h-full max-h-full mx-4 my-6 bg-white dark:bg-zinc-800 rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 dark:border-zinc-700 transition-all duration-300">
+                        <div className="flex-1 h-full max-h-full mx-4 my-6 bg-white rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 transition-all duration-300">
                             <PostContent
                                 postTitle={postTitle}
                                 date={date}
@@ -395,8 +376,8 @@ export default function MdRender({ doc_id, mode = "edit" }) {
                     </div>
                 </div>
             ) : (
-                <div className="w-full min-h-screen flex justify-center items-start bg-gradient-to-br from-zinc-100 via-white to-zinc-200 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900">
-                    <div className="w-full max-w-4xl mx-auto my-12 bg-white dark:bg-zinc-800 rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 dark:border-zinc-700 transition-all duration-300">
+                <div className="w-full min-h-screen flex justify-center items-start bg-gradient-to-br from-zinc-100 via-white to-zinc-200">
+                    <div className="w-full max-w-4xl mx-auto my-12 bg-white rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 transition-all duration-300">
                         <PostContent
                             postTitle={postTitle}
                             date={date}

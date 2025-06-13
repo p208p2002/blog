@@ -21,14 +21,7 @@
 
     link.type = "text/css";
     link.rel = "stylesheet";
-    
-    if (localStorage.getItem("darkmode").toLowerCase() === "true") {
-      link.href = '/theme-dark.css';
-    }
-    else {
-      link.href = '/theme.css';
-    }
-
+    link.href = '/theme.css'; // 只載入 light theme
     head.appendChild(link);  
   </script>
 
