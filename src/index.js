@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import './tailwindcss.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -17,7 +17,8 @@ export const AppStateContext = React.createContext();
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-let { page = undefined } = params
+let { page = undefined, mode="view" } = params
+console.log("params", params);
 
 function Index() {
   let appState = new AppState()
@@ -54,13 +55,26 @@ function Index() {
       </div>
     )
   }
-  else {
+  else if (mode === "edit") {
     pageContext = (
-      <div className="render-container">
-        <MdRender doc_id={page} />
+      <>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{BLOG_NAME} - 編輯 {page}</title>
+        </Helmet>
+        <MdRender doc_id={page} mode={mode}/>
         <CornerMenu />
         <Footer />
-      </div>
+      </>
+    )
+  }
+  else {
+    pageContext = (
+      <>
+        <MdRender doc_id={page} mode={mode}/>
+        <CornerMenu />
+        <Footer />
+      </>
     )
   }
 
