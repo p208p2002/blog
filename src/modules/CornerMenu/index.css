@@ -6,8 +6,9 @@
     color: var(--support-1);
     font-size: 3px;
     position: fixed;
-    bottom: 55px;
+    bottom: 90px; /* 上移，避免壓到 Footer */
     right: 3.4%;
+    z-index: 20;
 }
 
 #Corner-Menu .link {
@@ -36,7 +37,7 @@
         color: var(--support-2);
         font-size: 3px;
         position: fixed;
-        bottom: 30px;
+        bottom: 110px; /* 手機版再上移 */
         right: 6%;
     }
 
