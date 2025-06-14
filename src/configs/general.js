@@ -8,3 +8,4 @@ export const IMG_FILE_PREFIX = NODE_ENV === "production" ? `https://media.github
 export const POST_PRE_PAGE = 10
 export const CODE_LAB_PREFIX = `https://colab.research.google.com/github/${GITHUB_USER}/blog/blob/main/public`
 export const GITHUB_USER_CONTENT_PREFIX = `https://raw.githubusercontent.com/${GITHUB_USER}/blog/main/public`
+export const EDIT_SERVER = `http://localhost:8000`

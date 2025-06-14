@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight as codeSyntaxStyleLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { BLOG_NAME, IMG_FILE_PREFIX } from '../../configs/general';
+import { BLOG_NAME, IMG_FILE_PREFIX, EDIT_SERVER } from '../../configs/general';
 import { Helmet } from 'react-helmet';
 import rehypeRaw from 'rehype-raw';
 import './index.css';
@@ -241,23 +241,37 @@ export default function MdRender({ doc_id, mode = "edit" }) {
     useSyncScroll(editorTextAreaRef, renderContainerRef);
 
     // 取得文章內容
+    let base_url = ""
+    if (mode === "edit") {
+        base_url = EDIT_SERVER;
+    }
+
     useEffect(() => {
-        axios.get(`/docs/${doc_id}/document.md`)
+        axios.get(`${base_url}/docs/${doc_id}/document.md`)
             .then((res) => {
-                const gistTitle = res.data.split("\n")[0].replace("# ", "");
-                let gistContent = fixImgLink(res.data, doc_id).replace(`# ${gistTitle}`, "");
-                const documentInfoText = gistContent.match(/<document-info>((.|\n)*)<\/document-info>/)[0];
-                gistContent = gistContent.replace(/<document-info>((.|\n)*)<\/document-info>/, "");
-                setDocumentInfo(parseDocumentInfo(documentInfoText));
-                setContent(gistContent);
-                setPostTitle(gistTitle);
-                setPageTitle(`${gistTitle} - ${BLOG_NAME}`);
-                setPageDescription(gistContent.replaceAll("#", " ").slice(0, 500));
+                if (mode === "edit") {
+                    // 如果是編輯模式，直接將內容設置到編輯器
+                    setContent(res.data);
+                    return;
+                }
+                else {
+                    const gistTitle = res.data.split("\n")[0].replace("# ", "");
+                    let gistContent = fixImgLink(res.data, doc_id).replace(`# ${gistTitle}`, "");
+                    const documentInfoText = gistContent.match(/<document-info>((.|\n)*)<\/document-info>/)[0];
+                    gistContent = gistContent.replace(/<document-info>((.|\n)*)<\/document-info>/, "");
+                    setDocumentInfo(parseDocumentInfo(documentInfoText));
+                    setContent(gistContent);
+                    setPostTitle(gistTitle);
+                    setPageTitle(`${gistTitle} - ${BLOG_NAME}`);
+                    setPageDescription(gistContent.replaceAll("#", " ").slice(0, 500));
+                }
+
             })
-            .catch(() => {
+            .catch((e) => {
+                console.error("Error fetching document:", e);
                 window.location.href = "/?page=code-404";
             });
-    }, [doc_id]);
+    }, [doc_id, mode, base_url]);
 
     // hash 滾動
     useEffect(() => {
@@ -333,16 +347,24 @@ export default function MdRender({ doc_id, mode = "edit" }) {
                 <div className="flex h-screen overflow-hidden justify-center">
                     <div className="w-full flex h-full">
                         <div className="flex-1 mx-4 my-6 bg-white rounded-xl shadow-lg p-6 border border-zinc-200 transition-all duration-300">
-                        
-                                <textarea
-                                    id="EditorTextArea"
-                                    ref={editorTextAreaRef}
-                                    className="w-full h-full bg-zinc-100 p-4 rounded-lg border border-zinc-300 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono text-base shadow-inner transition-all duration-200"
-                                    value={content}
-                                    onChange={(e) => setContent(e.target.value)}
-                                    spellCheck={false}
-                                />
-                            
+
+                            <textarea
+                                id="EditorTextArea"
+                                ref={editorTextAreaRef}
+                                className="w-full h-full bg-zinc-100 p-4 rounded-lg border border-zinc-300 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono text-base shadow-inner transition-all duration-200"
+                                value={content}
+                                onChange={(e) => {
+                                    setContent(e.target.value)
+                                }}
+                                onBlur={(e) => {
+                                    if (mode !== "edit") return;
+                                    axios.post(`${EDIT_SERVER}/docs/` + doc_id + "/document.md", null, {
+                                        params: { content: content }
+                                    })
+                                }}
+                                spellCheck={false}
+                            />
+
                         </div>
                         <div className="flex-1 mx-4 my-6 bg-white rounded-xl shadow-lg p-8 border border-zinc-200 transition-all duration-300">
                             <PostContent

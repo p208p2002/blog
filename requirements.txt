@@ -1,2 +1,5 @@
 jieba
 jupyter
+fastapi[all]
+uvicorn
+pydantic
