@@ -332,27 +332,8 @@ export default function MdRender({ doc_id, mode = "edit" }) {
             {mode === "edit" ? (
                 <div className="flex h-screen overflow-hidden justify-center">
                     <div className="w-full flex h-full">
-                        <div className="flex-1 h-full max-h-full mx-4 my-6 bg-white rounded-xl shadow-lg p-6 overflow-hidden border border-zinc-200 transition-all duration-300">
-                            <h3 className="text-xl font-bold mb-3 text-blue-700 flex items-center gap-2">
-                                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m0 0H3" /></svg>
-                                編輯模式
-                            </h3>
-                            <p className="text-sm text-zinc-500 mb-4">您可以在左側編輯 Markdown 內容，右側即時預覽。</p>
-                            <button
-                                className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition-all duration-200 mb-4"
-                                onClick={() => {
-                                    const contentBlob = new Blob([content], { type: 'text/markdown' });
-                                    const url = URL.createObjectURL(contentBlob);
-                                    const a = document.createElement('a');
-                                    a.href = url;
-                                    a.download = `${postTitle}.md`;
-                                    a.click();
-                                    URL.revokeObjectURL(url);
-                                }}
-                            >
-                                下載 Markdown
-                            </button>
-                            <div id="Editor" className="h-[calc(100vh-180px)] mt-2 overflow-y-auto">
+                        <div className="flex-1 mx-4 my-6 bg-white rounded-xl shadow-lg p-6 border border-zinc-200 transition-all duration-300">
+                        
                                 <textarea
                                     id="EditorTextArea"
                                     ref={editorTextAreaRef}
@@ -361,9 +342,9 @@ export default function MdRender({ doc_id, mode = "edit" }) {
                                     onChange={(e) => setContent(e.target.value)}
                                     spellCheck={false}
                                 />
-                            </div>
+                            
                         </div>
-                        <div className="flex-1 h-full max-h-full mx-4 my-6 bg-white rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 transition-all duration-300">
+                        <div className="flex-1 mx-4 my-6 bg-white rounded-xl shadow-lg p-8 border border-zinc-200 transition-all duration-300">
                             <PostContent
                                 postTitle={postTitle}
                                 date={date}
@@ -377,7 +358,7 @@ export default function MdRender({ doc_id, mode = "edit" }) {
                 </div>
             ) : (
                 <div className="w-full min-h-screen flex justify-center items-start bg-gradient-to-br from-zinc-100 via-white to-zinc-200">
-                    <div className="w-full max-w-4xl mx-auto my-12 bg-white rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 transition-all duration-300">
+                    <div className="w-full max-w-4xl mx-auto my-8 bg-white rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 transition-all duration-300">
                         <PostContent
                             postTitle={postTitle}
                             date={date}
