@@ -24,6 +24,31 @@
         "_sort_key": 20250723
     },
     {
+        "title": "淺談 DP，MP 和 TP",
+        "tags": [
+            "data-parallel",
+            "model-parallel",
+            "tensor-parallel"
+        ],
+        "hidden_tags": [
+            "https",
+            "資料",
+            "io",
+            "##",
+            "GPU",
+            "batch",
+            "我們",
+            "模型",
+            "MP",
+            "parallel"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=dp-mp-tp",
+        "file_link": "https://blog.philip-huang.tech/docs/dp-mp-tp/document.md",
+        "date": "2025/02/20",
+        "_has_notebook": false,
+        "_sort_key": 20250220
+    },
+    {
         "title": "VLMo: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts",
         "tags": [
             "vision",
