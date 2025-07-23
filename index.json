@@ -1,29 +1,27 @@
 [
     {
-        "title": "Transformer 模型的記憶體使用量估算",
+        "title": "CUDA GPU 排程策略",
         "tags": [
-            "transformer",
-            "vram",
-            "training",
-            "inference"
+            "cuda",
+            "job-schedule"
         ],
         "hidden_tags": [
-            "text",
-            "times",
-            "Bytes",
-            "GiB",
-            "記憶體",
-            "Memory",
-            "FP16",
-            "10",
-            "FP32",
-            "模型"
+            "stream",
+            "K2",
+            "https",
+            "K3",
+            "CUDA",
+            "threads",
+            "執行",
+            "K1",
+            "image",
+            "hackmd"
         ],
-        "page_link": "https://blog.philip-huang.tech?page=transformers-vram-comsumption",
-        "file_link": "https://blog.philip-huang.tech/docs/transformers-vram-comsumption/document.md",
-        "date": "2024/10/26",
+        "page_link": "https://blog.philip-huang.tech?page=cuda-schedule",
+        "file_link": "https://blog.philip-huang.tech/docs/cuda-schedule/document.md",
+        "date": "2025/07/23",
         "_has_notebook": false,
-        "_sort_key": 20241026
+        "_sort_key": 20250723
     },
     {
         "title": "VLMo: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts",
@@ -45,6 +43,32 @@
         ],
         "page_link": "https://blog.philip-huang.tech?page=vlmo",
         "file_link": "https://blog.philip-huang.tech/docs/vlmo/document.md",
+        "date": "2024/10/26",
+        "_has_notebook": false,
+        "_sort_key": 20241026
+    },
+    {
+        "title": "Transformer 模型的記憶體使用量估算",
+        "tags": [
+            "transformer",
+            "vram",
+            "training",
+            "inference"
+        ],
+        "hidden_tags": [
+            "text",
+            "times",
+            "Bytes",
+            "GiB",
+            "記憶體",
+            "Memory",
+            "FP16",
+            "10",
+            "FP32",
+            "模型"
+        ],
+        "page_link": "https://blog.philip-huang.tech?page=transformers-vram-comsumption",
+        "file_link": "https://blog.philip-huang.tech/docs/transformers-vram-comsumption/document.md",
         "date": "2024/10/26",
         "_has_notebook": false,
         "_sort_key": 20241026
