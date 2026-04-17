@@ -7,8 +7,7 @@ import Search from './modules/Search'
 import MDPreviewer from './modules/MdRender/preview'
 import { HOME_PAGE, POST_PRE_PAGE, publicPath } from './configs/general'
 import Banner from './modules/Banner';
-
-const axios = require('axios');
+import axios from 'axios';
 
 function App() {
 

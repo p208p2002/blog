@@ -18,10 +18,10 @@
 }
 #MD-Preview document-info,
 #MD-Preview .md-preview h1{
-    visibility: hidden;
-    line-height: 0px;
+    display: none;
+    line-height: 0;
 }
 
 #MD-Preview img{
-  visibility: hidden;
+  display: none;
 }

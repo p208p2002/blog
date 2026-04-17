@@ -4,8 +4,16 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { tomorrow as codeSyntaxStyle } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import './preview.css'
 import rehypeRaw from 'rehype-raw'
+import axios from 'axios'
 
-const axios = require('axios');
+function stripPreviewOnlyBlocks(markdown) {
+    return markdown
+        .replace(/<document-info>[\s\S]*?<\/document-info>/g, "")
+        .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+        .replace(/<img\b[^>]*>/gi, "")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim()
+}
 
 export default function MdRender({ file_link, maxLine = 20 }) {
     const [content, setContent] = useState("")
@@ -14,7 +22,9 @@ export default function MdRender({ file_link, maxLine = 20 }) {
         setLoading(true)
         axios.get(file_link)
             .then((res) => {
-                const gistContent = res.data.split("\n").slice(1, maxLine).join("\n") // remove title
+                const gistContent = stripPreviewOnlyBlocks(
+                    res.data.split("\n").slice(1, maxLine).join("\n") // remove title
+                )
                 setContent(gistContent)
             })
             .finally(() => {
@@ -56,6 +66,9 @@ export default function MdRender({ file_link, maxLine = 20 }) {
                                     {children}
                                 </code>
                             )
+                        },
+                        img() {
+                            return null
                         }
                     }}
                 />

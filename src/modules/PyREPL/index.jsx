@@ -1,7 +1,28 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import './index.css'
-const { loadPyodide } = require("pyodide");
+
+const PYODIDE_VERSION = "0.29.3"
+const PYODIDE_BASE_URL = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full`
+
+function loadPyodideRuntime() {
+    if (window.loadPyodide !== undefined) {
+        return Promise.resolve(window.loadPyodide)
+    }
+
+    if (window.__pyodideLoaderPromise === undefined) {
+        window.__pyodideLoaderPromise = new Promise((resolve, reject) => {
+            const script = document.createElement("script")
+            script.src = `${PYODIDE_BASE_URL}/pyodide.js`
+            script.async = true
+            script.onload = () => resolve(window.loadPyodide)
+            script.onerror = reject
+            document.head.appendChild(script)
+        })
+    }
+
+    return window.__pyodideLoaderPromise
+}
 
 function PyREPL({ script }) {
     const [isReady, setIsReady] = useState(false)
@@ -65,9 +86,9 @@ function PyREPL({ script }) {
 
     // load/init pyodide
     useEffect(() => {
-        loadPyodide({
-            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.23.4/full",
-        }).then((pyodide) => {
+        loadPyodideRuntime().then((loadPyodide) => loadPyodide({
+            indexURL: PYODIDE_BASE_URL,
+        })).then((pyodide) => {
             setPyodide(pyodide)
             // redirect the python std out to io.String
             // so that we can get stdout in js

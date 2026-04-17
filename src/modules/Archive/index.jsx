@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import { AppStateContext } from '../../index'
 import './index.css'
 import { publicPath } from '../../configs/general'
-const axios = require('axios')
+import axios from 'axios'
 
 function Archive() {
     let [posts, setPosts] = useState([])

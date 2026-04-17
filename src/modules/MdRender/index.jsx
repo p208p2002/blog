@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 import rehypeRaw from 'rehype-raw';
 import './index.css';
 import PyREPL from "../PyREPL";
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import remarkMath from 'remark-math';
 import katex from 'katex';
 import TOC from '../TableOfContent';
@@ -17,7 +17,7 @@ import Gitalk from 'gitalk';
 import ExifReader from 'exifreader';
 import { siNikon, siLens, siApple } from 'simple-icons';
 import { mdTableToHTML } from './md-table-to-html';
-const axios = require('axios');
+import axios from 'axios';
 
 // 工具函式
 function fixImgLink(content, doc_id) {
@@ -237,6 +237,7 @@ export default function MdRender({ doc_id, mode = "edit" }) {
     const [codeSyntaxStyle] = useState(codeSyntaxStyleLight);
     const editorTextAreaRef = useRef();
     const renderContainerRef = useRef();
+    const pyReplRootsRef = useRef(new Map());
 
     useSyncScroll(editorTextAreaRef, renderContainerRef);
 
@@ -272,6 +273,7 @@ export default function MdRender({ doc_id, mode = "edit" }) {
     // 代碼區塊 Run 按鈕
     useEffect(() => {
         let supportLangs = ['python'];
+        const pyReplRoots = pyReplRootsRef.current;
         let appendNoteBook = (e) => {
             let codeLang = 'shell';
             try {
@@ -280,12 +282,17 @@ export default function MdRender({ doc_id, mode = "edit" }) {
             let newNode = document.createElement("pre");
             let codeScript = e.target.parentNode.getElementsByTagName('code')[0].innerText;
             if (document.getElementById(codeScript)) {
-                document.getElementById(codeScript).remove();
+                const existingNode = document.getElementById(codeScript);
+                pyReplRoots.get(existingNode)?.unmount();
+                pyReplRoots.delete(existingNode);
+                existingNode.remove();
             }
             if (supportLangs.includes(codeLang)) {
                 newNode.id = codeScript;
                 e.target.parentNode.insertBefore(newNode, e.target.nextSibling.nextSibling);
-                ReactDOM.render(<PyREPL script={codeScript} />, newNode);
+                const root = createRoot(newNode);
+                pyReplRoots.set(newNode, root);
+                root.render(<PyREPL script={codeScript} />);
             }
         };
         let codeBlocks = document.getElementsByTagName('pre');
@@ -312,6 +319,8 @@ export default function MdRender({ doc_id, mode = "edit" }) {
                 let codeBlock = codeBlocks[i];
                 codeBlock.removeEventListener('click', appendNoteBook);
             }
+            pyReplRoots.forEach((root) => root.unmount());
+            pyReplRoots.clear();
         };
     }, [content]);
 
