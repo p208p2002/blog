@@ -1,17 +1,50 @@
+#TOC {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+#TOC .toc-list {
+    display: none;
+    width: 256px;
+    padding: var(--space-7) 0 0 var(--space-6);
+    margin: 0;
+    font-size: 14px;
+    word-break: break-word;
+}
+
 #TOC .activate-h2 {
-    color: var(--text-1);
-    text-decoration-color: var(--main-3);
+    color: var(--color-text);
+    text-decoration-color: var(--color-primary-soft);
 }
 
 #TOC .activate-h3 {
-    color: var(--text-1);
-    text-decoration-color: var(--main-3);
+    color: var(--color-text);
+    text-decoration-color: var(--color-primary-soft);
 }
 
 
 #TOC li {
-    color: var(--text-2);
+    color: var(--color-text-muted);
     line-height: 1.6;
+}
+
+#TOC .toc-link {
+    cursor: pointer;
+    color: var(--color-text-muted);
+    list-style: none;
+}
+
+#TOC .toc-link-nested {
+    margin-left: var(--space-5);
+    list-style: disc;
+}
+
+#TOC .toc-link-active {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
 }
 
 .box {
@@ -23,4 +56,16 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 1280px) {
+    #TOC .toc-list {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    #TOC .toc-list {
+        width: 288px;
+    }
 }

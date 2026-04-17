@@ -1,0 +1,42 @@
+#LiveCode {
+    min-height: 150px;
+    padding-bottom: 28px;
+    position: relative;
+    color: var(--color-text);
+}
+
+#LiveCode .runtime-status {
+    overflow: hidden;
+    color: var(--color-text-muted);
+}
+
+#LiveCode .script-line {
+    background: var(--color-surface-muted);
+    padding: var(--space-1) var(--space-2);
+    font-family: var(--font-mono);
+}
+
+#LiveCode .result-line {
+    padding: var(--space-1) var(--space-2);
+    font-family: var(--font-mono);
+    white-space: pre-wrap;
+}
+
+#LiveCode .repl-form {
+    height: 28px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#LiveCode .repl-input {
+    width: calc(100% - 64px);
+    height: calc(100% - 1px);
+}
+
+#LiveCode .repl-submit {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 100%;
+}

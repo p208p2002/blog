@@ -1,13 +1,13 @@
 import { React } from 'react'
-import { BLOG_NAME } from '../../configs/general'
+import { BLOG_NAME, HOME_PAGE, publicPath } from '../../configs/general'
 import './index.css'
 
 function Banner(props) {
     return (
         <div id="Banner" className="text-center">
             <h1>
-                <a href="/" className="home-page-title font-medium">
-                    <img src="/icon.svg" alt="" srcSet="" />
+                <a href={HOME_PAGE} className="home-page-title font-medium">
+                    <img src={publicPath("/icon.svg")} alt="" srcSet="" />
                     {BLOG_NAME}
                 </a>
             </h1>
@@ -15,7 +15,7 @@ function Banner(props) {
             <br />
             
             <div className="sub-item-container">
-                <small className='spec-page'><a href="/?page=archive">Archive</a></small>
+                <small className='spec-page'><a href={`${HOME_PAGE}?page=archive`}>Archive</a></small>
                 <span className='sep'></span>
                 <small className='spec-page'><a href="https://github.com/p208p2002" target="_blank" rel="noopener noreferrer">GitHub</a></small>
                 <span className='sep'></span>

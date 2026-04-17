@@ -42,18 +42,18 @@ function Index() {
     }, [])
 
     return (
-        <div className='fixed top-0 left-0' id="TOC">
-            <ul className='pl-4 pt-4 lg:pl-8 lg:pt-10 text-sm break-words hidden xl:block xl:w-64 2xl:w-72'>
+        <div id="TOC">
+            <ul className='toc-list'>
                 {
                     docTitles.map((docTitle, docTitleIdx) => {
                         // console.log(docTitle.getBoundingClientRect())
-                        let eleStyle = docTitle.tagName === "H1" || docTitle.tagName === "H2" ? "cursor-pointer text-zinc-500" : "ml-5 cursor-pointer text-zinc-500 list-disc"
+                        let eleStyle = docTitle.tagName === "H1" || docTitle.tagName === "H2" ? "toc-link" : "toc-link toc-link-nested"
                         if (docTitleIdx === activateIdx) {
                             if (docTitle.tagName === "H1" || docTitle.tagName === "H2") {
-                                eleStyle += " underline activate-h2 decoration-2 underline-offset-2"
+                                eleStyle += " toc-link-active activate-h2"
                             }
                             else {
-                                eleStyle += " underline activate-h3 decoration-2 underline-offset-2"
+                                eleStyle += " toc-link-active activate-h3"
                             }
 
                         }

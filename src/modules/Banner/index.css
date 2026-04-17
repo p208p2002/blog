@@ -1,14 +1,14 @@
 #Banner {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-7);
 }
 
 #Banner .blog-icon{
     color: white;
     font-size: 12px;
-    background-color: var(--main-2);
-    border-radius: 4px;
-    padding: 5px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1);
     font-weight: 700;
     height: 18px;
     position: relative;
@@ -17,7 +17,7 @@
 
 #Banner h1 {
     font-size: 32px;
-    margin-bottom: 3px;
+    margin: 0 0 var(--space-1);
 }
 
 #Banner h1 img{
@@ -28,48 +28,33 @@
 }
 
 #Banner .home-page-title {
-    color: var(--text-1);
-    text-decoration: none;
-}
-
-#Banner a{
-    color: var(--main-2);
-}
-  
-#Banner a:link{
+    color: var(--color-text);
     text-decoration: none;
 }
 
 #Banner .sub-item-container{
-    margin-top: 3px;
-    margin-bottom: 8px;
+    margin-top: var(--space-1);
+    margin-bottom: var(--space-2);
     height: 24px;
 }
 
-#Banner small{
-    color: var(--text-2);
-}
-
 #Banner small.spec-page{
-    color: var(--text-2);
-    margin-left: 3px;
-    margin-right: 3px;
-    border-radius: 6px;
-    padding: 3px;
+    margin-inline: var(--space-1);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1);
 }
 
 #Banner small.spec-page > a:hover{
-    /* color: var(--main-2); */
-    color: var(--main-1);
+    color: var(--color-primary-strong);
 }
 
 #Banner small.spec-page a{
-    color: var(--text-2);
+    color: var(--color-text-muted);
 }
 
 #Banner span.sep::before {
     content: '<sep>';
-    color: var(--text-2);
+    color: var(--color-text-muted);
     font-style: italic;
     font-size: 8px;
 }

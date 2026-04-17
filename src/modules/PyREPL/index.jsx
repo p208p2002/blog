@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import './index.css'
 const { loadPyodide } = require("pyodide");
 
 function PyREPL({ script }) {
@@ -109,51 +110,33 @@ function PyREPL({ script }) {
     }, [isReady])
 
     return (
-        <div id="LiveCode" style={{ minHeight: 150, paddingBottom: 28, position: 'relative' }}>
-            <p key={isReady} style={{ overflow: 'hidden' }}>
+        <div id="LiveCode">
+            <p className="runtime-status" key={isReady}>
                 {isReady ? pyVersionInfo : 'Loading ...'}
             </p>
             {scripts.map((scirpt, scirptIndex) => {
                 return (
                     <div key={scirptIndex}>
-                        <div className='bg-gray-100'>[{scirptIndex + 1}] {scirpt}</div>
-                        <div>{'>>>'} {runResults[scirptIndex]}</div>
+                        <div className='script-line'>[{scirptIndex + 1}] {scirpt}</div>
+                        <div className="result-line">{'>>>'} {runResults[scirptIndex]}</div>
                     </div>
                 )
             })}
             <form
-                style={{
-                    height: 28,
-                    position: 'absolute',
-                    bottom: 0,
-                    width: '100%'
-                }}
+                className="repl-form"
                 onSubmit={(e) => {
                     e.preventDefault()
                 }}
             >
                 <input
-                    style={{
-                        width: 'calc(100% - 64px)',
-                        height: 'calc(100% - 1px)',
-                        boxSizing: 'border-box',
-                        borderWidth: '0px 0px 1px 0px',
-                    }}
+                    className="repl-input form-control"
                     type="text"
                     value={scriptInput}
                     onChange={(e) => { setScriptInput(e.target.value) }}
                 />
                 <button
                     disabled={!isReady}
-                    className='text-center'
-                    style={{
-                        position: 'absolute',
-                        width: '60px',
-                        right: 0,
-                        height: '100%',
-                        borderWidth: 0,
-                        cursor: 'pointer'
-                    }}
+                    className='repl-submit text-button text-center'
                     onClick={runButtonSubmit}
                 >
                     Exec

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import './tailwindcss.css'
+import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LoadingView from './modules/Loading'
 import CornerMenu from './modules/CornerMenu'
 import Footer from './modules/Footer'
 import Archive from './modules/Archive'
-import { BLOG_NAME } from './configs/general'
+import { BLOG_NAME, HOME_PAGE } from './configs/general'
 import MdRender from './modules/MdRender';
 import { Helmet } from 'react-helmet'
 import { AppState } from './AppState'
@@ -49,9 +49,9 @@ function Index() {
   }
   else if (page === "code-404") {
     pageContext = (
-      <div className='flex flex-col p-2'>
+      <div className='article-page'>
         <p>很抱歉，您要求的文章不存在。</p>
-        <p><a style={{ color: 'blue', textDecoration: 'underline' }} href='/'>回首頁</a></p>
+        <p><a href={HOME_PAGE}>回首頁</a></p>
       </div>
     )
   }

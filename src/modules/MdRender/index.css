@@ -1,50 +1,25 @@
 .post-title{
-    color: var(--text-1);
+    color: var(--color-text);
 }
 .document-info{
-    margin-top: 10px;
-    margin-bottom: 25px;
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-5);
     font-size: 14px;
 }
 
 .document-info .post-tag{
-    background-color: var(--support-1);
-    color: var(--text-3);
-    margin-right: 5px;
-    font-size: 12px;
-    padding: 2px 6px 2px 6px;
-    border-radius: 3px;
+    margin-right: var(--space-1);
 }
 
 #MD {
     line-height: 26px;
-    color: var(--text-1);
+    color: var(--color-text);
 }
 
 #MD a {
-    color: var(--main-2);
+    color: var(--color-primary);
     text-decoration: underline;
-    text-decoration-color: var(--main-2);
-}
-
-#MD ol {
-    display: block;
-    list-style-type: decimal;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px;
-}
-
-#MD ul {
-    display: block;
-    list-style-type: disc;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px;
+    text-decoration-color: var(--color-primary);
 }
 
 #MD p {
@@ -53,17 +28,17 @@
 }
 
 #MD .footer {
-    color: var(--text-1);
+    color: var(--color-text);
     margin-top: 60px;
 }
 
 #MD .footer a {
-    color: var(--main-3);
+    color: var(--color-primary-soft);
 }
 
 #MD h2 {
     text-decoration: underline;
-    text-decoration-color: var(--main-3);
+    text-decoration-color: var(--color-primary-soft);
     line-height: 60px;
     font-size: 28px;
     margin-top: 18px;
@@ -72,7 +47,7 @@
 
 #MD h3 {
     text-decoration: underline;
-    text-decoration-color: var(--main-3);;
+    text-decoration-color: var(--color-primary-soft);
     line-height: 40px;
     font-size: 24px;
     margin-top: 18px;
@@ -81,7 +56,7 @@
 
 #MD h4 {
     text-decoration: underline;
-    text-decoration-color: var(--support-1);
+    text-decoration-color: var(--color-border-strong);
     line-height: 40px;
     font-size: 20px;
     margin-top: 18px;
@@ -90,7 +65,7 @@
 
 #MD h5 {
     text-decoration: underline;
-    text-decoration-color: var(--support-2);
+    text-decoration-color: var(--color-border);
     line-height: 40px;
     font-size: 16px;
     margin-top: 16px;
@@ -100,7 +75,7 @@
 
 #MD h6 {
     text-decoration: none;
-    text-decoration-color: var(--support-2);
+    text-decoration-color: var(--color-border);
     line-height: 40px;
     font-size: 14px;
     margin-top: 14px;
@@ -115,15 +90,15 @@
 } 
 
 #MD pre div{
-    border-radius: 0px !important;
+    border-radius: 0 !important;
 }
 
 /* inline code */
 #MD code {
     box-sizing: border-box;
     font-family: monospace;
-    color: var(--text-1);
-    border-radius: 2px
+    color: var(--color-text);
+    border-radius: var(--radius-xs);
 } 
 
 #MD pre div::before {
@@ -133,11 +108,11 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--main-2);
+    background-color: var(--color-primary);
     text-align: right;
     line-height: 10px;
     font-size: 8px;
-    color: var(--text-3);
+    color: var(--color-text-inverse);
     padding-right: 2px;
 }
 #MD blockquote::before{
@@ -147,11 +122,11 @@
     position: absolute;
     top: -10px;
     left: 0;
-    background-color: var(--support-2);
+    background-color: var(--color-border);
     text-align: left;
     line-height: 10px;
     font-size: 8px;
-    color: var(--text-2);
+    color: var(--color-text-muted);
     padding-left: 2px;
 }
 
@@ -159,7 +134,7 @@
 #MD blockquote {
     position: relative;
     margin-top: 16px;
-    background-color: var(--support-3);
+    background-color: var(--color-surface-muted);
     font-size: smaller;
     margin-bottom: 34px;
     padding: 8px;
@@ -179,18 +154,18 @@
 
 /* Track */
 #MD pre ::-webkit-scrollbar-track {
-    background: var(--support-3);
+    background: var(--color-surface-muted);
 }
 
 /* Handle */
 #MD pre ::-webkit-scrollbar-thumb {
-    background: var(--support-2);
-    border-radius: 0px;
+    background: var(--color-border);
+    border-radius: 0;
 }
 
 /* Handle on hover */
 #MD pre ::-webkit-scrollbar-thumb:hover {
-    background: var(--support-1);
+    background: var(--color-border-strong);
 }
 
 #MD .cursor-pointer {
@@ -204,7 +179,7 @@
 }
 
 #MD .run-btn {
-    color: var(--text-1);
+    color: var(--color-text);
     position: absolute;
     right: 8px;
     top: 3px;
@@ -213,21 +188,21 @@
 
 #MD .exif{
     font-family: monospace;
-    color: var(--text-1);
+    color: var(--color-text);
     font-style: italic;
     border-width: 1px;
     border-style: solid;
-    border-color: var(--support-3);
-    padding: 12px 12px 0px 12px;
+    border-color: var(--color-surface-muted);
+    padding: var(--space-3) var(--space-3) 0;
 }
 
 #MD .exif img{
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #MD .exif-text{
-    margin-left: 5px;
+    margin-left: var(--space-1);
     font-size: 12px;
     height: 48px;
 }
@@ -235,23 +210,87 @@
 #MD .exif-item{
     padding-right: 5px;
     margin-left: 6px;
-    color: var(--text-2);
+    color: var(--color-text-muted);
 }
 
 
 #MD .md-table-container tr:first-child{
     border-width: 1px 0px 2px 0px;
     border-style: solid;
-    border-color: var(--main-1);;
+    border-color: var(--color-primary-strong);
 }
 
 #MD .md-table-container tr{
     border-width: 1px 0px 1px 0px;
     border-style: solid;
-    border-color: var(--support-1);;
+    border-color: var(--color-border-strong);
 }
 
 #MD .md-table-container th, td{
     padding-right: 10px;
     padding-left: 3px;
+}
+
+.post-content {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.post-heading {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-3);
+    margin: 0 0 var(--space-4);
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.post-meta-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-6);
+}
+
+.post-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-text-muted);
+}
+
+.post-meta-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-text-muted);
+}
+
+.markdown-editor {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 16px;
+    padding: var(--space-4);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.markdown-editor:focus {
+    border-color: var(--color-primary);
+    outline: 0;
+}
+
+@media screen and (max-width: 576px) {
+    .post-heading {
+        font-size: 28px;
+    }
+
+    .post-meta-row {
+        gap: var(--space-2);
+    }
 }

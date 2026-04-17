@@ -60,8 +60,8 @@ def get_file_last_modify_time(f_path):
     return _timestamp_to_datestr(timestamp)
 
 if __name__ == "__main__":
-    homepage = sys.argv[-1]
-    if 'http' not in homepage:
+    homepage = sys.argv[1] if len(sys.argv) > 1 else None
+    if homepage is None:
         homepage = None
         site_setting = json.load(open('package.json','r',encoding='utf-8'))
         homepage = site_setting.get('homepage',None)
@@ -103,14 +103,10 @@ if __name__ == "__main__":
                         value.pop(0)    
                 document_info[tag_name] = value
 
-            if sys.platform == "win32":
-                file_link = urljoin(homepage,file).replace("/public","").replace("\\","/")
-                page_link = urljoin(homepage,os.path.dirname(file))\
-                    .replace("\\","/")\
-                    .replace("/docs/","?page=").replace("/public","")
-            else:
-                file_link = urljoin(homepage,file).replace("/public","")
-                page_link = urljoin(homepage,os.path.dirname(file)).replace("/docs/","?page=").replace("/public","")
+            normalized_file = file.replace("\\","/")
+            doc_id = os.path.basename(os.path.dirname(normalized_file))
+            file_link = urljoin(homepage, normalized_file).replace("/public", "")
+            page_link = f"{homepage.rstrip('/')}/?page={doc_id}"
                 
             # 日期不存在時，從git編輯紀錄取得
             document_date = document_info.get(

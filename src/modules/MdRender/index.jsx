@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight as codeSyntaxStyleLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { BLOG_NAME, IMG_FILE_PREFIX } from '../../configs/general';
+import { BLOG_NAME, HOME_PAGE, IMG_FILE_PREFIX, publicPath } from '../../configs/general';
 import { Helmet } from 'react-helmet';
 import rehypeRaw from 'rehype-raw';
 import './index.css';
@@ -198,21 +198,21 @@ function useSyncScroll(editorRef, renderRef) {
 // 新增 PostContent 元件，統一渲染標題、日期、標籤、Markdown
 function PostContent({ postTitle, date, tags, content, codeSyntaxStyle, renderContainerRef }) {
     return (
-        <div id="Render" ref={renderContainerRef} className="overflow-y-auto h-full max-h-full">
-            <h1 className="post-title text-4xl font-extrabold mb-4 text-zinc-800 tracking-tight leading-tight border-b border-zinc-200 pb-2">
+        <div id="Render" ref={renderContainerRef} className="post-content">
+            <h1 className="post-title post-heading">
                 {postTitle}
             </h1>
-            <div className="document-info flex flex-row items-center gap-6 mb-6 text-sm">
-                <div className="post-date text-zinc-500 flex items-center gap-1">
-                    <svg className="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <div className="document-info post-meta post-meta-row">
+                <div className="post-date post-meta-item">
+                    <svg className="post-meta-icon" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                     日期:&nbsp;{date}
                 </div>
-                <div className="post-tags text-zinc-500 flex items-center gap-1">
-                    <svg className="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M7 7h10M7 11h10M7 15h10" /></svg>
+                <div className="post-tags post-meta-item tag-list">
+                    <svg className="post-meta-icon" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M7 7h10M7 11h10M7 15h10" /></svg>
                     標籤:&nbsp;
                     {tags.map((tag, i) => (
                         <span
-                            className="post-tag bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full mx-1 text-xs font-semibold shadow"
+                            className="post-tag"
                             key={i}
                         >
                             #{tag}
@@ -242,7 +242,7 @@ export default function MdRender({ doc_id, mode = "edit" }) {
 
     // 取得文章內容
     useEffect(() => {
-        axios.get(`/docs/${doc_id}/document.md`)
+        axios.get(publicPath(`/docs/${doc_id}/document.md`))
             .then((res) => {
                 const gistTitle = res.data.split("\n")[0].replace("# ", "");
                 let gistContent = fixImgLink(res.data, doc_id).replace(`# ${gistTitle}`, "");
@@ -255,7 +255,7 @@ export default function MdRender({ doc_id, mode = "edit" }) {
                 setPageDescription(gistContent.replaceAll("#", " ").slice(0, 500));
             })
             .catch(() => {
-                window.location.href = "/?page=code-404";
+                window.location.href = `${HOME_PAGE}?page=code-404`;
             });
     }, [doc_id]);
 
@@ -318,7 +318,7 @@ export default function MdRender({ doc_id, mode = "edit" }) {
     let { date = "", tags = [] } = documentInfo;
 
     return (
-        <div className="bg-gradient-to-br from-zinc-100 via-white to-zinc-200 min-h-screen">
+        <div className="app-shell">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>{pageTitle}</title>
@@ -330,35 +330,31 @@ export default function MdRender({ doc_id, mode = "edit" }) {
             </Helmet>
 
             {mode === "edit" ? (
-                <div className="flex h-screen overflow-hidden justify-center">
-                    <div className="w-full flex h-full">
-                        <div className="flex-1 mx-4 my-6 bg-white rounded-xl shadow-lg p-6 border border-zinc-200 transition-all duration-300">
-                        
-                                <textarea
-                                    id="EditorTextArea"
-                                    ref={editorTextAreaRef}
-                                    className="w-full h-full bg-zinc-100 p-4 rounded-lg border border-zinc-300 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono text-base shadow-inner transition-all duration-200"
-                                    value={content}
-                                    onChange={(e) => setContent(e.target.value)}
-                                    spellCheck={false}
-                                />
-                            
-                        </div>
-                        <div className="flex-1 mx-4 my-6 bg-white rounded-xl shadow-lg p-8 border border-zinc-200 transition-all duration-300">
-                            <PostContent
-                                postTitle={postTitle}
-                                date={date}
-                                tags={tags}
-                                content={content}
-                                codeSyntaxStyle={codeSyntaxStyle}
-                                renderContainerRef={renderContainerRef}
-                            />
-                        </div>
+                <div className="editor-layout">
+                    <div className="editor-pane surface-panel editor-surface">
+                        <textarea
+                            id="EditorTextArea"
+                            ref={editorTextAreaRef}
+                            className="markdown-editor"
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                            spellCheck={false}
+                        />
+                    </div>
+                    <div className="editor-pane surface-panel article-surface">
+                        <PostContent
+                            postTitle={postTitle}
+                            date={date}
+                            tags={tags}
+                            content={content}
+                            codeSyntaxStyle={codeSyntaxStyle}
+                            renderContainerRef={renderContainerRef}
+                        />
                     </div>
                 </div>
             ) : (
-                <div className="w-full min-h-screen flex justify-center items-start bg-gradient-to-br from-zinc-100 via-white to-zinc-200">
-                    <div className="w-full max-w-4xl mx-auto my-8 bg-white rounded-xl shadow-lg p-8 overflow-hidden border border-zinc-200 transition-all duration-300">
+                <div className="article-page">
+                    <div className="article-container surface-panel article-surface">
                         <PostContent
                             postTitle={postTitle}
                             date={date}

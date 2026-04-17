@@ -26,7 +26,7 @@ export default function MdRender({ file_link, maxLine = 20 }) {
         <div id="MD-Preview" className="md-preview">
             {loading === true ? (
                 <div className="w-100 text-center">
-                <div className="loading">
+                <div className="loading-dots">
                     <span></span>
                     <span></span>
                     <span></span>

@@ -54,7 +54,7 @@ function Search({setPosts,fullIndex=[]}) {
         <div id="Search-Bar">
             <form id="Searrch-Form">
                 <input
-                    className='text-sm'
+                    className='form-control text-sm'
                     placeholder="Search post, tag, etc."
                     type="text"
                     value={keyword}
@@ -63,6 +63,7 @@ function Search({setPosts,fullIndex=[]}) {
                     }}
                 />
                 <button
+                    className="text-button"
                     type="submit"
                     onClick={(e) => {
                         e.preventDefault();

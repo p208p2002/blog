@@ -1,38 +1,47 @@
 #Post-Block{
-    margin-bottom: 50px;
-    border-color: var(--support-2);
+    margin-bottom: var(--space-8);
+    border-color: var(--color-border);
     border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    /* border-radius: 5px; */
+    border-width: 0 0 1px;
 }
 
 #Post-Block hr{
-    border: 1px solid var(--support-1);
-    margin-bottom: 12px;
+    border: 0;
+    border-top: 1px solid var(--color-border-strong);
+    margin-bottom: var(--space-3);
 }
 
 #Post-Block small{
-    color: var(--text-1);
+    color: var(--color-text);
 }
 
 #Post-Block .post-date{
-    color: var(--text-2);
+    color: var(--color-text-muted);
 }
 
 #Post-Block .title-badge{
     width: 100px;
-    margin-left: 10px;
+    margin-left: var(--space-2);
     position: relative;
     top: 4px;
 }
 
 #Post-Block a.post-title{
     font-size: 18px;
+    font-weight: 600;
+}
+
+#Post-Block .post-title-row {
+    margin-bottom: 0;
+}
+
+#Post-Block .post-summary-meta {
+    margin-bottom: var(--space-2);
 }
 
 @media screen and (max-width: 768px) {
     #Post-Block{
-        padding: 12px;
+        padding: var(--space-3);
         max-width: 100%;     
     }
 }
@@ -40,9 +49,9 @@
 @media screen and (max-width: 576px) {
     #Post-Block{
         width: 100%;
-        padding: 12px;
+        padding: var(--space-3);
         box-sizing: border-box;
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin-bottom: var(--space-5);
     }
 }

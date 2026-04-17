@@ -5,7 +5,7 @@ import { AppStateContext } from './index'
 import PostBlock from './modules/PostBlock'
 import Search from './modules/Search'
 import MDPreviewer from './modules/MdRender/preview'
-import { POST_PRE_PAGE } from './configs/general'
+import { HOME_PAGE, POST_PRE_PAGE, publicPath } from './configs/general'
 import Banner from './modules/Banner';
 
 const axios = require('axios');
@@ -19,7 +19,7 @@ function App() {
 
   let fetchPost = () => {
     appState.setLoading(true)
-    axios.get("/index.json")
+    axios.get(publicPath("/index.json"))
       .then((res) => {
         posts = res.data
         posts = posts.slice(offset, limit)
@@ -54,10 +54,10 @@ function App() {
         ))}
       </div>
 
-      <div style={{ textAlign: 'center', marginBottom: 40 }}>
-        <a href="/">{`<<Fisrt Page`}</a>
-        <span style={{ marginLeft: 5, marginRight: 5 }}> - </span>
-        <a href={`/?offset=${offset + POST_PRE_PAGE}&limit=${offset + POST_PRE_PAGE * 2}`}>{'Older Post >>'}</a>
+      <div className="pagination-nav">
+        <a href={HOME_PAGE}>{`<<Fisrt Page`}</a>
+        <span className="separator"> - </span>
+        <a href={`${HOME_PAGE}?offset=${offset + POST_PRE_PAGE}&limit=${offset + POST_PRE_PAGE * 2}`}>{'Older Post >>'}</a>
       </div>
       <br />
     </div>

@@ -1,6 +1,6 @@
 {
   "name": "trailer",
-  "homepage": "https://p208p2002.github.io",
+  "homepage": "https://p208p2002.github.io/blog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,7 +32,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "npm run build-twcss && sh -c 'python build_index.py http://localhost:3000' && react-scripts start",
+    "start": "npm run build-twcss && sh -c 'python build_index.py /' && react-scripts start",
     "build": "npm run build-twcss && pip install -r  requirements.txt && python build_index.py && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

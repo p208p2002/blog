@@ -1,59 +1,13 @@
-#App a{
-    color: var(--main-2);
-}
-  
-#App a:link{
-    text-decoration: none;
+#App {
+    min-height: 100vh;
 }
 
-#App small{
-    color: var(--text-2);
+.pagination-nav {
+    text-align: center;
+    margin-bottom: var(--space-7);
 }
 
-#App ol {
-    display: block;
-    list-style-type: decimal;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px;
-}
-
-#App ul {
-    display: block;
-    list-style-type: disc;
-    margin-top: 1em;
-    margin-bottom: 1 em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px;
-}
-
-.context {
-    max-width: 800px;
-    min-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 70px; /* 預留 Footer 空間 */
-}
-
-@media screen and (max-width: 768px) {
-    .context {
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        padding-bottom: 80px; /* 手機版預留更多空間 */
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .context {
-        margin-left: 0px;
-        box-sizing: border-box;
-        max-width: 576px;
-        min-width: 380px;
-        position: relative;
-        padding-bottom: 90px; /* 小螢幕再多一點 */
-    }
+.pagination-nav .separator {
+    margin-inline: var(--space-1);
+    color: var(--color-text-muted);
 }
