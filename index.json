@@ -1,0 +1,786 @@
+[
+    {
+        "title": "CUDA GPU 排程策略",
+        "tags": [
+            "cuda",
+            "job-schedule"
+        ],
+        "hidden_tags": [
+            "stream",
+            "K2",
+            "https",
+            "K3",
+            "CUDA",
+            "threads",
+            "執行",
+            "K1",
+            "image",
+            "hackmd"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=cuda-schedule",
+        "file_link": "https://p208p2002.github.io/blog/docs/cuda-schedule/document.md",
+        "date": "2025/07/23",
+        "_has_notebook": false,
+        "_sort_key": 20250723
+    },
+    {
+        "title": "淺談 DP，MP 和 TP",
+        "tags": [
+            "data-parallel",
+            "model-parallel",
+            "tensor-parallel"
+        ],
+        "hidden_tags": [
+            "https",
+            "資料",
+            "io",
+            "##",
+            "GPU",
+            "batch",
+            "我們",
+            "模型",
+            "MP",
+            "parallel"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=dp-mp-tp",
+        "file_link": "https://p208p2002.github.io/blog/docs/dp-mp-tp/document.md",
+        "date": "2025/02/20",
+        "_has_notebook": false,
+        "_sort_key": 20250220
+    },
+    {
+        "title": "Transformer 模型的記憶體使用量估算",
+        "tags": [
+            "transformer",
+            "vram",
+            "training",
+            "inference"
+        ],
+        "hidden_tags": [
+            "text",
+            "times",
+            "Bytes",
+            "GiB",
+            "記憶體",
+            "Memory",
+            "FP16",
+            "10",
+            "FP32",
+            "模型"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=transformers-vram-comsumption",
+        "file_link": "https://p208p2002.github.io/blog/docs/transformers-vram-comsumption/document.md",
+        "date": "2024/10/26",
+        "_has_notebook": false,
+        "_sort_key": 20241026
+    },
+    {
+        "title": "VLMo: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts",
+        "tags": [
+            "vision",
+            "transformer"
+        ],
+        "hidden_tags": [
+            "影像",
+            "文字",
+            "專家",
+            "預訓練",
+            "編碼器",
+            "視覺",
+            "text",
+            "輸入",
+            "MoME",
+            "mathcal"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=vlmo",
+        "file_link": "https://p208p2002.github.io/blog/docs/vlmo/document.md",
+        "date": "2024/10/26",
+        "_has_notebook": false,
+        "_sort_key": 20241026
+    },
+    {
+        "title": "Reasons to Reject? Aligning Language Models with Judgments",
+        "tags": [
+            "論文筆記"
+        ],
+        "hidden_tags": [
+            "判斷",
+            "回應",
+            "mid",
+            "mathcal",
+            "Align",
+            "LLM",
+            "sum",
+            "log",
+            "rightarrow",
+            "####"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=reason-to-reject",
+        "file_link": "https://p208p2002.github.io/blog/docs/reason-to-reject/document.md",
+        "date": "2024/07/05",
+        "_has_notebook": false,
+        "_sort_key": 20240705
+    },
+    {
+        "title": "Mixture of experts (MoE) 的路由設計與訓練",
+        "tags": [
+            "論文筆記",
+            "MoE",
+            "Mixtral"
+        ],
+        "hidden_tags": [
+            "專家",
+            "路由",
+            "token",
+            "MoE",
+            "訓練",
+            "text",
+            "Switch",
+            "capacity",
+            "損失",
+            "一個"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=moe-routing-design",
+        "file_link": "https://p208p2002.github.io/blog/docs/moe-routing-design/document.md",
+        "date": "2024/05/09",
+        "_has_notebook": false,
+        "_sort_key": 20240509
+    },
+    {
+        "title": "Streaming text with FastAPI and JavaScript",
+        "tags": [
+            "SSE",
+            "text-streaming"
+        ],
+        "hidden_tags": [
+            "text",
+            "FastAPI",
+            "reader",
+            "SSE",
+            "streaming",
+            "import",
+            "test",
+            "message",
+            "completions",
+            "return"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=server-sent-events",
+        "file_link": "https://p208p2002.github.io/blog/docs/server-sent-events/document.md",
+        "date": "2024/05/06",
+        "_has_notebook": false,
+        "_sort_key": 20240506
+    },
+    {
+        "title": "旋轉位置編碼 (RoPE) 筆記與長度拓展方法",
+        "tags": [
+            "旋轉矩陣",
+            "RoPE",
+            "position-embedding"
+        ],
+        "hidden_tags": [
+            "theta",
+            "cos",
+            "sin",
+            "旋轉",
+            "pmatrix",
+            "RoPE",
+            "位置",
+            "vdots",
+            "base",
+            "弧度"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=rope-embedding",
+        "file_link": "https://p208p2002.github.io/blog/docs/rope-embedding/document.md",
+        "date": "2024/05/03",
+        "_has_notebook": false,
+        "_sort_key": 20240503
+    },
+    {
+        "title": "Exif 資訊解析",
+        "tags": [
+            "exif",
+            "blog-update"
+        ],
+        "hidden_tags": [
+            "image",
+            "Exif",
+            "資訊",
+            "document",
+            "info",
+            "04",
+            "ExifReader",
+            "jpeg",
+            "相片",
+            "解析"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=js-exif-support",
+        "file_link": "https://p208p2002.github.io/blog/docs/js-exif-support/document.md",
+        "date": "2024/04/04",
+        "_has_notebook": false,
+        "_sort_key": 20240404
+    },
+    {
+        "title": "論文筆記 Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+        "tags": [
+            "論文筆記",
+            "DPO",
+            "PPO",
+            "RLHF"
+        ],
+        "hidden_tags": [
+            "pi",
+            "獎勵",
+            "我們",
+            "theta",
+            "DPO",
+            "偏好",
+            "模型",
+            "ref",
+            "學習",
+            "函數"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=dpo",
+        "file_link": "https://p208p2002.github.io/blog/docs/dpo/document.md",
+        "date": "2024/04/02",
+        "_has_notebook": false,
+        "_sort_key": 20240402
+    },
+    {
+        "title": "Distributed Training with multi data worker for iterable-style dataset",
+        "tags": [
+            "distributed-training",
+            "iterable-dataset",
+            "worker-setting"
+        ],
+        "hidden_tags": [
+            "worker",
+            "data",
+            "self",
+            "id",
+            "total",
+            "next",
+            "資料",
+            "torch",
+            "process",
+            "num"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=iterable-style-dataset-worker-setting",
+        "file_link": "https://p208p2002.github.io/blog/docs/iterable-style-dataset-worker-setting/document.md",
+        "date": "2024/03/02",
+        "_has_notebook": false,
+        "_sort_key": 20240302
+    },
+    {
+        "title": "Azure ML Studio GPU Cluster 使用體驗",
+        "tags": [
+            "gpu-cluster",
+            "multi-node-training",
+            "LLM",
+            "model-training"
+        ],
+        "hidden_tags": [
+            "Azure",
+            "ML",
+            "環境",
+            "資料",
+            "Studio",
+            "python",
+            "image",
+            "azureml",
+            "node",
+            "####"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=az-multi-node-training",
+        "file_link": "https://p208p2002.github.io/blog/docs/az-multi-node-training/document.md",
+        "date": "2024/02/15",
+        "_has_notebook": false,
+        "_sort_key": 20240215
+    },
+    {
+        "title": "設定聊天模板讓 chat model 更好用",
+        "tags": [
+            "chat-template",
+            "transformers",
+            "LLM",
+            "chat-model"
+        ],
+        "hidden_tags": [
+            "chat",
+            "template",
+            "content",
+            "role",
+            "tokenizer",
+            "user",
+            "system",
+            "assistant",
+            "message",
+            "prompt"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=chat-template",
+        "file_link": "https://p208p2002.github.io/blog/docs/chat-template/document.md",
+        "date": "2023/12/19",
+        "_has_notebook": false,
+        "_sort_key": 20231219
+    },
+    {
+        "title": "概覽 Parameter-Efficient Fine-Tuning (PEFT)",
+        "tags": [
+            "peft",
+            "overview",
+            "LLM",
+            "fine-tune",
+            "LoRA",
+            "Adapter"
+        ],
+        "hidden_tags": [
+            "參數",
+            "image",
+            "模型",
+            "png",
+            "####",
+            "https",
+            "Tuning",
+            "訓練",
+            "tuning",
+            "ICL"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=peft-overview",
+        "file_link": "https://p208p2002.github.io/blog/docs/peft-overview/document.md",
+        "date": "2023/12/15",
+        "_has_notebook": false,
+        "_sort_key": 20231215
+    },
+    {
+        "title": "論文筆記 Efficient Training of Language Models to Fill in the Middle",
+        "tags": [
+            "論文筆記",
+            "FIM",
+            "LM",
+            "預訓練"
+        ],
+        "hidden_tags": [
+            "FIM",
+            "模型",
+            "作者",
+            "進行",
+            "token",
+            "訓練",
+            "prefix",
+            "rate",
+            "預訓練",
+            "學習"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=fill-in-middle",
+        "file_link": "https://p208p2002.github.io/blog/docs/fill-in-middle/document.md",
+        "date": "2023/12/13",
+        "_has_notebook": false,
+        "_sort_key": 20231213
+    },
+    {
+        "title": "論文筆記 Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning",
+        "tags": [
+            "論文筆記",
+            "PEFT",
+            "IA3"
+        ],
+        "hidden_tags": [
+            "ICL",
+            "PEFT",
+            "訓練",
+            "模型",
+            "微調",
+            "Few",
+            "參數",
+            "選擇",
+            "###",
+            "hat"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=IA3",
+        "file_link": "https://p208p2002.github.io/blog/docs/IA3/document.md",
+        "date": "2023/12/05",
+        "_has_notebook": false,
+        "_sort_key": 20231205
+    },
+    {
+        "title": "Fast API GPU 推論性能優化",
+        "tags": [
+            "gpu",
+            "fast-api",
+            "inference",
+            "optimize"
+        ],
+        "hidden_tags": [
+            "推論",
+            "model",
+            "gp",
+            "進程",
+            "import",
+            "max",
+            "return",
+            "-------",
+            "Fast",
+            "API"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=fast-api-gpu-inference",
+        "file_link": "https://p208p2002.github.io/blog/docs/fast-api-gpu-inference/document.md",
+        "date": "2023/09/12",
+        "_has_notebook": false,
+        "_sort_key": 20230912
+    },
+    {
+        "title": "論文筆記 Neural Machine Translation of Rare Words with Subword Units",
+        "tags": [
+            "論文筆記",
+            "gpt2",
+            "bpe",
+            "tokenizer",
+            "tokenization"
+        ],
+        "hidden_tags": [
+            "翻譯",
+            "BPE",
+            "vocab",
+            "step",
+            "你好",
+            "back",
+            "off",
+            "word",
+            "我們",
+            "out"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=bpe-tokenization",
+        "file_link": "https://p208p2002.github.io/blog/docs/bpe-tokenization/document.md",
+        "date": "2023/09/06",
+        "_has_notebook": false,
+        "_sort_key": 20230906
+    },
+    {
+        "title": "論文筆記 1-bit Adam: Communication Efficient Large-Scale Training with Adam’s Convergence Speed",
+        "tags": [
+            "論文筆記",
+            "1-bit",
+            "Adam"
+        ],
+        "hidden_tags": [
+            "Adam",
+            "壓縮",
+            "bit",
+            "誤差",
+            "補償",
+            "delta",
+            "進行",
+            "variance",
+            "png",
+            "量化"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=1-bit_Adam",
+        "file_link": "https://p208p2002.github.io/blog/docs/1-bit_Adam/document.md",
+        "date": "2023/05/24",
+        "_has_notebook": false,
+        "_sort_key": 20230524
+    },
+    {
+        "title": "好用資料標記工具 Label Studio",
+        "tags": [
+            "label-studo",
+            "資料標記"
+        ],
+        "hidden_tags": [
+            "資料",
+            "label",
+            "標記",
+            "一個",
+            "studio",
+            "設定",
+            "png",
+            "Label",
+            "###",
+            "Studio"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=label-studio",
+        "file_link": "https://p208p2002.github.io/blog/docs/label-studio/document.md",
+        "date": "2023/02/04",
+        "_has_notebook": false,
+        "_sort_key": 20230204
+    },
+    {
+        "title": "透過瀏覽器執行 Python 程式碼",
+        "tags": [
+            "webassembley",
+            "pyodide",
+            "blog-update"
+        ],
+        "hidden_tags": [
+            "WebAssembly",
+            "pyodide",
+            "org",
+            "程式",
+            "瀏覽器",
+            "執行",
+            "語言",
+            "https",
+            "import",
+            "Pyodide"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog-update-230116",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog-update-230116/document.md",
+        "date": "2023/01/16",
+        "_has_notebook": false,
+        "_sort_key": 20230116
+    },
+    {
+        "title": "Poetry 與 PyTorch 依賴解決方案",
+        "tags": [
+            "peotry",
+            "pytorch"
+        ],
+        "hidden_tags": [
+            "torch",
+            "poetry",
+            "install",
+            "PyTorch",
+            "light",
+            "ltt",
+            "Poetry",
+            "安裝",
+            "硬體",
+            "cuda"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=poetry-and-pytorch",
+        "file_link": "https://p208p2002.github.io/blog/docs/poetry-and-pytorch/document.md",
+        "date": "2022/09/26",
+        "_has_notebook": false,
+        "_sort_key": 20220926
+    },
+    {
+        "title": "修改 Transformer Language Model, 教你如何加入新的 Embedding Layer",
+        "tags": [
+            "bart",
+            "bert",
+            "transformer-model",
+            "pytorch",
+            "nlp",
+            "huggingface",
+            "custom-transformer-model"
+        ],
+        "hidden_tags": [
+            "None",
+            "Optional",
+            "mask",
+            "torch",
+            "self",
+            "ids",
+            "input",
+            "head",
+            "decoder",
+            "__"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=custom_bart_model",
+        "file_link": "https://p208p2002.github.io/blog/docs/custom_bart_model/document.md",
+        "date": "2022/08/10",
+        "_has_notebook": true,
+        "_sort_key": 20220810
+    },
+    {
+        "title": "Elasticserach Search 中文搜尋優化",
+        "tags": [
+            "Elasticserach",
+            "中文搜尋優化",
+            "簡繁轉換",
+            "同義詞",
+            "中文分詞"
+        ],
+        "hidden_tags": [
+            "ik",
+            "json",
+            "POST",
+            "analyzer",
+            "type",
+            "synonym",
+            "title",
+            "smart",
+            "index",
+            "custom"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=elasticsearch-chinese-search-optimize",
+        "file_link": "https://p208p2002.github.io/blog/docs/elasticsearch-chinese-search-optimize/document.md",
+        "date": "2022/07/28",
+        "_has_notebook": false,
+        "_sort_key": 20220728
+    },
+    {
+        "title": "Python3 文字與unicode互轉",
+        "tags": [
+            "blog",
+            "python3",
+            "uni2word",
+            "word2uni"
+        ],
+        "hidden_tags": [
+            "uni",
+            "unicode",
+            "uni2word",
+            "python",
+            "word",
+            "word2unicode",
+            "5B57",
+            "shell",
+            "str",
+            "bytes"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog_python3_uni2word_word2uni",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog_python3_uni2word_word2uni/document.md",
+        "date": "2022/07/01",
+        "_has_notebook": false,
+        "_sort_key": 20220701
+    },
+    {
+        "title": "Docker多階段建構",
+        "tags": [
+            "docker",
+            "ssh",
+            "docker-multi-stage-build"
+        ],
+        "hidden_tags": [
+            "ssh",
+            "build",
+            "server",
+            "RUN",
+            "###",
+            "image",
+            "system",
+            "SSH",
+            "PRIVATE",
+            "KEY"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog_docker_ssh_docker-multi-stage-build",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog_docker_ssh_docker-multi-stage-build/document.md",
+        "date": "2022/03/14",
+        "_has_notebook": false,
+        "_sort_key": 20220314
+    },
+    {
+        "title": "用 PyTorch Lighting 拯救你的一天",
+        "tags": [
+            "blog",
+            "pytorch-lightning",
+            "pytorch"
+        ],
+        "hidden_tags": [
+            "self",
+            "batch",
+            "model",
+            "loss",
+            "step",
+            "def",
+            "test",
+            "__",
+            "size",
+            "path"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog_pytorch-lightning_pytorch",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog_pytorch-lightning_pytorch/document.md",
+        "date": "2021/06/20",
+        "_has_notebook": false,
+        "_sort_key": 20210620
+    },
+    {
+        "title": "PyTorch實作NLP中的Self-Attention",
+        "tags": [
+            "nlp",
+            "pytorch",
+            "self-attention"
+        ],
+        "hidden_tags": [
+            "0.0000",
+            "attention",
+            "mask",
+            "score",
+            "inf",
+            "self",
+            "batch",
+            "torch",
+            "0.0775",
+            "0.0157"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog_nlp_pytorch_self-attention",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog_nlp_pytorch_self-attention/document.md",
+        "date": "2021/03/24",
+        "_has_notebook": false,
+        "_sort_key": 20210324
+    },
+    {
+        "title": "GPT & GPT2 Fine-Tuning",
+        "tags": [
+            "gpt",
+            "gpt2"
+        ],
+        "hidden_tags": [
+            "input",
+            "device",
+            "model",
+            "tensor",
+            "cuda",
+            "grad",
+            "fn",
+            "NllLossBackward",
+            "100",
+            "python"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog_gpt_gpt2_nlp",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog_gpt_gpt2_nlp/document.md",
+        "date": "2020/01/01",
+        "_has_notebook": true,
+        "_sort_key": 20200101
+    },
+    {
+        "title": "BART Model Fine-Tuning",
+        "tags": [
+            "bart-model",
+            "nlp"
+        ],
+        "hidden_tags": [
+            "100",
+            "input",
+            "model",
+            "length",
+            "python",
+            "max",
+            "label",
+            "pad",
+            "True",
+            "torch"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog_bart-model_nlp",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog_bart-model_nlp/document.md",
+        "date": "2020/01/01",
+        "_has_notebook": true,
+        "_sort_key": 20200101
+    },
+    {
+        "title": "在Dockerfile與GitHub Action中安裝私有Python套件",
+        "tags": [
+            "dockerfile",
+            "gh-action",
+            "ssh",
+            "pip-install-private"
+        ],
+        "hidden_tags": [
+            "ssh",
+            "github",
+            "docker",
+            "date",
+            "git",
+            "DOCKER",
+            "com",
+            "name",
+            "HUB",
+            "GitHub"
+        ],
+        "page_link": "https://p208p2002.github.io/blog/?page=blog_dockerfile_gh-action_ssh_pip-install-private",
+        "file_link": "https://p208p2002.github.io/blog/docs/blog_dockerfile_gh-action_ssh_pip-install-private/document.md",
+        "date": "2021/10/6",
+        "_has_notebook": false,
+        "_sort_key": 2021106
+    }
+]
